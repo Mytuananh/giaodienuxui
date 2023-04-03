@@ -1,0 +1,43 @@
+.sidebar {
+    width: 200px;
+    background-color: #eee;
+    padding: 10px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar li a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: #333;
+}
+
+.sidebar .dropdown-menu {
+    display: none;
+}
+
+.sidebar .dropdown-toggle {
+    cursor: pointer;
+}
+
+.sidebar .dropdown-toggle::after {
+    content: "▼";
+    margin-left: 5px;
+}
+
+.sidebar .dropdown-toggle.open::after {
+    content: "▲";
+}
+
+.sidebar .dropdown-menu li a {
+    padding: 5px 20px;
+}
