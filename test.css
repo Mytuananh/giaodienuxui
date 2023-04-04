@@ -1,43 +1,23 @@
-.sidebar {
-    width: 200px;
-    background-color: #eee;
-    padding: 10px;
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-.sidebar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+th, td {
+    padding: 12px;
+    text-align: left;
 }
 
-.sidebar li {
-    margin-bottom: 10px;
+th {
+    background-color: #333;
+    color: #fff;
+    text-transform: uppercase;
 }
 
-.sidebar li a {
-    display: block;
-    padding: 5px;
-    text-decoration: none;
-    color: #333;
-}
-
-.sidebar .dropdown-menu {
-    display: none;
-}
-
-.sidebar .dropdown-toggle {
-    cursor: pointer;
-}
-
-.sidebar .dropdown-toggle::after {
-    content: "▼";
-    margin-left: 5px;
-}
-
-.sidebar .dropdown-toggle.open::after {
-    content: "▲";
-}
-
-.sidebar .dropdown-menu li a {
-    padding: 5px 20px;
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
