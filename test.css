@@ -1,23 +1,73 @@
-table {
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-th, td {
-    padding: 12px;
-    text-align: left;
-}
-
-th {
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
     background-color: #333;
-    color: #fff;
-    text-transform: uppercase;
+    overflow-y: auto;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+    transform: translateX(-300px);
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar nav ul li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.sidebar-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.sidebar-toggle .open-icon,
+.sidebar-toggle .close-icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.sidebar-toggle .close-icon {
+    display: none;
+}
+
+.sidebar.active + .sidebar-toggle .open-icon {
+    display: none;
+}
+
+.sidebar.active + .sidebar-toggle .close-icon {
+    display: block;
 }
