@@ -7,19 +7,68 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous"/>
 </head>
 <body>
-<div class="sidebar">
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    <button class="sidebar-toggle">
-        <span class="open-icon">&#9776;</span>
-        <span class="close-icon">&times;</span>
-    </button>
+<!-- Button to Open Modal -->
+<button id="openModalBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Thông tin công trình</h2>
+        <form>
+            <div class="form-group">
+                <label for="project-code">Mã công trình:</label>
+                <select id="project-code" name="project-code">
+                    <option value="K">K</option>
+                    <option value="TB">TB</option>
+                    <option value="KT">KT</option>
+                    <option value="C">C</option>
+                    <option value="CTTK">CTTK</option>
+                </select>
+                <input type="text" id="project-code-num" name="project-code-num" placeholder="Số thứ tự">
+                <span class="error-message" id="project-code-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="project-name">Tên công trình:</label>
+                <input type="text" id="project-name" name="project-name">
+                <span class="error-message" id="project-name-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="project-location">Vị trí, địa điểm:</label>
+                <input type="text" id="project-location-name" name="project-location-name" placeholder="Tên địa điểm">
+                <input type="text" id="project-location-x" name="project-location-x" placeholder="Tọa độ X">
+                <input type="text" id="project-location-y" name="project-location-y" placeholder="Tọa độ Y">
+                <span class="error-message" id="project-location-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="project-scale">Quy mô:</label>
+                <input type="text" id="project-scale" name="project-scale">
+            </div>
+            <div class="form-group">
+                <label for="project-equipment">Thiết bị:</label>
+                <input type="text" id="project-equipment" name="project-equipment">
+            </div>
+            <div class="form-group">
+                <label for="related-projects">Công trình liên quan:</label>
+                <select id="related-projects" name="related-projects">
+                    <option value="none">Không có</option>
+                    <option value="project1">Công trình 1</option>
+                    <option value="project2">Công trình 2</option>
+                    <option value="project3">Công trình 3</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="other-info">Thông tin khác:</label>
+                <input type="text" id="other-info" name="other-info">
+                <input type="file" id="file-upload" name="file-upload" multiple>
+            </div>
+            <div class="form-group">
+                <button type="button" id="saveBtn">Lưu thông tin</button>
+                <button type="button" id="cancelBtn">Hủy bỏ</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 <script src="test.js"></script>

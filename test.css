@@ -1,73 +1,93 @@
-.sidebar {
+/* The Modal (background) */
+.modal {
+    display: none;
     position: fixed;
+    z-index: 1;
+    left: 0;
     top: 0;
-    right: 0;
-    width: 300px;
+    width: 100%;
     height: 100%;
-    background-color: #333;
-    overflow-y: auto;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
     padding: 20px;
-    transition: transform 0.3s ease-in-out;
-    z-index: 999;
-    transform: translateX(-300px);
+    border: 1px solid #888;
+    width: 80%;
 }
 
-.sidebar.active {
-    transform: translateX(0);
-}
-
-.sidebar nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.sidebar nav ul li {
-    margin-bottom: 10px;
-}
-
-.sidebar nav ul li a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
     font-weight: bold;
 }
 
-.sidebar-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    border: none;
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
-    z-index: 1000;
 }
 
-.sidebar-toggle .open-icon,
-.sidebar-toggle .close-icon {
+/* Form Styling */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+select,
+textarea {
     display: block;
     width: 100%;
-    height: 100%;
-    font-size: 30px;
-    color: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+select option[value="none"] {
+    color: #aaa;
+}
+
+/* Button Styling */
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 0.5rem;
     text-align: center;
-    line-height: 1.2;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0.25rem;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-.sidebar-toggle .close-icon {
-    display: none;
+button:hover {
+    background-color: #3e8e41;
 }
 
-.sidebar.active + .sidebar-toggle .open-icon {
-    display: none;
+button:active {
+    background-color: #3e8e41;
+    transform: translateY(2px);
 }
-
-.sidebar.active + .sidebar-toggle .close-icon {
-    display: block;
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
 }
