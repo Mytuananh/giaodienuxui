@@ -1,13 +1,16 @@
 var addNewBtn = document.getElementById('addNewBtn');
 var functionList = document.getElementById('functionList');
 var modal = document.getElementById('myModal');
-
+var modal1 = document.getElementById('myModal1')
 // Get the <span> element that closes the modal
 const span = document.getElementsByClassName("close")[0];
+const span1 = document.getElementsByClassName("close1")[0];
 
 // Get the buttons to save and cancel changes
 const saveBtn = document.getElementById("saveBtn");
 const cancelBtn = document.getElementById("cancelBtn");
+const saveBtn1 = document.getElementById("saveBtn1");
+const cancelBtn1 = document.getElementById("cancelBtn1");
 
 // Get the form and all input fields
 const form = document.querySelector("form");
@@ -20,16 +23,21 @@ functionList.style.display = "none";
 addNewBtn.addEventListener('click', function () {
     functionList.style.display = "block";
     modal.style.display = "none";
+    modal1.style.display = "none";
 });
 
 // Hide the function list when any function is clicked, except for "thongTinChung", and show the modal
 functionList.addEventListener('click', function (event) {
     var functionName = event.target.getAttribute('data-function');
-    if (functionName !== "thongTinChung") {
+    if (functionName === "thongTinChung") {
         functionList.style.display = "none";
-    } else {
-        modal.style.display = 'block';
+        modal1.style.display = "none";
+        modal.style.display = "block"
+    }
+    if (functionName === "thongTinQuanLy") {
+        modal.style.display = 'none';
         functionList.style.display = "none";
+        modal1.style.display = "block"
     }
 });
 
@@ -37,6 +45,7 @@ functionList.addEventListener('click', function (event) {
 const projectCodeError = document.getElementById("project-code-error");
 const projectNameError = document.getElementById("project-name-error");
 const projectLocationError = document.getElementById("project-location-error");
+const projectHistoryError = document.getElementById("project-history-error");
 
 // Function to clear all input fields in the form
 function clearFormInputs() {
@@ -85,6 +94,18 @@ function validateFormInputs() {
         projectLocationError.textContent = "";
     }
 
+    const projectHistoryValue = document.getElementById(
+        "project-history"
+    ).value;
+    if (
+        projectHistoryValue === ""
+    ) {
+        projectHistoryError.textContent = "Chưa nhập thông tin lịch sử xây dựng công trình";
+        isValid = false;
+    } else {
+        projectHistoryError.textContent = "";
+    }
+
     return isValid;
 }
 
@@ -103,13 +124,16 @@ function saveFormData() {
 // Function to close the modal
 function closeModal() {
     modal.style.display = "none";
+    modal1.style.display = "none";
 }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
     closeModal();
 };
-
+span1.onclick = function () {
+    closeModal();
+}
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
     if (event.target === modal) {
@@ -121,12 +145,19 @@ window.onclick = function (event) {
 saveBtn.onclick = function () {
     saveFormData();
 };
+saveBtn1.onclick = function () {
+    saveFormData();
+}
 // When the user clicks the cancel button, close the modal
 cancelBtn.onclick = function () {
     closeModal();
 };
+cancelBtn1.onclick = function () {
+    closeModal();
+}
 
 // Function to close the modal
 function closeModal() {
     modal.style.display = "none";
+    modal1.style.display = "none";
 }

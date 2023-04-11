@@ -13,7 +13,7 @@
     <div class="function-list-item" data-function="hoSoCongTrinh">Hồ sơ công trình</div>
     <div class="function-list-item" data-function="hoSoViPham">Hồ sơ vi phạm</div>
 </div>
-<!-- The Modal -->
+<!-- The Modal Thong Tin Chung -->
 <div id="myModal" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
@@ -69,6 +69,57 @@
             <div class="form-group">
                 <button type="button" id="saveBtn">Lưu thông tin</button>
                 <button type="button" id="cancelBtn">Hủy bỏ</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- The Modal Thong Tin Quan Ly -->
+<div id="myModal1" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close1">&times;</span>
+        <h2>Thông tin công trình</h2>
+        <form>
+            <div class="form-group">
+                <label for="project-name-did">Chọn công trình quản lý:</label>
+                <select id="project-name-did" name="project-name-did">
+                    <option value="Cống Trung Trang">Cống Trung Trang</option>
+                    <option value="Cống Cổ Tiểu">Cống Cổ Tiểu</option>
+                    <option value="Cống Táo">Cống Táo</option>
+                    <option value="Cống Mai Dương">Cống Mai Dương</option>
+                    <option value="Cống Cao Mật">Cống Cao Mật</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="project-type">Quản lý tài sản:</label>
+                <select id="project-type" name="project-type">
+                    <option value="Sở NNPTNT">Sở NNPTNT</option>
+                    <option value="Công Ty">Công Ty</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="project-status">Trạng thái công trình:</label>
+                <select id="project-status" name="project-status">
+                    <option value="Đã cắm mốc">Đã cắm mốc</option>
+                    <option value="Chưa cắm mốc">chưa cắm mốc</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="project-encroachment-violation">Vi phạm lấn chiếm:</label>
+                <input type="text" id="project-encroachment-violation" name="project-encroachment-violation" readonly value="Đang cập nhật">
+            </div>
+            <div class="form-group">
+                <label for="project-history">Lịch sử công trình:</label>
+                <input type="text" id="project-history" name="project-history">
+                <select id="project-history-file" name="project-history-file">
+                    <option value="hs1">Hồ sơ sửa chữa cánh cống</option>
+                    <option value="hs2">Hồ sơ sửa chữa hèm cống</option>
+                </select>
+                <span class="error-message" id="project-history-error"></span>
+            </div>
+            <div class="form-group">
+                <button type="button" id="saveBtn1">Lưu thông tin</button>
+                <button type="button" id="cancelBtn1">Hủy bỏ</button>
             </div>
         </form>
     </div>

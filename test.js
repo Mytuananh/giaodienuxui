@@ -16,9 +16,8 @@ const form = document.querySelector("form");
 const inputFields = form.querySelectorAll("input, select");
 
 // Get the error message elements
-const projectCodeError = document.getElementById("project-code-error");
-const projectNameError = document.getElementById("project-name-error");
-const projectLocationError = document.getElementById("project-location-error");
+const projectHistoryError = document.getElementById("project-history-error");
+
 
 // Function to clear all input fields in the form
 function clearFormInputs() {
