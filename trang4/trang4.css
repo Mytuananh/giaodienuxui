@@ -379,7 +379,7 @@ nav i {
     line-height: 40px;
 }
 
-.search-btn {
+.search-btn{
     color: #fff;
     font-size: 16px;
     background: #3b9dee;
@@ -581,8 +581,6 @@ tr:nth-child(even) {
     font-size: 24px;
     margin: 0 20px;
 }
-
-
 .side-qlct-1-his{
     height: 92%;
     width: 0;
