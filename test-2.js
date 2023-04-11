@@ -1,8 +1,6 @@
-// Get the modal element
-const modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-const btn = document.getElementById("openModalBtn");
+var addNewBtn = document.getElementById('addNewBtn');
+var functionList = document.getElementById('functionList');
+var modal = document.getElementById('myModal');
 
 // Get the <span> element that closes the modal
 const span = document.getElementsByClassName("close")[0];
@@ -14,6 +12,26 @@ const cancelBtn = document.getElementById("cancelBtn");
 // Get the form and all input fields
 const form = document.querySelector("form");
 const inputFields = form.querySelectorAll("input, select");
+
+// Hide the function list initially
+functionList.style.display = "none";
+
+// Show the function list when addNewBtn is clicked and hide the modal
+addNewBtn.addEventListener('click', function () {
+    functionList.style.display = "block";
+    modal.style.display = "none";
+});
+
+// Hide the function list when any function is clicked, except for "thongTinChung", and show the modal
+functionList.addEventListener('click', function (event) {
+    var functionName = event.target.getAttribute('data-function');
+    if (functionName !== "thongTinChung") {
+        functionList.style.display = "none";
+    } else {
+        modal.style.display = 'block';
+        functionList.style.display = "none";
+    }
+});
 
 // Get the error message elements
 const projectCodeError = document.getElementById("project-code-error");
@@ -81,15 +99,11 @@ function saveFormData() {
         clearFormInputs();
     }
 }
+
 // Function to close the modal
 function closeModal() {
     modal.style.display = "none";
 }
-
-// When the user clicks the button, open the modal
-btn.onclick = function () {
-    modal.style.display = "block";
-};
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
@@ -107,19 +121,12 @@ window.onclick = function (event) {
 saveBtn.onclick = function () {
     saveFormData();
 };
-
-// When the user clicks the cancel button, close the modal and clear input fields
+// When the user clicks the cancel button, close the modal
 cancelBtn.onclick = function () {
     closeModal();
-    clearFormInputs();
 };
 
-// When the user types into any input field, clear its error message
-inputFields.forEach((field) => {
-    field.addEventListener("input", () => {
-        const errorElement = document.getElementById(field.name + "-error");
-        if (errorElement) {
-            errorElement.textContent = "";
-        }
-    });
-});
+// Function to close the modal
+function closeModal() {
+    modal.style.display = "none";
+}
