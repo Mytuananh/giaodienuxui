@@ -12,7 +12,7 @@
 .img-logo{
     margin-left: 10%;
     width: 20%;
-    height: 100%;
+    height: 100%;border: 1px solid;
 }
 .img-logo img{
     width: 100%;
@@ -527,11 +527,42 @@ tr:nth-child(even) {
     margin-left: 2%;
 }
 .content-file-b{
-    width: 55%;
+    width: 40%;
     height: 100%;
     display: flex;
     align-items: center;
     margin-left: 3%;
+
+}
+.content-file-c{
+    width: 15%;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+}
+/* Thiết lập kiểu dáng cho button */
+.button-image {
+    background-color: #4CAF50; /* Màu nền của button */
+    border: none; /* Xóa đường viền */
+    color: white; /* Màu chữ trên button */
+    padding: 6px 10px; /* Kích thước lề và padding của button */
+    text-align: center; /* Căn giữa nội dung trên button */
+    text-decoration: none; /* Xóa gạch chân dưới chữ trên button */
+    font-size: 14px; /* Kích thước chữ trên button */
+    cursor: pointer; /* Đổi con trỏ chuột thành hình bàn tay khi di chuột qua button */
+    border-radius: 4px; /* Bo góc của button */
+    transition: background-color 0.3s ease; /* Hiệu ứng màu nền thay đổi mượt mà */
+    margin-left: 30%;
+}
+
+/* Thiết lập kiểu dáng khi di chuột qua button */
+.button-image:hover {
+    background-color: #45a049; /* Màu nền thay đổi khi di chuột qua button */
+}
+
+/* Thiết lập kiểu dáng khi nhấn giữ button */
+.button-image:active {
+    background-color: #367c39; /* Màu nền thay đổi khi nhấn giữ button */
 }
 .carousel-container {
     border-radius: 20px;
