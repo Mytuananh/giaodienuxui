@@ -1,121 +1,191 @@
-.nav-bar{
+/* CSS cơ bản */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar {
     background-image: url("anh3/Header_background.png");
     width: 100%;
-    height: 6vh;
+    min-height: 6vh;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
 }
-.logo-qlct{
-    width: 20%;
+
+.logo-qlct {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 20%;
+}
+
+.img-logo {
+    width: 100%;
     height: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.img-logo{
-    margin-left: 10%;
-    width: 20%;
-    height: 100%;
+
+.img-l/* CSS cơ bản */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-.img-logo img{
+
+.nav-bar {
+    background-image: url("anh3/Header_background.png");
+    width: 100%;
+    min-height: 6vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.logo-qlct {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 1rem;
+}
+
+.img-logo {
+    width: 80px;
+    height: 80px;
+}
+
+.img-logo img {
     width: 100%;
     height: 100%;
 }
-.title-logo{
-    width: 60%;
-    height: 100%;
+
+.title-logo {
     font-family: 'Arial', serif;
     font-style: normal;
     font-weight: 900;
-    font-size: 35px;
-    line-height: 41px;
+    font-size: 2rem;
+    line-height: 1.2;
     letter-spacing: 0.005em;
     text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
     color: #003192;
-    display: flex;
-    align-items: center;
+    margin-left: 1rem;
 }
-.title-qlct{
-    width: 50%;
-    height: 100%;
-    display: flex;
-}
-.title-qlct-1{
-    width: 30%;
-    height: 100%;
-    margin-left: 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Arial', serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 18px;
-    color: #838383;
-}
-.title-qlct-2{
-    width: 30%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Arial', serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 18px;
-    color: #838383;
-}
-.title-qlct-3{
-    width: 30%;
-    height: 100%;
-    margin-right: 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Arial', serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 18px;
-    color: #838383;
-}
-.ava-qlct{
-    width: 30%;
-    height: 100%;
-    display: flex;
-}
-.ava{
-    margin-left: 5%;
-    width: 17%;
-    height: 100%;
 
+.title-qlct {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
 }
-.ava img{
-    width: 50%;
-    height: 80%;
-    border-radius: 360px;
-}
-.user{
 
-    width: 60%;
-    height: 100%;
-    display: flex;
-    align-items: center;
+.title-qlct > div {
     font-family: 'Arial', serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 15px;
-    line-height: 18px;
+    font-size: 1rem;
+    line-height: 1.2;
+    color: #838383;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.title-qlct > div:hover {
+    color: #003192;
+}
+
+.ava-qlct {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    gap: 1rem;
+}
+
+.ava {
+    width: 3rem;
+    height: 3rem;
+}
+
+.ava img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.user {
+    font-family: 'Arial', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.2;
     color: #838383;
 }
-.side-menu{
-    width: 15%;
-    height: 100%;
+
+.side-menu {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.side-menu i {
+    font-size: 1.5rem;
+    color: #838383;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.side-menu i:hover {
+    color: #003192;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1024px) {
+    .title-logo {
+        font-size: 1.5rem;
+    }
+
+    .title-qlct > div {
+        font-size: 0.9rem;
+    }
+
+    .user {
+        font-size: 0.9rem;
+    }
+
+    .side-menu i {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-bar {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .title-qlct {
+        display: none;
+    }
+
+    .ava {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .user {
+        display: none;
+    }
+
+    .side-menu i {
+        font-size: 1rem;
+    }
 }
 .body-qlct{
     width: 100%;
