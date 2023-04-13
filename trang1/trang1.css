@@ -843,15 +843,16 @@
         border-radius: 10px;
     }
     .title-body-2 {
-        width: 70%;
+        width: 80%;
         height: 60%;
         left: 0;
-        margin-left: 280px;
+        margin-left: 300px;
         float: left;
     }
     .title-bd-2-1{
-        font-size: 22px;
+        font-size: 30px;
         text-align: left;
+        width: 100%;
     }
     .title-bd-2-2{
         font-size: 18px;
@@ -885,6 +886,11 @@
         left: 0;
         margin-left: 200px;
     }
+    .title-bd-2-1{
+        font-size: 15px;
+        text-align: left;
+        width: 100%;
+    }
 }
 
 .body-5{
@@ -917,7 +923,6 @@
 }
 
 #carousel figure {
-    border: 1px solid;
     animation: rotate 30000ms ease-in-out infinite;
     position: absolute;
     background-color: white;
