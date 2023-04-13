@@ -6,7 +6,6 @@
     <title>Title</title>
   <link rel="stylesheet" href="trang3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-
 </head>
 <body>
 <div class="nav-bar">
@@ -22,11 +21,22 @@
         <div class="title-qlct-3"><p style="cursor: pointer">Tin tức hoạt động</p></div>
     </div>
     <div class="ava-qlct">
+        <div class="mess">
+            <div class="messenger-icon">
+                <i class="fab fa-facebook-messenger" style="color: #6151d6;"></i>
+                <span class="notification-badge">6</span>
+            </div>
+        </div>
+        <div class="notification">
+            <div class="messenger-icon">
+                <i class="fas fa-bell" style="color: #784ae3;"></i>
+                <span class="notification-badge">9</span>
+            </div></div>
         <div class="ava">
             <img src="anh3/anh-nen-mau-trang-001.jpg" alt=Error>
         </div>
         <div class="user">Nguyễn Anh Tuấn</div>
-        <div class="side-menu"><i class="fas fa-align-justify fa-2x" style="color: #838383B2"></i></div>
+        <div class="side-menu"><i class="fas fa-align-justify" style="color: #838383B2"></i></div>
     </div>
 </div>
 <div class="body-qlct">
@@ -36,11 +46,12 @@
             <ul>
                 <li><a href="#" class="dropdown-toggle"><i class="fas fa-industry"></i><span class="toggle-text">Quản lý công trình</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Cống dưới đê</a></li>
-                        <li><a href="#">Trạm bơm</a></li>
-                        <li><a href="#">Kênh cấp I</a></li>
-                        <li><a href="#">Kênh tưới sau trạm bơm</a></li>
-                        <li><a href="#">Công trình trên kênh</a></li>
+                        <li><a href="#">Thông tin chung</a></li>
+                        <li><a href="#">Thông tin quản lý</a></li>
+                        <li><a href="#">Hồ sơ công trình</a></li>
+                        <li><a href="#">Hồ sơ vi phạm</a></li>
+                        <li><a href="#">Hồ sơ vận hành</a></li>
+                        <li><a href="#">Hồ sơ khác</a></li>
                     </ul>
                 </li>
                 <li><a href="#" class="dropdown-toggle"><i class="fas fa-chart-line"></i><span class="toggle-text">Quản lý SXKD&ĐTPT</span></a>
@@ -70,6 +81,10 @@
     <div class="content">
             <div id="main-my-side-qlct" class="body-qlct-2-2">
                 <div class="tabs">
+                    <div class="tab-i">
+                        <div class="name-1-1">Tồng công trình</div>
+                        <div class="number-1-1">1232</div>
+                    </div>
                     <div class="tab-item active">
                         <div class="name-1">Cống dưới đê</div>
                         <div class="number-1"> 72</div>
@@ -94,16 +109,130 @@
                 <div class="tab-content">
                     <div class="tab-pane active">
                         <div class="menu-tit">
-                            <div class="menu-tit-1">Cống dưới đê (72 công trình)</div>
+                            <div class="menu-tit-1">Cống dưới đê: 72 công trình</div>
                             <div class="menu-tit-2">
-                                <div class="m-t-1"><i class="fas fa-plus"></i>Thêm mới</div>
+                                <div class="m-t-1" id="addNewBtn-1"><i class="fas fa-plus"></i>Thêm mới</div>
+                                <div id="functionList-1" class="function-list">
+                                    <div class="function-list-item" data-function="thongTinChung">Thông tin chung</div>
+                                    <div class="function-list-item" data-function="thongTinQuanLy">Thông tin quản lý</div>
+                                    <div class="function-list-item" data-function="hoSoCongTrinh">Hồ sơ công trình</div>
+                                    <div class="function-list-item" data-function="hoSoViPham">Hồ sơ vi phạm</div>
+                                </div>
+                                <!-- The Modal Thong Tin Chung -->
+                                <div id="myModal-1" class="modal">
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                        <h2>Thông tin chung</h2>
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="project-code-1">Mã công trình:</label>
+                                                <select id="project-code-1" name="project-code-1">
+                                                    <option value="K">K</option>
+                                                    <option value="TB">TB</option>
+                                                    <option value="KT">KT</option>
+                                                    <option value="C">C</option>
+                                                    <option value="CTTK">CTTK</option>
+                                                </select>
+                                                <input type="text" id="project-code-num-1" name="project-code-num-1" placeholder="Số thứ tự">
+                                                <span class="error-message" id="project-code-error-1"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="project-name-1">Tên công trình:</label>
+                                                <input type="text" id="project-name-1" name="project-name-1">
+                                                <span class="error-message" id="project-name-error-1"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="project-location">Vị trí, địa điểm:</label>
+                                                <input type="text" id="project-location-name-1" name="project-location-name-1" placeholder="Tên địa điểm">
+                                                <input type="text" id="project-location-x-1" name="project-location-x-1" placeholder="Tọa độ X">
+                                                <input type="text" id="project-location-y-1" name="project-location-y-1" placeholder="Tọa độ Y">
+                                                <span class="error-message" id="project-location-error-1"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="project-scale-1">Quy mô:</label>
+                                                <input type="text" id="project-scale-1" name="project-scale-1">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="project-equipment-1">Thiết bị:</label>
+                                                <input type="text" id="project-equipment-1" name="project-equipment-1">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="related-projects-1">Công trình liên quan:</label>
+                                                <select id="related-projects-1" name="related-projects-1">
+                                                    <option value="none">Không có</option>
+                                                    <option value="project1">Công trình 1</option>
+                                                    <option value="project2">Công trình 2</option>
+                                                    <option value="project3">Công trình 3</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="other-info-1">Thông tin khác:</label>
+                                                <input type="text" id="other-info-1" name="other-info-1">
+                                                <input type="file" id="file-upload-1" name="file-upload-1" multiple>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="button" id="saveBtn-1">Lưu thông tin</button>
+                                                <button type="button" id="cancelBtn-1">Hủy bỏ</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- The Modal Thong Tin Quan Ly -->
+                                <div id="myModal2" class="modal">
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                        <span class="close-1">&times;</span>
+                                        <h2>Thông tin quản lý</h2>
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="project-name-did-1">Chọn công trình quản lý:</label>
+                                                <select id="project-name-did-1" name="project-name-did-1">
+                                                    <option value="Cống Trung Trang">Cống Trung Trang</option>
+                                                    <option value="Cống Cổ Tiểu">Cống Cổ Tiểu</option>
+                                                    <option value="Cống Táo">Cống Táo</option>
+                                                    <option value="Cống Mai Dương">Cống Mai Dương</option>
+                                                    <option value="Cống Cao Mật">Cống Cao Mật</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="project-type-1">Quản lý tài sản:</label>
+                                                <select id="project-type-1" name="project-type-1">
+                                                    <option value="Sở NNPTNT">Sở NNPTNT</option>
+                                                    <option value="Công Ty">Công Ty</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="project-status-1">Trạng thái công trình:</label>
+                                                <select id="project-status-1" name="project-status-1">
+                                                    <option value="Đã cắm mốc">Đã cắm mốc</option>
+                                                    <option value="Chưa cắm mốc">chưa cắm mốc</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="project-encroachment-violation-1">Vi phạm lấn chiếm:</label>
+                                                <input type="text" id="project-encroachment-violation-1" name="project-encroachment-violation-1" readonly value="Đang cập nhật">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="project-history-1">Lịch sử công trình:</label>
+                                                <input type="text" id="project-history-1" name="project-history-1">
+                                                <select id="project-history-file-1" name="project-history-file-1">
+                                                    <option value="hs1">Hồ sơ sửa chữa cánh cống</option>
+                                                    <option value="hs2">Hồ sơ sửa chữa hèm cống</option>
+                                                </select>
+                                                <span class="error-message" id="project-history-error-1"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="button" id="saveBtn1-2">Lưu thông tin</button>
+                                                <button type="button" id="cancelBtn1-2">Hủy bỏ</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                                 <div class="m-t-2">
                                     <form action="#" method="get">
-                                        <div class="search-box">
-                                            <input type="text" class="search-txt" placeholder="Tìm kiếm...">
-                                            <button type="submit" class="search-btn">
-                                                <i class="fas fa-search"></i>
-                                            </button>
+                                        <div class="search-boxx">
+                                            <input type="text" class="search-txtt" placeholder="Tìm kiếm...">
                                         </div>
                                     </form>
                                 </div>
@@ -116,10 +245,12 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Hạng mục</th>
-                                    <th>Thông tin công trình</th>
+                                    <th>Thông tin chung</th>
                                     <th>Thông tin quản lý</th>
                                     <th>Hồ sơ công trình</th>
                                     <th>Hồ sơ vi phạm</th>
+                                    <th>Hồ sơ vận hành</th>
+                                    <th>Hồ sơ vi khác</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -130,6 +261,8 @@
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">05 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
+                                    <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
+                                    <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                 </tr>
                                 <tr>
                                     <td>C02</td>
@@ -138,6 +271,8 @@
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td onclick="Hp()" style="cursor: pointer">-</td>
                                 </tr>
                                 <tr>
                                     <td>C03</td>
@@ -145,6 +280,8 @@
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">01 hồ sơ</td>
+                                    <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                 </tr>
                                 </tbody>
@@ -166,7 +303,7 @@
                                 <div id="myModal" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close">&times;</span>
+                                        <span class="close-2">&times;</span>
                                         <h2>Thông tin công trình</h2>
                                         <form>
                                             <div class="form-group">
@@ -226,7 +363,7 @@
                                 <div id="myModal1" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close1">&times;</span>
+                                        <span class="close-3">&times;</span>
                                         <h2>Thông tin công trình</h2>
                                         <form>
                                             <div class="form-group">
