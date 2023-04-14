@@ -96,7 +96,7 @@
     align-items: center;
     justify-content: center;
     font-size: 3vh;
-    margin-left: 30%;
+    margin-left: 20%;
     cursor: pointer;
 }
 .messenger-icon {
@@ -143,7 +143,7 @@
     border: 1px solid darkmagenta;
 }
 .user{
-    width: 30%;
+    width: 40%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -215,16 +215,9 @@
 .side-bar-1 .dropdown-toggle {
     cursor: pointer;
 }
-.side-bar-1 .dropdown-toggle::after {
-    content: "";
-    float: right;
-}
 .side-bar-1.active .dropdown-toggle::after {
     content: "▼";
     float: right;
-}
-.side-bar-1 .dropdown-toggle.open::after {
-    content: "▲";
 }
 
 .side-bar-1 .dropdown-menu li a {
@@ -262,7 +255,7 @@ nav a:hover {
 }
 
 nav i {
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 .side-bar-1 ul li a .toggle-text {
     display: none;
@@ -512,13 +505,14 @@ tr:hover{
 .function-list {
     display: none;
     position: absolute;
-    top: 27vh;
-    right: 27vh;
+    top: 26.5vh;
+    right: 33vh;
     background-color: #beb9b9;
     z-index: 999;
-    width:20vh;
+    width:15vh;
     border-radius: 10px;
     font-weight: 600;
+    font-size: 12px;
 }
 
 .function-list.show {
@@ -528,11 +522,14 @@ tr:hover{
 .function-list-item {
     cursor: pointer;
     padding: 5px;
+    border-radius: 10px;
+    border-bottom: 1px solid;
 }
 
 .function-list-item:hover {
     background-color: #382e2e;
     color: white;
+    border-radius: 7px;
 }
 .modal-bg {
     display: none;
@@ -612,14 +609,15 @@ tr:hover{
 }
 
 /* Close Button */
-.modal .close,.modal .close-1,.modal .close-2,.modal .close-3 {
+.modal .close,.modal .close-1,.modal .close-2,.modal .close-3,.modal .close-4, .modal .close-5, .modal .close-6, .modal .close-7,.modal .close-8,.modal .close-9 {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }
-.modal.close:hover,.modal.close-1:hover,.modal.close-2:hover, .modal.close-3:hover,
-.modal.close:focus,.modal.close-1:focus,.modal.close-2:focus, .modal.close-3:focus {
+.modal.close:hover,.modal.close-1:hover,.modal.close-2:hover, .modal.close-3:hover, .modal.close-4:hover, .modal.close-5:hover, .modal.close-6:hover, .modal.close-7:hover, .modal.close-8:hover, .modal.close-9:hover,
+.modal.close:focus,.modal.close-1:focus,.modal.close-2:focus, .modal.close-3:focus,.modal.close-4:focus, .modal.close-5:focus, .modal.close-6:focus, .modal.close-7:focus, .modal.close-8:focus, .modal.close-9:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
