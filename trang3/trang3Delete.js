@@ -52,3 +52,20 @@ document.getElementById("toggleBtn4").addEventListener("click", function() {
         }
     }
 });
+
+/*Modal hỏi delete*/
+document.getElementById("deleteBtn").addEventListener("click", function () {
+    document.getElementById("confirmModal").style.display = "block";
+});
+
+document.getElementById("yesBtn").addEventListener("click", function () {
+    // Thực hiện xóa dữ liệu tại đây
+    console.log("Xóa dữ liệu");
+
+    // Đóng modal
+    document.getElementById("confirmModal").style.display = "none";
+});
+
+document.getElementById("noBtn").addEventListener("click", function () {
+    document.getElementById("confirmModal").style.display = "none";
+});

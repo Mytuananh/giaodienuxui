@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="trang3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 
+
 </head>
 <body>
 <div class="nav-bar">
@@ -22,17 +23,247 @@
         <div class="title-qlct-3"><p style="cursor: pointer">Tin tức hoạt động</p></div>
     </div>
     <div class="ava-qlct">
-        <div class="mess">
+        <div class="mess" onclick="toggleContent('message-list')">
             <div class="messenger-icon">
                 <i class="fab fa-facebook-messenger" style="color: #6151d6;"></i>
-                <span class="notification-badge">6</span>
+                <span class="notification-badge"></span>
             </div>
         </div>
-        <div class="notification">
+        <div class="content-container hidden" id="message-list">
+            <h2>CHAT</h2>
+            <input type="text" class="search-input" placeholder="Tìm kiếm...">
+            <!-- Ví dụ cho tin nhắn chưa đọc -->
+             <div class="message-item unread">
+                    <div class="avatar-wrapper">
+                        <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                        <div class="online-indicator"></div>
+                    </div>
+                    <div class="message-content">
+                        <div class="sender-name">Khánh Trắng</div>
+                        <div class="message-text">Bạn: alo</div>
+                    </div>
+                </div>
+             <div class="message-item unread">
+                    <div class="avatar-wrapper">
+                        <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                        <div class="online-indicator"></div>
+                    </div>
+                    <div class="message-content">
+                        <div class="sender-name">Mai Phương</div>
+                        <div class="message-text">Mai e cho a 50 củ nhé</div>
+                    </div>
+                </div>
+             <div class="message-item unread">
+                    <div class="avatar-wrapper">
+                        <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                        <div class="online-indicator"></div>
+                    </div>
+                    <div class="message-content">
+                        <div class="sender-name">Toán Vũ</div>
+                        <div class="message-text">Bạn: E gửi rồi c nhé</div>
+                    </div>
+                </div>
+             <div class="message-item unread">
+                    <div class="avatar-wrapper">
+                        <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                        <div class="online-indicator"></div>
+                    </div>
+                    <div class="message-content">
+                        <div class="sender-name">Phương Bùi</div>
+                        <div class="message-text">Làm hộ c chứ</div>
+                    </div>
+                </div>
+            <div class="message-item unread">
+                <div class="avatar-wrapper">
+                    <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                    <div class="online-indicator"></div>
+                </div>
+                <div class="message-content">
+                    <div class="sender-name">Phương Bùi</div>
+                    <div class="message-text">Làm hộ c chứ</div>
+                </div>
+            </div>
+            <div class="message-item unread">
+                <div class="avatar-wrapper">
+                    <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                    <div class="online-indicator"></div>
+                </div>
+                <div class="message-content">
+                    <div class="sender-name">Phương Bùi</div>
+                    <div class="message-text">Làm hộ c chứ</div>
+                </div>
+            </div>
+            <div class="message-item unread">
+                <div class="avatar-wrapper">
+                    <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                    <div class="online-indicator"></div>
+                </div>
+                <div class="message-content">
+                    <div class="sender-name">Phương Bùi</div>
+                    <div class="message-text">Làm hộ c chứ</div>
+                </div>
+            </div>
+            <div class="message-item unread">
+                <div class="avatar-wrapper">
+                    <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                    <div class="online-indicator"></div>
+                </div>
+                <div class="message-content">
+                    <div class="sender-name">Phương Bùi</div>
+                    <div class="message-text">Làm hộ c chứ</div>
+                </div>
+            </div>
+            <div class="message-item unread">
+                <div class="avatar-wrapper">
+                    <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                    <div class="online-indicator"></div>
+                </div>
+                <div class="message-content">
+                    <div class="sender-name">Phương Bùi</div>
+                    <div class="message-text">Làm hộ c chứ</div>
+                </div>
+            </div>
+            <div class="message-item unread">
+                <div class="avatar-wrapper">
+                    <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                    <div class="online-indicator"></div>
+                </div>
+                <div class="message-content">
+                    <div class="sender-name">Phương Bùi</div>
+                    <div class="message-text">Làm hộ c chứ</div>
+                </div>
+            </div>
+            <div class="message-item unread">
+                <div class="avatar-wrapper">
+                    <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                    <div class="online-indicator"></div>
+                </div>
+                <div class="message-content">
+                    <div class="sender-name">Phương Bùi</div>
+                    <div class="message-text">Làm hộ c chứ</div>
+                </div>
+            </div>
+            <div class="message-item">
+                <div class="avatar-wrapper">
+                    <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                    <div class="online-indicator"></div>
+                </div>
+                <div class="message-content">
+                    <div class="sender-name">Phương Bùi</div>
+                    <div class="message-text">Làm hộ c chứ</div>
+                </div>
+            </div>
+            <div class="message-item">
+                <div class="avatar-wrapper">
+                    <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                    <div class="online-indicator"></div>
+                </div>
+                <div class="message-content">
+                    <div class="sender-name">Phương Bùi</div>
+                    <div class="message-text">Làm hộ c chứ</div>
+                </div>
+            </div>
+        </div>
+        <div class="notification" onclick="toggleContent('notification-list')">
             <div class="messenger-icon">
                 <i class="fas fa-bell" style="color: #784ae3;"></i>
-                <span class="notification-badge">9</span>
-            </div></div>
+                <span class="notification-badge"></span>
+            </div>
+        </div>
+        <div class="content-container hidden" id="notification-list">
+            <h2>Thông báo</h2>
+            <div class="notification-item unread">
+                <div class="avatar-wrapper">
+                    <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                </div>
+                <div class="notification-content">
+                    <div class="notification-text">
+                        <strong>Toán Vũ</strong> đã bình luận về bài viết của bạn.
+                    </div>
+                    <div class="notification-time">
+                        15 phút trước
+                    </div>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                    <div class="avatar-wrapper">
+                        <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-text">
+                            <strong>Toán Vũ</strong> đã thả haha về bài viết của bạn.
+                        </div>
+                        <div class="notification-time">
+                            16 phút trước
+                        </div>
+                    </div>
+                </div>
+            <div class="notification-item">
+                    <div class="avatar-wrapper">
+                        <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-text">
+                            <strong>Toán Vũ</strong> đã chọc về bài viết của bạn.
+                        </div>
+                        <div class="notification-time">
+                            15 phút trước
+                        </div>
+                    </div>
+                </div>
+            <div class="notification-item">
+                <div class="avatar-wrapper">
+                    <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                </div>
+                <div class="notification-content">
+                    <div class="notification-text">
+                        <strong>Toán Vũ</strong> đã bình luận về bài viết của bạn.
+                    </div>
+                    <div class="notification-time">
+                        15 phút trước
+                    </div>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="avatar-wrapper">
+                    <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                </div>
+                <div class="notification-content">
+                    <div class="notification-text">
+                        <strong>Toán Vũ</strong> đã bình luận về bài viết của bạn.
+                    </div>
+                    <div class="notification-time">
+                        15 phút trước
+                    </div>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="avatar-wrapper">
+                    <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                </div>
+                <div class="notification-content">
+                    <div class="notification-text">
+                        <strong>Toán Vũ</strong> đã bình luận về bài viết của bạn.
+                    </div>
+                    <div class="notification-time">
+                        15 phút trước
+                    </div>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="avatar-wrapper">
+                    <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
+                </div>
+                <div class="notification-content">
+                    <div class="notification-text">
+                        <strong>Toán Vũ</strong> đã bình luận về bài viết của bạn.
+                    </div>
+                    <div class="notification-time">
+                        15 phút trước
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="ava">
             <img src="anh3/anh-nen-mau-trang-001.jpg" alt=Error>
         </div>
@@ -265,7 +496,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
-                                    <td style="display:none;" class="deleteColumn1"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn1"><a class="icon-delete" id="deleteBtn"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C02</td>
@@ -276,7 +507,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td style="display:none;" class="deleteColumn1"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn1"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C03</td>
@@ -287,7 +518,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td style="display:none;" class="deleteColumn1"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn1"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -450,7 +681,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
-                                    <td style="display:none;" class="deleteColumn"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C02</td>
@@ -461,7 +692,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td style="display:none;" class="deleteColumn"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C03</td>
@@ -472,7 +703,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td style="display:none;" class="deleteColumn"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -635,7 +866,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
-                                    <td style="display:none;" class="deleteColumn2"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C02</td>
@@ -646,7 +877,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td style="display:none;" class="deleteColumn2"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C03</td>
@@ -657,7 +888,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td style="display:none;" class="deleteColumn2"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -820,7 +1051,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
-                                    <td style="display:none;" class="deleteColumn3"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn3"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C02</td>
@@ -831,7 +1062,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td style="display:none;" class="deleteColumn3"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn3"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C03</td>
@@ -842,7 +1073,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td style="display:none;" class="deleteColumn3"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn3"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -1005,7 +1236,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
-                                    <td style="display:none;" class="deleteColumn4"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn4"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C02</td>
@@ -1016,7 +1247,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td style="display:none;" class="deleteColumn4"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn4"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C03</td>
@@ -1027,7 +1258,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td style="display:none;" class="deleteColumn4"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn4"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -1036,11 +1267,18 @@
                 </div>
             </div>
         </div>
-
+    <div id="confirmModal" class="modal-delete">
+        <div class="modal-content-del">
+            <p>Bạn chắc chắn xóa không?</p>
+            <button id="yesBtn">Có</button>
+            <button id="noBtn">Không</button>
+        </div>
+    </div>
 </div>
 <script src="trang3-tab.js"></script>
 <script src="trang3-sidebar.js"></script>
 <script src="trang3-modal.js"></script>
 <script src="trang3Delete.js"></script>
+<script src="trang3-mess.js"></script>
 </body>
 </html>

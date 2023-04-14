@@ -6,124 +6,72 @@
     <link rel="stylesheet" href="test-2.css">
 </head>
 <body>
-<button id="addNewBtn">Thêm mới</button>
-<div id="functionList" class="function-list">
-    <div class="function-list-item" data-function="thongTinChung">Thông tin chung</div>
-    <div class="function-list-item" data-function="thongTinQuanLy">Thông tin quản lý</div>
-    <div class="function-list-item" data-function="hoSoCongTrinh">Hồ sơ công trình</div>
-    <div class="function-list-item" data-function="hoSoViPham">Hồ sơ vi phạm</div>
-</div>
-<!-- The Modal Thong Tin Chung -->
-<div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Thông tin công trình</h2>
-        <form>
-            <div class="form-group">
-                <label for="project-code">Mã công trình:</label>
-                <select id="project-code" name="project-code">
-                    <option value="K">K</option>
-                    <option value="TB">TB</option>
-                    <option value="KT">KT</option>
-                    <option value="C">C</option>
-                    <option value="CTTK">CTTK</option>
-                </select>
-                <input type="text" id="project-code-num" name="project-code-num" placeholder="Số thứ tự">
-                <span class="error-message" id="project-code-error"></span>
-            </div>
-            <div class="form-group">
-                <label for="project-name">Tên công trình:</label>
-                <input type="text" id="project-name" name="project-name">
-                <span class="error-message" id="project-name-error"></span>
-            </div>
-            <div class="form-group">
-                <label for="project-location">Vị trí, địa điểm:</label>
-                <input type="text" id="project-location-name" name="project-location-name" placeholder="Tên địa điểm">
-                <input type="text" id="project-location-x" name="project-location-x" placeholder="Tọa độ X">
-                <input type="text" id="project-location-y" name="project-location-y" placeholder="Tọa độ Y">
-                <span class="error-message" id="project-location-error"></span>
-            </div>
-            <div class="form-group">
-                <label for="project-scale">Quy mô:</label>
-                <input type="text" id="project-scale" name="project-scale">
-            </div>
-            <div class="form-group">
-                <label for="project-equipment">Thiết bị:</label>
-                <input type="text" id="project-equipment" name="project-equipment">
-            </div>
-            <div class="form-group">
-                <label for="related-projects">Công trình liên quan:</label>
-                <select id="related-projects" name="related-projects">
-                    <option value="none">Không có</option>
-                    <option value="project1">Công trình 1</option>
-                    <option value="project2">Công trình 2</option>
-                    <option value="project3">Công trình 3</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="other-info">Thông tin khác:</label>
-                <input type="text" id="other-info" name="other-info">
-                <input type="file" id="file-upload" name="file-upload" multiple>
-            </div>
-            <div class="form-group">
-                <button type="button" id="saveBtn">Lưu thông tin</button>
-                <button type="button" id="cancelBtn">Hủy bỏ</button>
-            </div>
-        </form>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng chat giống Facebook Messenger</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+<div class="message-list">
+    <div class="message-item" onclick="openChat('Người dùng 1')">
+        <span>Người dùng 1</span>
+    </div>
+    <div class="message-item" onclick="openChat('Người dùng 2')">
+        <span>Người dùng 2</span>
+    </div>
+    <div class="message-item" onclick="openChat('Người dùng 3')">
+        <span>Người dùng 3</span>
+    </div>
+    <div class="message-item" onclick="openChat('Người dùng 4')">
+        <span>Người dùng 4</span>
     </div>
 </div>
-<!-- The Modal Thong Tin Quan Ly -->
-<div id="myModal1" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close1">&times;</span>
-        <h2>Thông tin công trình</h2>
-        <form>
-            <div class="form-group">
-                <label for="project-name-did">Chọn công trình quản lý:</label>
-                <select id="project-name-did" name="project-name-did">
-                    <option value="Cống Trung Trang">Cống Trung Trang</option>
-                    <option value="Cống Cổ Tiểu">Cống Cổ Tiểu</option>
-                    <option value="Cống Táo">Cống Táo</option>
-                    <option value="Cống Mai Dương">Cống Mai Dương</option>
-                    <option value="Cống Cao Mật">Cống Cao Mật</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="project-type">Quản lý tài sản:</label>
-                <select id="project-type" name="project-type">
-                    <option value="Sở NNPTNT">Sở NNPTNT</option>
-                    <option value="Công Ty">Công Ty</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="project-status">Trạng thái công trình:</label>
-                <select id="project-status" name="project-status">
-                    <option value="Đã cắm mốc">Đã cắm mốc</option>
-                    <option value="Chưa cắm mốc">chưa cắm mốc</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="project-encroachment-violation">Vi phạm lấn chiếm:</label>
-                <input type="text" id="project-encroachment-violation" name="project-encroachment-violation" readonly value="Đang cập nhật">
-            </div>
-            <div class="form-group">
-                <label for="project-history">Lịch sử công trình:</label>
-                <input type="text" id="project-history" name="project-history">
-                <select id="project-history-file" name="project-history-file">
-                    <option value="hs1">Hồ sơ sửa chữa cánh cống</option>
-                    <option value="hs2">Hồ sơ sửa chữa hèm cống</option>
-                </select>
-                <span class="error-message" id="project-history-error"></span>
-            </div>
-            <div class="form-group">
-                <button type="button" id="saveBtn1">Lưu thông tin</button>
-                <button type="button" id="cancelBtn1">Hủy bỏ</button>
-            </div>
-        </form>
+<div class="chat-container">
+<div class="chat-wrapper hidden" id="chat-wrapper">
+    <div class="chat-header">
+        <div class="user-info">
+            <img src="avatar1.png" alt="Avatar" class="avatar">
+            <span>Tên người dùng</span>
+            <div class="online-indicator"></div>
+        </div>
+        <button onclick="toggleChat()" class="close-btn">&times;</button>
+    </div>
+    <div class="chat-content">
+        <!-- Thêm các tin nhắn vào đây -->
+        <div class="message received">
+            <div class="message-text">Xin chào!</div>
+            <div class="message-time">10:00 AM, 01-01-2023</div>
+        </div>
+        <div class="message sent">
+            <div class="message-text">Chào bạn!</div>
+            <div class="message-time">10:02 AM, 01-01-2023</div>
+        </div>
+    </div>
+    <div class="chat-input">
+        <button type="button" class="icon-btn">
+            <label for="file-upload">
+                📎
+                <input type="file" id="file-upload" class="hidden" onchange="uploadFile()">
+            </label>
+        </button>
+        <button type="button" class="icon-btn">
+            <label for="image-upload">
+                🖼️
+                <input type="file" id="image-upload" class="hidden" accept="image/*" onchange="uploadImage()">
+            </label>
+        </button>
+        <input type="text" placeholder="Nhập tin nhắn...">
+        <button type="submit" onclick="event.preventDefault(); sendMessage();">Gửi</button>
     </div>
 </div>
+
+</div>
+</body>
+</html>
+
 <script src="test-2.js"></script>
 </body>
 </html>
