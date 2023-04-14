@@ -6,6 +6,7 @@
     <title>Title</title>
   <link rel="stylesheet" href="trang3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
 </head>
 <body>
 <div class="nav-bar">
@@ -236,7 +237,7 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div class="m-t-3"><i class="fas fa-ellipsis-v fa-2x"></i></div>
+                                <div class="m-t-3" id="toggleBtn1"><i class="fas fa-ellipsis-v"></i></div>
                             </div>
                         </div>
                         <div class="content-qlct">
@@ -251,6 +252,7 @@
                                     <th>Hồ sơ vi phạm</th>
                                     <th>Hồ sơ vận hành</th>
                                     <th>Hồ sơ khác</th>
+                                    <th style="display:none;" class="deleteColumn1">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -263,6 +265,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
+                                    <td style="display:none;" class="deleteColumn1"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C02</td>
@@ -273,6 +276,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="display:none;" class="deleteColumn1"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C03</td>
@@ -283,6 +287,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="display:none;" class="deleteColumn1"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -417,7 +422,7 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div class="m-t-3"><i class="fas fa-ellipsis-v fa-2x"></i></div>
+                                <div class="m-t-3" id="toggleBtn"><i class="fas fa-ellipsis-v"></i></div>
                             </div>
                         </div>
                         <div class="content-qlct">
@@ -432,6 +437,7 @@
                                     <th>Hồ sơ vi phạm</th>
                                     <th>Hồ sơ vận hành</th>
                                     <th>Hồ sơ khác</th>
+                                    <th style="display:none;" class="deleteColumn">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -444,6 +450,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
+                                    <td style="display:none;" class="deleteColumn"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C02</td>
@@ -454,6 +461,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="display:none;" class="deleteColumn"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C03</td>
@@ -464,6 +472,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="display:none;" class="deleteColumn"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -598,7 +607,7 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div class="m-t-3"><i class="fas fa-ellipsis-v fa-2x"></i></div>
+                                <div class="m-t-3" id="toggleBtn2"><i class="fas fa-ellipsis-v"></i></div>
                             </div>
                         </div>
                         <div class="content-qlct">
@@ -613,6 +622,7 @@
                                     <th>Hồ sơ vi phạm</th>
                                     <th>Hồ sơ vận hành</th>
                                     <th>Hồ sơ khác</th>
+                                    <th style="display:none;" class="deleteColumn2">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -625,6 +635,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
+                                    <td style="display:none;" class="deleteColumn2"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C02</td>
@@ -635,6 +646,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="display:none;" class="deleteColumn2"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C03</td>
@@ -645,6 +657,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="display:none;" class="deleteColumn2"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -779,7 +792,7 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div class="m-t-3"><i class="fas fa-ellipsis-v fa-2x"></i></div>
+                                <div class="m-t-3" id="toggleBtn3"><i class="fas fa-ellipsis-v"></i></div>
                             </div>
                         </div>
                         <div class="content-qlct">
@@ -794,6 +807,7 @@
                                     <th>Hồ sơ vi phạm</th>
                                     <th>Hồ sơ vận hành</th>
                                     <th>Hồ sơ khác</th>
+                                    <th style="display:none;" class="deleteColumn3">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -806,6 +820,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
+                                    <td style="display:none;" class="deleteColumn3"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C02</td>
@@ -816,6 +831,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="display:none;" class="deleteColumn3"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C03</td>
@@ -826,6 +842,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="display:none;" class="deleteColumn3"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -960,7 +977,7 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div class="m-t-3"><i class="fas fa-ellipsis-v fa-2x"></i></div>
+                                <div class="m-t-3" id="toggleBtn4"><i class="fas fa-ellipsis-v"></i></div>
                             </div>
                         </div>
                         <div class="content-qlct">
@@ -975,6 +992,7 @@
                                     <th>Hồ sơ vi phạm</th>
                                     <th>Hồ sơ vận hành</th>
                                     <th>Hồ sơ khác</th>
+                                    <th style="display:none;" class="deleteColumn4">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -987,6 +1005,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
+                                    <td style="display:none;" class="deleteColumn4"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C02</td>
@@ -997,6 +1016,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="display:none;" class="deleteColumn4"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C03</td>
@@ -1007,6 +1027,7 @@
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
                                     <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="display:none;" class="deleteColumn4"><a><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -1020,5 +1041,6 @@
 <script src="trang3-tab.js"></script>
 <script src="trang3-sidebar.js"></script>
 <script src="trang3-modal.js"></script>
+<script src="trang3Delete.js"></script>
 </body>
 </html>

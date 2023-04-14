@@ -444,6 +444,10 @@ nav i {
     transform: translateY(-50%);
     cursor: pointer;
     color: white;
+    font-size: 25px;
+}
+.m-t-3 i:hover{
+    scale: 105%;
 }
 .search-boxx {
     display: flex;

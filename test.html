@@ -7,60 +7,24 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous"/>
 </head>
 <body>
-<!-- Button to Open Modal -->
-<button id="openModalBtn">Open Modal</button>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Thông tin công trình</h2>
-        <form>
-            <div class="form-group">
-                <label for="project-name">Chọn công trình quản lý:</label>
-                <select id="project-name" name="project-name">
-                    <option value="Cống Trung Trang">Cống Trung Trang</option>
-                    <option value="Cống Cổ Tiểu">Cống Cổ Tiểu</option>
-                    <option value="Cống Táo">Cống Táo</option>
-                    <option value="Cống Mai Dương">Cống Mai Dương</option>
-                    <option value="Cống Cao Mật">Cống Cao Mật</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="project-type">Quản lý tài sản:</label>
-                <select id="project-type" name="project-type">
-                    <option value="Sở NNPTNT">Sở NNPTNT</option>
-                    <option value="Công Ty">Công Ty</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="project-status">Trạng thái công trình:</label>
-                <select id="project-status" name="project-status">
-                    <option value="Đã cắm mốc">Đã cắm mốc</option>
-                    <option value="Chưa cắm mốc">chưa cắm mốc</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="project-encroachment-violation">Vi phạm lấn chiếm:</label>
-                <input type="text" id="project-encroachment-violation" name="project-encroachment-violation" readonly value="Đang cập nhật">
-            </div>
-            <div class="form-group">
-                <label for="project-history">Lịch sử công trình:</label>
-                <input type="text" id="project-history" name="project-history">
-                <select id="project-history-file" name="project-history-file">
-                    <option value="hs1">Hồ sơ sửa chữa cánh cống</option>
-                    <option value="hs2">Hồ sơ sửa chữa hèm cống</option>
-                </select>
-                <span class="error-message" id="project-history-error"></span>
-            </div>
-            <div class="form-group">
-                <button type="button" id="saveBtn">Lưu thông tin</button>
-                <button type="button" id="cancelBtn">Hủy bỏ</button>
-            </div>
-        </form>
-    </div>
-</div>
+<button id="toggleBtn">Hiện/Ẩn cột xóa</button>
+<table id="myTable">
+    <tr>
+        <th>Tên</th>
+        <th>Tuổi</th>
+        <th class="deleteColumn" style="display:none;">Xóa</th>
+    </tr>
+    <tr>
+        <td>Nam</td>
+        <td>25</td>
+        <td class="deleteColumn" style="display:none;"><button class="deleteBtn">X</button></td>
+    </tr>
+    <tr>
+        <td>Hoa</td>
+        <td>22</td>
+        <td class="deleteColumn" style="display:none;"><button class="deleteBtn">X</button></td>
+    </tr>
+</table>
 
 <script src="test.js"></script>
 </body>
