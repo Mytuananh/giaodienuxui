@@ -826,7 +826,7 @@ tr:hover{
 }
 /*---------------------------------------------mess---------------------------------------------------------------*/
 .chat-box {
-    width: 40vh;
+    width: 30vh;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -834,6 +834,7 @@ tr:hover{
     border-radius: 5px;
     position: absolute;
     bottom: 0;
+    right: 5px;
 }
 
 .chat-header {
@@ -864,7 +865,7 @@ tr:hover{
 .chat-body {
     background-color: #f0f0f0;
     padding: 15px;
-    max-height: 40vh;
+    height: 25vh;
     overflow-y: auto;
     border: 1px solid #ccc;
 }

@@ -11,14 +11,19 @@ function toggleContent(contentId) {
         document.getElementById(contentId).classList.remove("hidden");
         activeContentId = contentId;
     }
+
 }
+
 /*Đếm số lượng tin nhắn chưa đọc hoặc chưa xem*/
 function updateUnreadCounts() {
-    var messageUnreadCount = document.querySelectorAll("#message-list .message-item.unread").length;
-    var notificationUnreadCount = document.querySelectorAll("#notification-list .notification-item.unread").length;
+    // Thêm đoạn mã sau để chắc chắn rằng phần tử HTML đã được tải đầy đủ trước khi thực hiện đếm
+    setTimeout(() => {
+        var messageUnreadCount = document.querySelectorAll("#message-list .message-item.unread").length;
+        var notificationUnreadCount = document.querySelectorAll("#notification-list .notification-item.unread").length;
 
-    updateBadge("mess", messageUnreadCount);
-    updateBadge("notification", notificationUnreadCount);
+        updateBadge("mess", messageUnreadCount);
+        updateBadge("notification", notificationUnreadCount);
+    }, 100);
 }
 
 function updateBadge(iconClass, count) {
@@ -32,10 +37,13 @@ function updateBadge(iconClass, count) {
             icon.appendChild(notificationBadge);
         }
         notificationBadge.textContent = count > 5 ? "5+" : count;
+        notificationBadge.style.display = "block"; // Thêm dòng này để hiển thị hình tròn đỏ khi có tin nhắn chưa đọc
     } else if (notificationBadge) {
-        icon.removeChild(notificationBadge);
+        notificationBadge.style.display = "none"; // Thêm dòng này để ẩn hình tròn đỏ khi không còn tin nhắn chưa đọc
     }
+
 }
+
 
 // Gọi hàm updateUnreadCounts() để cập nhật số lượng chưa đọc ban đầu
 updateUnreadCounts();
@@ -57,12 +65,9 @@ document.addEventListener("click", function (event) {
         notificationList.classList.add("hidden");
         activeContentId = null;
     }
+
 });
-document.querySelectorAll('.message-item').forEach(function(item) {
-    item.addEventListener('click', function() {
-        document.getElementById('chat-box').style.display = 'flex';
-    });
-});
+
 
 document.querySelector('.close-chat').addEventListener('click', function() {
     document.getElementById('chat-box').style.display = 'none';
@@ -94,92 +99,111 @@ function getCurrentTimeString() {
 
     return day + '/' + month + '/' + year + ' ' + hours + ':' + minutes;
 }
+function sendMessage(chatBox) {
+    var messageInput = chatBox.querySelector(".chat-input");
+    var message = messageInput.value;
+
+    if (message.trim() !== "") {
+        // Tạo một tin nhắn mới
+        var newMessage = document.createElement("div");
+        newMessage.classList.add("chat-message", "my-message");
+
+        var messageText = document.createElement("div");
+        messageText.classList.add("message-text");
+        messageText.textContent = message;
+        newMessage.appendChild(messageText);
+
+        var messageTime = document.createElement("div");
+        messageTime.classList.add("message-time");
+        messageTime.textContent = getCurrentTimeString(); // Sử dụng thời gian thực khi gửi tin nhắn
+        newMessage.appendChild(messageTime);
+
+        // Thêm tin nhắn mới vào chat-body
+        var chatBody = chatBox.querySelector("#chat-body");
+        chatBody.appendChild(newMessage);
+
+        // Xóa nội dung trong input
+        messageInput.value = "";
+    }
+
+}
 function handleEnter(event) {
     if (event.keyCode === 13 || event.which === 13) {
-        // Gửi tin nhắn khi ấn phím Enter
-        // Bạn có thể thêm đoạn mã để xử lý gửi tin nhắn ở đây
-        // Lấy nội dung tin nhắn từ input
-        var message = document.querySelector('.chat-input').value;
-
-        if (message.trim() !== '') {
-            // Tạo một tin nhắn mới
-            var newMessage = document.createElement('div');
-            newMessage.classList.add('chat-message', 'my-message');
-
-            var messageText = document.createElement('div');
-            messageText.classList.add('message-text');
-            messageText.textContent = message;
-            newMessage.appendChild(messageText);
-
-            var messageTime = document.createElement('div');
-            messageTime.classList.add('message-time');
-            messageTime.textContent = getCurrentTimeString(); // Sử dụng thời gian thực khi gửi tin nhắn
-            // Sử dụng thời gian thực khi gửi tin nhắn
-            newMessage.appendChild(messageTime);
-
-            // Thêm tin nhắn mới vào chat-body
-            document.getElementById('chat-body').appendChild(newMessage);
-
-            // Xóa nội dung trong input
-            document.querySelector('.chat-input').value = '';
-        }
         event.preventDefault();
-        console.log("Tin nhắn đã được gửi: " + event.target.value);
-        event.target.value = "";
+        sendMessage(chatBox);
     }
+    event.preventDefault();
+}
+// Hàm cập nhật trạng thái của tin nhắn khi ấn vào
+function markAsRead(messageItem) {
+    messageItem.classList.remove("unread");
+    // Chờ một chút để cập nhật trạng thái của tin nhắn trước khi cập nhật số lượng tin nhắn chưa đọc
+    setTimeout(() => {
+        updateUnreadCounts();
+    }, 100);
+    event.preventDefault();
 }
 document.addEventListener("DOMContentLoaded", function () {
-    const messageItems = document.querySelectorAll(".message-item");
-    const messageList = document.getElementById("message-list");
+    let openChatBoxes = [];
     const chatBoxTemplate = document.getElementById("chat-box");
+    const chatBoxSpacing = 31;
+    const messageList = document.getElementById("message-list");
+    const messageItems = messageList.querySelectorAll(".message-item");
 
-    let openChatBoxes = 0;
+    chatBoxTemplate.style.display = "none";
+
+    function updateChatBoxPositions() {
+        openChatBoxes.forEach((box, index) => {
+            const chatBox = document.getElementById(`chat-box-${box}`);
+            chatBox.style.right = `${(index + 1) * chatBoxSpacing}vh`;
+        });
+    }
 
     messageItems.forEach((item) => {
-        item.addEventListener("click", function () {
-            if (openChatBoxes >= 3) {
-                alert("Bạn chỉ có thể mở tối đa 3 bảng chat cùng lúc.");
-                return;
-            }
+        if (item.classList.contains("message-item")) {
+            item.addEventListener("click", function () {
 
-            const username = this.dataset.username;
-            const avatar = this.dataset.avatar;
+                // Cập nhật trạng thái tin nhắn khi ấn vào
+                markAsRead(this);
 
-            // Ẩn danh sách tin nhắn
-            messageList.classList.add("hidden");
+                if (openChatBoxes.length >= 3) {
+                    alert("Bạn chỉ có thể mở tối đa 3 bảng chat cùng lúc.");
+                    return;
+                }
 
-            // Tìm kiếm bảng chat đã mở hoặc tạo mới nếu chưa có
-            let chatBox = document.getElementById(`chat-box-${username}`);
-            if (!chatBox) {
-                // Tạo một bản sao của khung chat và cập nhật thông tin
-                chatBox = chatBoxTemplate.cloneNode(true);
-                chatBox.id = `chat-box-${username}`;
-                chatBox.querySelector(".sender-name").textContent = username;
-                chatBox.querySelector(".avatar").src = avatar;
+                const username = this.dataset.username;
+                const avatar = this.dataset.avatar;
+                messageList.classList.add("hidden");
 
-                // Thêm sự kiện 'click' cho nút đóng chat
-                const closeChat = chatBox.querySelector(".close-chat");
-                closeChat.addEventListener("click", function () {
-                    messageList.classList.remove("hidden");
-                    chatBox.remove(); // Xóa bảng chat khỏi trang
-                    openChatBoxes--; // Giảm số lượng bảng chat hiện tại
+                let chatBox = document.getElementById(`chat-box-${username}`);
+                if (!chatBox) {
+                    chatBox = chatBoxTemplate.cloneNode(true);
+                    chatBox.id = `chat-box-${username}`;
+                    chatBox.querySelector(".sender-name").textContent = username;
+                    chatBox.querySelector(".avatar").src = avatar;
+                    const closeChat = chatBox.querySelector(".close-chat");
+                    closeChat.addEventListener("click", function () {
+                        chatBox.style.display = "none";
+                        openChatBoxes = openChatBoxes.filter(box => box !== username);
+                        updateChatBoxPositions();
+                    });
+                    document.body.appendChild(chatBox);
+                }
+
+                if (!openChatBoxes.includes(username)) {
+                    openChatBoxes.push(username);
+                }
+                chatBox.style.display = "flex";
+                chatBox.querySelector(".chat-input").addEventListener("keydown", function (event) {
+                    if (event.keyCode === 13 || event.which === 13) {
+                        event.preventDefault();
+                        sendMessage(chatBox);
+                    }
                 });
-
-                // Thêm bảng chat mới vào trang và tăng số lượng bảng chat hiện tại
-                document.body.appendChild(chatBox);
-                openChatBoxes++;
-            }
-
-            // Hiển thị bảng chat tương ứng với người dùng
-            chatBox.style.display = "block";
-        });
+                updateChatBoxPositions();
+            });
+        }
     });
 
-    // Thêm sự kiện 'click' cho nút đóng chat để hiện lại danh sách tin nhắn và ẩn khung chat
-    const closeChat = chatBoxTemplate.querySelector(".close-chat");
-    closeChat.addEventListener("click", function () {
-        messageList.classList.remove("hidden");
-        chatBoxTemplate.style.display = "none";
-    });
 });
 
