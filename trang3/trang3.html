@@ -31,10 +31,10 @@
             <h2>CHAT</h2>
             <input type="text" class="search-input" placeholder="Tìm kiếm...">
             <!-- Ví dụ cho tin nhắn chưa đọc -->
-             <div class="message-item unread" data-username="Khánh Trắng" data-avatar="anh3/anh-nen-mau-trang-001.jpg">
+             <div class="message-item unread" data-username="Khánh Trắng" data-avatar="anh3/Logo%20Cty%20(Chuan)%20-%20none%20background%201.png">
                     <div class="avatar-wrapper">
-                        <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
-                        <div class="online-indicator"></div>
+                        <img src="anh3/Logo%20Cty%20(Chuan)%20-%20none%20background%201.png" alt="Avatar" class="avatar">
+                        <div class="online-status"></div>
                     </div>
                     <div class="message-content">
                         <div class="sender-name">Khánh Trắng</div>
@@ -44,7 +44,7 @@
              <div class="message-item unread" data-username="Mai Phương" data-avatar="anh3/anh-nen-mau-trang-001.jpg">
                     <div class="avatar-wrapper">
                         <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
-                        <div class="online-indicator"></div>
+                        <div class="online-status"></div>
                     </div>
                     <div class="message-content">
                         <div class="sender-name">Mai Phương</div>
@@ -54,7 +54,6 @@
              <div class="message-item unread" data-username="Toán Vũ" data-avatar="anh3/anh-nen-mau-trang-001.jpg">
                     <div class="avatar-wrapper">
                         <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
-                        <div class="online-indicator"></div>
                     </div>
                     <div class="message-content">
                         <div class="sender-name">Toán Vũ</div>
@@ -64,7 +63,7 @@
              <div class="message-item unread" data-username="Phương Bùi" data-avatar="anh3/anh-nen-mau-trang-001.jpg">
                     <div class="avatar-wrapper">
                         <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
-                        <div class="online-indicator"></div>
+                        <div class="online-status"></div>
                     </div>
                     <div class="message-content">
                         <div class="sender-name">Phương Bùi</div>
@@ -74,7 +73,7 @@
             <div class="message-item" data-username="Phương Bùi" data-avatar="anh3/anh-nen-mau-trang-001.jpg">
                 <div class="avatar-wrapper">
                     <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
-                    <div class="online-indicator"></div>
+                    <div class="online-status"></div>
                 </div>
                 <div class="message-content">
                     <div class="sender-name">Phương Bùi</div>
@@ -84,7 +83,7 @@
             <div class="message-item" data-username="Phương Bùi" data-avatar="anh3/anh-nen-mau-trang-001.jpg">
                 <div class="avatar-wrapper">
                     <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
-                    <div class="online-indicator"></div>
+                    <div class="online-status"></div>
                 </div>
                 <div class="message-content">
                     <div class="sender-name">Phương Bùi</div>
@@ -97,6 +96,8 @@
             <div class="chat-header">
                 <img src="anh3/anh-nen-mau-trang-001.jpg" alt="Avatar" class="avatar">
                 <div class="sender-name" >Tên người dùng</div>
+                <div class="online-status"></div>
+                <button class="minimize-chat">&#8722;</button>
                 <button class="close-chat">&times;</button>
             </div>
             <div class="chat-body" id="chat-body">
@@ -111,6 +112,18 @@
                 </div>
             </div>
             <div class="chat-footer">
+                <div class="file-upload">
+                    <input type="file" id="file-input" hidden>
+                    <label for="file-input">
+                        <i class="fas fa-paperclip"></i>
+                    </label>
+                </div>
+                <div class="image-upload">
+                    <input type="file" id="image-input" accept="image/*" hidden>
+                    <label for="image-input">
+                        <i class="fas fa-image"></i>
+                    </label>
+                </div>
                 <input type="text" class="chat-input" placeholder="Nhập tin nhắn..." onkeypress="handleEnter(event)">
             </div>
         </div>
@@ -455,9 +468,9 @@
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
                                     <td style="display:none;" class="deleteColumn1"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
@@ -466,9 +479,9 @@
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">01 hồ sơ</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
                                     <td style="display:none;" class="deleteColumn1"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
@@ -640,9 +653,9 @@
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
                                     <td style="display:none;" class="deleteColumn"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
@@ -651,9 +664,9 @@
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">01 hồ sơ</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td  style="cursor: pointer">-</td>
                                     <td style="display:none;" class="deleteColumn"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
@@ -825,9 +838,9 @@
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
                                     <td style="display:none;" class="deleteColumn2"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
@@ -836,9 +849,9 @@
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">01 hồ sơ</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
                                     <td style="display:none;" class="deleteColumn2"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
@@ -1010,9 +1023,9 @@
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
                                     <td style="display:none;" class="deleteColumn3"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
@@ -1021,9 +1034,9 @@
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">01 hồ sơ</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
                                     <td style="display:none;" class="deleteColumn3"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
@@ -1195,9 +1208,9 @@
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">02 hồ sơ</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
                                     <td style="display:none;" class="deleteColumn4"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
@@ -1206,9 +1219,9 @@
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">Xem</td>
                                     <td onclick="Hp()" style="cursor: pointer">01 hồ sơ</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
-                                    <td onclick="Hp()" style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
+                                    <td style="cursor: pointer">-</td>
                                     <td style="display:none;" class="deleteColumn4"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>

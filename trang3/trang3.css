@@ -710,18 +710,13 @@ tr:hover{
     display: flex;
     padding: 10px;
     border-bottom: 1px solid #ccc;
+    cursor: pointer;
 }
-
+.message-item:hover{
+    scale: 102%;
+}
 .message-item:last-child {
     border-bottom: none;
-}
-
-.avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
 }
 
 .message-content {
@@ -750,15 +745,6 @@ tr:hover{
     margin-bottom: 10px;
 }
 
-.online-indicator {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: red;
-    border-radius: 50%;
-    top: 30px;
-    right: 10px;
-}
 .avatar-wrapper {
     position: relative;
     margin-right: 10px;
@@ -848,6 +834,8 @@ tr:hover{
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
 }
 
 .sender-name {
@@ -860,6 +848,7 @@ tr:hover{
     background: none;
     border: none;
     font-size: 18px;
+    cursor: pointer;
 }
 
 .chat-body {
@@ -885,7 +874,7 @@ tr:hover{
 }
 
 .message-text {
-    max-width: 60%;
+    max-width: 100%;
     padding: 10px;
     border-radius: 15px;
 }
@@ -922,16 +911,71 @@ tr:hover{
     border-radius: 5px;
 }
 
-.send-btn {
-    background-color: #0084ff;
-    color: #ffffff;
-    padding: 10px;
-    margin-left: 10px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
+.online-status {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
 }
 
-.send-btn:hover {
-    background-color: #0063cc;
+.message-item .online-status {
+    top: 20px;
+    right: 10px;
 }
+
+.chat-box .online-status {
+    top: 32px;
+    left: 30px;
+}
+
+/* Hiển thị trạng thái online khi có class 'online' */
+.online-status.online {
+    display: block;
+}
+.online-text {
+    padding-left: 29px; /* Thêm khoảng cách giữa chữ "Online" và nút tròn đỏ */
+    font-size: 13px;
+}
+.offline-text {
+    padding-left: 29px; /* Thêm khoảng cách giữa chữ "Offline" và vị trí của nút tròn đỏ */
+}
+
+.chat-box .online-status.offline {
+    display: none;
+}
+
+.file-upload,
+.image-upload {
+    cursor: pointer;
+    padding-right: 5px;
+}
+
+.file-upload i,
+.image-upload i {
+    font-size: 20px;
+    color: #999;
+}
+
+.file-upload input,
+.image-upload input {
+    display: none;
+}
+.minimize-chat {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left:auto;
+}
+.minimized-avatar {
+    z-index: 10000; /* Đảm bảo rằng avatar luôn nằm trên các phần tử khác */
+}
+.chat-header .minimize-chat {
+    position: absolute;
+    top: 1.4vh;
+    right: 3vh
+}
+
+
+

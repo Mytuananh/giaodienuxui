@@ -23,6 +23,9 @@ function updateUnreadCounts() {
 
         updateBadge("mess", messageUnreadCount);
         updateBadge("notification", notificationUnreadCount);
+
+        // Gọi hàm sortUnreadMessages() sau khi cập nhật số lượng tin nhắn chưa đọc
+        sortUnreadMessages();
     }, 100);
 }
 
@@ -132,7 +135,6 @@ function handleEnter(event) {
         event.preventDefault();
         sendMessage(chatBox);
     }
-    event.preventDefault();
 }
 // Hàm cập nhật trạng thái của tin nhắn khi ấn vào
 function markAsRead(messageItem) {
@@ -141,7 +143,6 @@ function markAsRead(messageItem) {
     setTimeout(() => {
         updateUnreadCounts();
     }, 100);
-    event.preventDefault();
 }
 document.addEventListener("DOMContentLoaded", function () {
     let openChatBoxes = [];
@@ -182,6 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     chatBox.querySelector(".sender-name").textContent = username;
                     chatBox.querySelector(".avatar").src = avatar;
                     const closeChat = chatBox.querySelector(".close-chat");
+                    updateOnlineStatus(username, chatBox); // Gọi hàm updateOnlineStatus() khi tạo bảng chat mới
                     closeChat.addEventListener("click", function () {
                         chatBox.style.display = "none";
                         openChatBoxes = openChatBoxes.filter(box => box !== username);
@@ -189,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     });
                     document.body.appendChild(chatBox);
                 }
-
+                updateOnlineStatus(username, chatBox); // Gọi hàm updateOnlineStatus() khi mở lại bảng chat đã tồn tại
                 if (!openChatBoxes.includes(username)) {
                     openChatBoxes.push(username);
                 }
@@ -207,3 +209,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+function sortUnreadMessages() {
+    const messageList = document.getElementById("message-list");
+    const messageItems = Array.from(messageList.querySelectorAll(".message-item"));
+
+    messageItems.sort((a, b) => {
+        if (a.classList.contains("unread") && !b.classList.contains("unread")) {
+            return -1;
+        }
+        if (!a.classList.contains("unread") && b.classList.contains("unread")) {
+            return 1;
+        }
+        return 0;
+    });
+
+    messageItems.forEach(item => {
+        messageList.appendChild(item);
+    });
+}
+
+function updateOnlineStatus(username, chatBox) {
+    const messageItem = document.querySelector(`.message-item[data-username="${username}"]`);
+    const onlineStatus = messageItem.querySelector(".online-status");
+    const chatBoxOnlineStatus = chatBox.querySelector(".online-status");
+
+    if (onlineStatus) {
+        chatBoxOnlineStatus.classList.add("online");
+        chatBoxOnlineStatus.innerHTML = '<span class="online-text">Online</span>';
+    } else {
+        chatBoxOnlineStatus.classList.remove("online");
+        chatBoxOnlineStatus.classList.add("offline");
+    }
+}
+
+document.querySelector('.minimize-chat').addEventListener('click', function() {
+    const chatBox = document.getElementById('chat-box');
+    const avatar = document.querySelector('.chat-header .avatar');
+    const chatHeader = document.querySelector('.chat-header');
+
+    chatBox.style.display = 'none';
+    avatar.style.display = 'block';
+    avatar.style.position = 'fixed';
+    avatar.style.bottom = '10px';
+    avatar.style.right = '10px';
+
+    chatHeader.addEventListener('click', function() {
+        chatBox.style.display = 'flex';
+        avatar.style.display = 'none';
+    });
+});
