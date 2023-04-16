@@ -8,24 +8,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous"/>
 </head>
 <body>
-<div class="container">
-    <div class="list">
-        <div class="user" data-user-id="1" onclick="openChat(this)">Người dùng 1 <span class="status online"></span></div>
-        <div class="user" data-user-id="2" onclick="openChat(this)">Người dùng 2 <span class="status offline"></span></div>
-        <div class="user" data-user-id="3" onclick="openChat(this)">Người dùng 3 <span class="status online"></span></div>
+<div class="chat-box">
+    <div class="header">
+        <div class="avatar"></div>
+        <div class="name">Tên người dùng</div>
+        <div class="actions">
+            <button class="minimize-btn">Ẩn</button>
+            <button class="close-btn">Đóng</button>
+        </div>
     </div>
-    <div class="chat" id="chat">
-        <div class="header">
-            <span id="user-name">Người dùng 1</span>
-            <span id="user-status">Trực tuyến</span>
-        </div>
-        <div class="messages" id="messages">
-        </div>
-        <div class="input-container">
-            <button class="icon" id="upload-image"><i class="fas fa-image"></i></button>
-            <button class="icon" id="upload-file"><i class="fas fa-paperclip"></i></button>
-            <input type="text" id="message-input" placeholder="Nhập tin nhắn..." onkeydown="handleEnter(event)">
-        </div>
+    <div class="body">
+        <!-- Nội dung cuộc trò chuyện -->
+    </div>
+    <div class="footer">
+        <input type="text" placeholder="Nhập tin nhắn">
+        <button>Gửi</button>
     </div>
 </div>
 <script src="test.js"></script>
