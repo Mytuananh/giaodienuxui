@@ -147,10 +147,10 @@ function markAsRead(messageItem) {
 document.addEventListener("DOMContentLoaded", function () {
     let openChatBoxes = [];
     const chatBoxTemplate = document.getElementById("chat-box");
-    const chatBoxSpacing = 31;
+    const chatBoxSpacing = 33;
     const messageList = document.getElementById("message-list");
     const messageItems = messageList.querySelectorAll(".message-item");
-
+    let hiddenChatBoxes = [];
     chatBoxTemplate.style.display = "none";
 
     function updateChatBoxPositions() {
@@ -160,17 +160,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    function hideFirstOpenChatBox() {
+        if (openChatBoxes.length > 0) {
+            const firstOpenChatBox = document.getElementById(`chat-box-${openChatBoxes[0]}`);
+            firstOpenChatBox.style.display = "none";
+            openChatBoxes.shift();
+            updateChatBoxPositions();
+        }
+    }
+    function showHiddenChatBox() {
+        if (hiddenChatBoxes.length > 0) {
+            const chatBoxToShow = document.getElementById(`chat-box-${hiddenChatBoxes[0]}`);
+            chatBoxToShow.style.display = "flex";
+            openChatBoxes.push(hiddenChatBoxes[0]);
+            hiddenChatBoxes.shift();
+            updateChatBoxPositions();
+        }
+    }
     messageItems.forEach((item) => {
         if (item.classList.contains("message-item")) {
             item.addEventListener("click", function () {
 
                 // Cập nhật trạng thái tin nhắn khi ấn vào
                 markAsRead(this);
-
-                if (openChatBoxes.length >= 3) {
-                    alert("Bạn chỉ có thể mở tối đa 3 bảng chat cùng lúc.");
-                    return;
-                }
 
                 const username = this.dataset.username;
                 const avatar = this.dataset.avatar;
@@ -183,25 +195,42 @@ document.addEventListener("DOMContentLoaded", function () {
                     chatBox.querySelector(".sender-name").textContent = username;
                     chatBox.querySelector(".avatar").src = avatar;
                     const closeChat = chatBox.querySelector(".close-chat");
-                    updateOnlineStatus(username, chatBox); // Gọi hàm updateOnlineStatus() khi tạo bảng chat mới
+                    updateOnlineStatus(username, chatBox);
                     closeChat.addEventListener("click", function () {
                         chatBox.style.display = "none";
                         openChatBoxes = openChatBoxes.filter(box => box !== username);
+                        showHiddenChatBox(); // Thêm dòng này
                         updateChatBoxPositions();
                     });
                     document.body.appendChild(chatBox);
+                    const minimizeButton = chatBox.querySelector('.minimize-button');
+                    minimizeButton.addEventListener('click', () => {
+                        hideChatBox(username);
+                    });
+
                 }
-                updateOnlineStatus(username, chatBox); // Gọi hàm updateOnlineStatus() khi mở lại bảng chat đã tồn tại
+                updateOnlineStatus(username, chatBox);
+
                 if (!openChatBoxes.includes(username)) {
-                    openChatBoxes.push(username);
-                }
-                chatBox.style.display = "flex";
-                chatBox.querySelector(".chat-input").addEventListener("keydown", function (event) {
-                    if (event.keyCode === 13 || event.which === 13) {
-                        event.preventDefault();
-                        sendMessage(chatBox);
+                    if (openChatBoxes.length > 3) {
+                        hideFirstOpenChatBox();
+                        openChatBoxes.push(username);
+                        chatBox.style.display = "flex";
+                    } else {
+                        openChatBoxes.push(username);
+                        chatBox.style.display = "flex";
                     }
-                });
+                }
+                if (openChatBoxes.length > 3) {
+                    if (hiddenChatBoxes.includes(username)) {
+                        hiddenChatBoxes = hiddenChatBoxes.filter(box => box !== username);
+                    } else {
+                        hiddenChatBoxes.push(openChatBoxes.shift());
+                    }
+                } else {
+                    // Nếu bảng chat đã mở, chỉ hiện thị nếu ẩn trước đó
+                    chatBox.style.display = "flex";
+                }
                 updateChatBoxPositions();
             });
         }
@@ -242,19 +271,51 @@ function updateOnlineStatus(username, chatBox) {
     }
 }
 
-document.querySelector('.minimize-chat').addEventListener('click', function() {
-    const chatBox = document.getElementById('chat-box');
-    const avatar = document.querySelector('.chat-header .avatar');
-    const chatHeader = document.querySelector('.chat-header');
 
+
+function hideChatBox(username) {
+    const chatBox = document.getElementById(`chat-box-${username}`);
     chatBox.style.display = 'none';
-    avatar.style.display = 'block';
-    avatar.style.position = 'fixed';
-    avatar.style.bottom = '10px';
-    avatar.style.right = '10px';
+    updateAvatarButtonPositions();
+    const avatarButton = createAvatarButton(username);
+    document.body.appendChild(avatarButton);
 
-    chatHeader.addEventListener('click', function() {
-        chatBox.style.display = 'flex';
-        avatar.style.display = 'none';
+}
+
+function createAvatarButton(username) {
+    const button = document.createElement('button');
+    button.className = 'avatar-button';
+    button.style.position = 'fixed';
+    button.style.bottom = '20px';
+    button.style.right = '20px';
+    button.style.zIndex = 9999;
+
+    const avatar = document.createElement('img');
+    avatar.src = 'anh3/Logo%20Cty%20(Chuan)%20-%20none%20background%201.png'; // Thay đổi đường dẫn này thành đường dẫn đến ảnh đại diện của người dùng
+    avatar.style.width = '20px';
+    avatar.style.height = '20px';
+    avatar.style.borderRadius = '50%';
+
+    button.appendChild(avatar);
+
+    button.addEventListener('click', () => {
+        const chatBox = document.getElementById(`chat-box-${username}`);
+        chatBox.style.display = 'block';
+        document.body.removeChild(button);
     });
-});
+
+    return button;
+}
+
+function updateAvatarButtonPositions() {
+    const avatarButtons = document.querySelectorAll('.avatar-button:not(.hidden)');
+    const avatarButtonHeight = 50; // Chiều cao của avatar-button, bạn có thể thay đổi giá trị này
+    const avatarButtonSpacing = 10; // Khoảng cách giữa các avatar-button, bạn có thể thay đổi giá trị này
+
+    avatarButtons.forEach((avatarButton, index) => {
+        const offset = (avatarButtons.length - index) * (avatarButtonHeight + avatarButtonSpacing);
+        avatarButton.style.bottom = `${offset}px`;
+    });
+
+}
+
