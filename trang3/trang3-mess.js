@@ -276,9 +276,9 @@ function updateOnlineStatus(username, chatBox) {
 function hideChatBox(username) {
     const chatBox = document.getElementById(`chat-box-${username}`);
     chatBox.style.display = 'none';
-    updateAvatarButtonPositions();
     const avatarButton = createAvatarButton(username);
-    document.body.appendChild(avatarButton);
+    document.body.appendChild(avatarButton)
+    updateAvatarButtonPositions();
 
 }
 
@@ -292,8 +292,8 @@ function createAvatarButton(username) {
 
     const avatar = document.createElement('img');
     avatar.src = 'anh3/Logo%20Cty%20(Chuan)%20-%20none%20background%201.png'; // Thay đổi đường dẫn này thành đường dẫn đến ảnh đại diện của người dùng
-    avatar.style.width = '20px';
-    avatar.style.height = '20px';
+    avatar.style.width = '100%';
+    avatar.style.height = '100%';
     avatar.style.borderRadius = '50%';
 
     button.appendChild(avatar);
@@ -310,12 +310,12 @@ function createAvatarButton(username) {
 function updateAvatarButtonPositions() {
     const avatarButtons = document.querySelectorAll('.avatar-button:not(.hidden)');
     const avatarButtonHeight = 50; // Chiều cao của avatar-button, bạn có thể thay đổi giá trị này
-    const avatarButtonSpacing = 10; // Khoảng cách giữa các avatar-button, bạn có thể thay đổi giá trị này
+    const avatarButtonSpacing = 15; // Khoảng cách giữa các avatar-button, bạn có thể thay đổi giá trị này
 
     avatarButtons.forEach((avatarButton, index) => {
-        const offset = (avatarButtons.length - index) * (avatarButtonHeight + avatarButtonSpacing);
+        const offset = (index + 1) * (avatarButtonHeight + avatarButtonSpacing);
         avatarButton.style.bottom = `${offset}px`;
     });
-
 }
+
 
