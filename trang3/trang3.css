@@ -812,7 +812,7 @@ tr:hover{
 }
 /*---------------------------------------------mess---------------------------------------------------------------*/
 .chat-box {
-    width: 32vh;
+    width: 34vh;
     background-color: white;
     display: flex;
     flex-direction: column;

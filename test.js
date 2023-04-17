@@ -1,11 +1,21 @@
-const chatBox = document.querySelector('.chat-box');
-const minimizeBtn = document.querySelector('.minimize-btn');
-const closeBtn = document.querySelector('.close-btn');
+const userList = document.querySelector('.user-list');
+const userButton = document.querySelector('.user-button');
 
-minimizeBtn.addEventListener('click', () => {
-    chatBox.classList.add('hidden');
+userButton.addEventListener('click', function() {
+    userList.classList.toggle('show');
 });
 
-closeBtn.addEventListener('click', () => {
-    chatBox.remove();
+// Lấy danh sách người dùng từ nguồn dữ liệu nào đó và hiển thị trên bảng danh sách
+const userOnline = ['Người dùng 1', 'Người dùng 3'];
+const userOffline = ['Người dùng 2'];
+const userListUL = document.querySelector('.user-list ul');
+userOnline.forEach(function(user) {
+    const userItem = document.createElement('li');
+    userItem.textContent = user + ' (Online)';
+    userListUL.appendChild(userItem);
+});
+userOffline.forEach(function(user) {
+    const userItem = document.createElement('li');
+    userItem.textContent = user + ' (Offline)';
+    userListUL.appendChild(userItem);
 });

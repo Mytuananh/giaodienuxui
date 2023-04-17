@@ -1,5 +1,4 @@
 var activeContentId = null;
-
 function toggleContent(contentId) {
     if (activeContentId === contentId) {
         document.getElementById(contentId).classList.add("hidden");
@@ -147,13 +146,13 @@ function markAsRead(messageItem) {
 document.addEventListener("DOMContentLoaded", function () {
     let openChatBoxes = [];
     const chatBoxTemplate = document.getElementById("chat-box");
-    const chatBoxSpacing = 33;
     const messageList = document.getElementById("message-list");
     const messageItems = messageList.querySelectorAll(".message-item");
     let hiddenChatBoxes = [];
     chatBoxTemplate.style.display = "none";
 
     function updateChatBoxPositions() {
+        const chatBoxSpacing = 35;
         openChatBoxes.forEach((box, index) => {
             const chatBox = document.getElementById(`chat-box-${box}`);
             chatBox.style.right = `${(index + 1) * chatBoxSpacing}vh`;
@@ -162,13 +161,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function hideFirstOpenChatBox() {
         if (openChatBoxes.length > 0) {
-            const firstOpenChatBox = document.getElementById(`chat-box-${openChatBoxes[0]}`);
-            firstOpenChatBox.style.display = "none";
+            hideChatBox(openChatBoxes[0]);
             openChatBoxes.shift();
             updateChatBoxPositions();
         }
     }
-    function showHiddenChatBox() {
+
+    function hideChatBox(username) {
+        const chatBox = document.getElementById(`chat-box-${username}`);
+        chatBox.style.display = 'none';
+
+        // Kiểm tra nếu có bảng chat ẩn được chuyển thành nút avatar-button
         if (hiddenChatBoxes.length > 0) {
             const chatBoxToShow = document.getElementById(`chat-box-${hiddenChatBoxes[0]}`);
             chatBoxToShow.style.display = "flex";
@@ -176,7 +179,61 @@ document.addEventListener("DOMContentLoaded", function () {
             hiddenChatBoxes.shift();
             updateChatBoxPositions();
         }
+
+        // Nếu không có bảng chat ẩn, hiển thị nút avatar-button
+        if (openChatBoxes.length <= 3 && hiddenChatBoxes.length === 0) {
+            const avatarButton = createAvatarButton(username);
+            document.body.appendChild(avatarButton);
+            avatarButton.classList.remove("hidden");
+            updateAvatarButtonPositions();
+        }
     }
+
+    function showHiddenChatBox() {
+        if (hiddenChatBoxes.length > 0) {
+            const chatBoxToShow = document.getElementById(`chat-box-${hiddenChatBoxes[0]}`);
+            chatBoxToShow.style.display = "flex";
+            openChatBoxes.push(hiddenChatBoxes[0]);
+            hiddenChatBoxes.shift();
+            updateChatBoxPositions();
+            // Ẩn nút avatar-button nếu không còn bảng chat nào bị ẩn
+            if (hiddenChatBoxes.length === 0) {
+                const avatarButton = document.querySelector(".avatar-button:not(.hidden)");
+                avatarButton.classList.add("hidden");
+            }
+        }
+    }
+
+    function createAvatarButton(username) {
+        const button = document.createElement('button');
+        button.className = 'avatar-button';
+        button.style.position = 'fixed';
+        button.style.bottom = '20px';
+        button.style.right = '20px';
+        button.style.zIndex = 9999;
+
+        const avatar = document.createElement('img');
+        avatar.src = 'anh3/Logo%20Cty%20(Chuan)%20-%20none%20background%201.png'; // Thay đổi đường dẫn này thành đường dẫn đến ảnh đại diện của người dùng
+        avatar.style.width = '100%';
+        avatar.style.height = '100%';
+        avatar.style.borderRadius = '50%';
+
+        button.appendChild(avatar);
+
+        button.addEventListener('click', () => {
+            const chatBox = document.getElementById(`chat-box-${username}`);
+            chatBox.style.display = 'block';
+            document.body.removeChild(button);
+            openChatBoxes.push(username);
+            if (openChatBoxes.length > 3) {
+                hideFirstOpenChatBox();
+            }
+            updateChatBoxPositions();
+        });
+
+        return button;
+    }
+
     messageItems.forEach((item) => {
         if (item.classList.contains("message-item")) {
             item.addEventListener("click", function () {
@@ -199,7 +256,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     closeChat.addEventListener("click", function () {
                         chatBox.style.display = "none";
                         openChatBoxes = openChatBoxes.filter(box => box !== username);
-                        showHiddenChatBox(); // Thêm dòng này
+                        showHiddenChatBox();
                         updateChatBoxPositions();
                     });
                     document.body.appendChild(chatBox);
@@ -212,14 +269,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 updateOnlineStatus(username, chatBox);
 
                 if (!openChatBoxes.includes(username)) {
-                    if (openChatBoxes.length > 3) {
+                    if (openChatBoxes.length >= 3) {
                         hideFirstOpenChatBox();
-                        openChatBoxes.push(username);
-                        chatBox.style.display = "flex";
-                    } else {
-                        openChatBoxes.push(username);
-                        chatBox.style.display = "flex";
                     }
+                    openChatBoxes.push(username);
+                    chatBox.style.display = "flex";
                 }
                 if (openChatBoxes.length > 3) {
                     if (hiddenChatBoxes.includes(username)) {
@@ -273,39 +327,7 @@ function updateOnlineStatus(username, chatBox) {
 
 
 
-function hideChatBox(username) {
-    const chatBox = document.getElementById(`chat-box-${username}`);
-    chatBox.style.display = 'none';
-    const avatarButton = createAvatarButton(username);
-    document.body.appendChild(avatarButton)
-    updateAvatarButtonPositions();
 
-}
-
-function createAvatarButton(username) {
-    const button = document.createElement('button');
-    button.className = 'avatar-button';
-    button.style.position = 'fixed';
-    button.style.bottom = '20px';
-    button.style.right = '20px';
-    button.style.zIndex = 9999;
-
-    const avatar = document.createElement('img');
-    avatar.src = 'anh3/Logo%20Cty%20(Chuan)%20-%20none%20background%201.png'; // Thay đổi đường dẫn này thành đường dẫn đến ảnh đại diện của người dùng
-    avatar.style.width = '100%';
-    avatar.style.height = '100%';
-    avatar.style.borderRadius = '50%';
-
-    button.appendChild(avatar);
-
-    button.addEventListener('click', () => {
-        const chatBox = document.getElementById(`chat-box-${username}`);
-        chatBox.style.display = 'block';
-        document.body.removeChild(button);
-    });
-
-    return button;
-}
 
 function updateAvatarButtonPositions() {
     const avatarButtons = document.querySelectorAll('.avatar-button:not(.hidden)');

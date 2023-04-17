@@ -8,23 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous"/>
 </head>
 <body>
-<div class="chat-box">
-    <div class="header">
-        <div class="avatar"></div>
-        <div class="name">Tên người dùng</div>
-        <div class="actions">
-            <button class="minimize-btn">Ẩn</button>
-            <button class="close-btn">Đóng</button>
-        </div>
+<div class="user-list-container">
+    <div class="user-list">
+        <h3>Danh sách người dùng</h3>
+        <ul>
+            <li>Người dùng 1 (Online)</li>
+            <li>Người dùng 2 (Offline)</li>
+            <li>Người dùng 3 (Online)</li>
+        </ul>
     </div>
-    <div class="body">
-        <!-- Nội dung cuộc trò chuyện -->
-    </div>
-    <div class="footer">
-        <input type="text" placeholder="Nhập tin nhắn">
-        <button>Gửi</button>
-    </div>
+    <button class="user-button"><i class="fas fa-user"></i></button>
 </div>
+
+
 <script src="test.js"></script>
 </body>
 </html>
