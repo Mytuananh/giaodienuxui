@@ -59,10 +59,11 @@
     background-color:#FFD5AE;
 }
 
-.friend img {
+.friend-avatar img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    object-fit: cover;
     margin-right: 10px;
 }
 
@@ -77,11 +78,12 @@
 }
 
 .friend-status {
-    display: block;
+    position: absolute;
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    margin-top: 2px;
+    top: 26px;
+    left: 28px;
 }
 .chat-box {
     position: fixed;
@@ -138,38 +140,6 @@
 .chat-message .message.you .message-text {
     background-color: #f2f2f2;
     color: #444;
-}
-
-.chat-input {
-    padding: 10px;
-    border-top: 1px solid #eee;
-    display: flex;
-    align-items: center;
-}
-
-.chat-input input[type="text"] {
-    flex: 1;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    font-size: 14px;
-    color: #444;
-}
-
-.chat-input button {
-    margin-left: 10px;
-    width: 60px;
-    height: 30px;
-    background-color: #1877f2;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.chat-input button:hover {
-    background-color: #1565c0;
 }
 .tabs-mess {
     display: flex;
@@ -263,9 +233,43 @@
     font-weight: bold;
     color: #444;
 }
+.friend-status.online {
+    background-color: #ff0000;
+}
 
-.friend-status-text {
-    font-size: 14px;
-    color: #444;
-    margin-top: 2px;
+.friend-status.offline {
+    display: none;
+}
+
+.friend-avatar {
+    position: relative;
+}
+.group-avatar{
+    position: relative;
+}
+.friend-status-text::after {
+    content: attr(data-status);
+    margin-left: 1px;
+    font-size: 12px;
+}
+.group-number::after {
+    content: attr(data-members) " thành viên";
+    font-size: 13px;
+    font-weight: 400;
+}
+.group-status {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 26px;
+    left: 28px;
+}
+
+.group-status.online {
+    background-color: #ff0000;
+}
+
+.group-status.offline {
+    display: none;
 }

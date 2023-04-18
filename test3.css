@@ -5,7 +5,7 @@
     right: 10px;
     height: 95px;
     width: 10px;
-    z-index: 10000;
+    z-index: 100000;
 }
 
 .icon {
@@ -71,7 +71,313 @@
     background-color: #F9F7F7;
 }
 
+.friends-list {
+    position: absolute;
+    bottom: 2px;
+    right: 10vh;
+    background-color: #F9F7F7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    display: none;
+    width: 34vh;
+    height: 45vh;
+    overflow: auto;
+}
+.new-mess{
+    position: absolute;
+    bottom: 2px;
+    right: 10vh;
+    background-color: #F9F7F7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    display: none;
+    width: 40vh;
+    height: 45vh;
+    overflow: auto;
+}
+.search-box input {
+    padding: 8px;
+    width: 100%;
+    height: 2vh;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    color: #444;
+}
+
+
+
+.friend {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(166, 157, 157, 0.3);
+
+}
+
+.friend:hover {
+    background-color:#FFD5AE;
+}
+
+.friend-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.friend-info {
+    flex: 1;
+}
+
+.friend-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+}
+
+.friend-status {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 26px;
+    left: 28px;
+}
+.chat-box {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
+    display: none;
+    width: 300px;
+    height: 400px;
+}
+
+.chat-header {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.chat-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    margin-left: 10px;
+}
+
+.chat-name.online {
+    color: #4CAF50;
+}
+
+.chat-message {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chat-message .message {
+    margin-bottom: 10px;
+}
+
+.chat-message .message:last-child {
+    margin-bottom: 0;
+}
+
+.chat-message .message.me {
+    text-align: right;
+}
+
+.chat-message .message.me .message-text {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.chat-message .message.you .message-text {
+    background-color: #f2f2f2;
+    color: #444;
+}
+.tabs-mess {
+    display: flex;
+    justify-content: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-mess {
+    font-size: 14px;
+    color: #444;
+    cursor: pointer;
+    padding: 0 10px;
+    position: relative;
+}
+
+.tab-mess.active {
+    font-weight: bold;
+    color: #4B5580;
+}
+
+.tab-mess.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #4B5580;
+}
+
+.separator {
+    padding: 0 5px;
+}
+
+
+.tab-content-mess {
+    display: none;
+}
+
+.tab-content-mess.active {
+    display: block;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.vertical-ellipsis {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.vertical-ellipsis::before {
+    content: "⋮";
+    font-size: 28px;
+    color: #444;
+}
+
+.groups-container {
+    max-height: 400px;
+}
+
+.group {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.group:hover {
+    background-color: #FFD5AE;
+}
+
+.group img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.group-info {
+    flex: 1;
+}
+
+.group-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+}
+.friend-status.online {
+    background-color: #ff0000;
+}
+
+.friend-status.offline {
+    display: none;
+}
+
+.friend-avatar {
+    position: relative;
+}
+.group-avatar{
+    position: relative;
+}
+.friend-status-text::after {
+    content: attr(data-status);
+    margin-left: 1px;
+    font-size: 12px;
+}
+.group-number::after {
+    content: attr(data-members) " thành viên";
+    font-size: 13px;
+    font-weight: 400;
+}
+.group-status {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 26px;
+    left: 28px;
+}
+
+.group-status.online {
+    background-color: #ff0000;
+}
+
+.group-status.offline {
+    display: none;
+}
 
 
 
 
+.new-mess h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1d2129;
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+
+.search-box-new-mess {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f2f5;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.new-mess input[type="text"] {
+    width: 100%;
+    border: none;
+    background-color: #f0f2f5;
+    padding: 8px;
+    font-size: 14px;
+    color: #1d2129;
+    outline: none;
+}
+
+.new-mess input[type="text"]::placeholder {
+    color: #8d949e;
+}
+
+.friend-list-new {
+    display: none;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}

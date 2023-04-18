@@ -331,7 +331,7 @@ function updateOnlineStatus(username, chatBox) {
 
 function updateAvatarButtonPositions() {
     const avatarButtons = document.querySelectorAll('.avatar-button:not(.hidden)');
-    const avatarButtonHeight = 50; // Chiều cao của avatar-button, bạn có thể thay đổi giá trị này
+    const avatarButtonHeight = 52; // Chiều cao của avatar-button, bạn có thể thay đổi giá trị này
     const avatarButtonSpacing = 15; // Khoảng cách giữa các avatar-button, bạn có thể thay đổi giá trị này
 
     avatarButtons.forEach((avatarButton, index) => {
