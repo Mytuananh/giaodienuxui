@@ -1,0 +1,77 @@
+
+.icon-wrapper {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    height: 95px;
+    width: 10px;
+    z-index: 10000;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: #FFFFFF;
+    border: 1px solid brown;
+}
+.icon-primary{
+    bottom: 3px;
+    right: 4px;
+    position: absolute;
+    font-size: 25px;
+}
+
+.icon-primary:hover {
+    background-color: #FFD5AE;
+    bottom: 0;
+}
+
+.icon-secondary {
+    position: absolute;
+    bottom: 80px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s;
+    right: 4px;
+    font-size: 25px;
+}
+
+.icon-wrapper:hover .icon-secondary {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.icon-secondary:hover{
+    background-color: #FFD5AE;
+}
+.icon-wrapper:hover .icon-primary{
+    bottom: 2px;
+    right: 4px;
+    position: absolute;
+}
+/* Thêm hiệu ứng bo viền khi rê chuột vào nút icon đầu tiên */
+.icon-primary:hover,
+.icon-wrapper:hover .icon-secondary, .icon-wrapper:hover .icon-primary  {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Thêm hiệu ứng box-shadow bo xung quanh cả hai nút icon */
+.icon-wrapper:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1), 0 8px 10px rgba(0, 0, 0, 0.1), 0 1px 18px rgba(0, 0, 0, 0.1);
+    border-radius: 100px; /* Thay đổi giá trị này để điều chỉnh độ bo của hình */
+    padding: 20px 24px; /* Thay đổi giá trị này để điều chỉnh khoảng cách giữa các nút icon và bo viền xung quanh */
+    background-color: #F9F7F7;
+}
+
+
+
+
+
