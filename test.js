@@ -1,21 +1,24 @@
-const userList = document.querySelector('.user-list');
-const userButton = document.querySelector('.user-button');
+const friendsButton = document.querySelector('.friends-button');
+const friendsList = document.querySelector('.friends-list');
+const friendItems = document.querySelectorAll('.friend');
+const chatBox = document.querySelector('.chat-box');
 
-userButton.addEventListener('click', function() {
-    userList.classList.toggle('show');
+friendsButton.addEventListener('click', function() {
+    friendsList.style.display = friendsList.style.display === 'none' ? 'block' : 'none';
 });
 
-// Lấy danh sách người dùng từ nguồn dữ liệu nào đó và hiển thị trên bảng danh sách
-const userOnline = ['Người dùng 1', 'Người dùng 3'];
-const userOffline = ['Người dùng 2'];
-const userListUL = document.querySelector('.user-list ul');
-userOnline.forEach(function(user) {
-    const userItem = document.createElement('li');
-    userItem.textContent = user + ' (Online)';
-    userListUL.appendChild(userItem);
-});
-userOffline.forEach(function(user) {
-    const userItem = document.createElement('li');
-    userItem.textContent = user + ' (Offline)';
-    userListUL.appendChild(userItem);
+friendItems.forEach(function(friend) {
+    friend.addEventListener('click', function() {
+        // Lấy tên và trạng thái của bạn bè được click
+        const name = this.querySelector('.friend-name').textContent;
+        const status = this.querySelector('.friend-status').classList.contains('online') ? 'online' : 'offline';
+
+        // Cập nhật thông tin trong bảng chat
+        const chatName = document.querySelector('.chat-name');
+        chatName.textContent = name;
+        chatName.classList.add(status);
+
+        // Hiển thị bảng chat
+        chatBox.style.display = 'block';
+    });
 });
