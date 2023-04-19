@@ -973,20 +973,20 @@ tr:hover{
 }
 .chat-header .minimize-button {
     position: absolute;
-    top: 1.8vh;
-    right: 4vh
+    top: 1.5vh;
+    right: 3vh
 }
 
 .avatar-button:hover {
-  scale: 110%;
+  scale: 105%;
 }
 .avatar-button img {
     object-fit: cover;
 }
 .avatar-button {
-    position: absolute;
-    width: 52px;
-    height: 52px;
+    position: relative;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-size: cover;
     background-position: center center;
@@ -994,7 +994,41 @@ tr:hover{
     transition: opacity 0.2s ease-in-out;
     opacity: 1;
     z-index: 9999;
-    border: 1px solid brown;
+    border: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.close-avatar-button {
+    position: absolute;
+    top: -5px;
+    right: -0.01px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    line-height: 15px;
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0; /* Ban đầu nút "x" sẽ ẩn đi */
+    transition: all 0.3s ease; /* Thêm hiệu ứng chuyển đổi khi nút "x" hiện/ẩn */
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.8);
+
+}
+
+.avatar-button:hover .close-avatar-button {
+    opacity: 1; /* Khi di chuột vào nút avatar-button, nút "x" sẽ hiện ra */
+}
+.chat-container{
+    position: absolute;
+}
+.avatar-button {
+    transition: bottom 0.3s, right 0.3s;
+}
+
+.hidden {
+    display: none;
 }
 
 /*--------------------------------------------------------Menu-friend-------------------------------------------------*/
