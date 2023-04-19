@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="trangttcn.css">
+</head>
+<body>
+<div class="container">
+    <div class="avatar-container">
+        <img id="avatar" src="https://via.placeholder.com/150" alt="Avatar" onclick="changeAvatar()">
+        <input type="file" id="avatarInput" style="display:none;" onchange="updateAvatar(event)">
+        <h2 id="username">Username</h2>
+    </div>
+    <form>
+        <label for="hoten">Họ và tên:</label>
+        <input type="text" id="hoten" name="hoten">
+
+        <label for="quequan">Quê quán:</label>
+        <input type="text" id="quequan" name="quequan">
+
+        <label for="sodienthoai">Số điện thoại:</label>
+        <input type="text" id="sodienthoai" name="sodienthoai">
+
+        <label for="diachithuongtru">Địa chỉ thường trú:</label>
+        <input type="text" id="diachithuongtru" name="diachithuongtru">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <button type="submit">Cập nhật thông tin</button>
+    </form>
+</div>
+<script src="trangttcn.js"></script>
+</body>
+</html>
