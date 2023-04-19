@@ -3,7 +3,6 @@ const newMess = document.querySelector('.icon-secondary');
 const danhSachBanBe = document.querySelector('.friends-list');
 const newList = document.querySelector('.new-mess');
 const cacMucBanBe = document.querySelectorAll('.friend');
-const hopThoaiChat = document.querySelector('.chat-box');
 
 const personalTab = document.getElementById('personal-tab');
 const groupTab = document.getElementById('group-tab');
@@ -62,10 +61,6 @@ cacMucBanBe.forEach(function(banBe) {
         const ten = this.querySelector('.friend-name').textContent;
         const trangThai = this.querySelector('.friend-status').classList.contains('online') ? 'online' : 'offline';
 
-        // Cập nhật thông tin trong hộp thoại chat
-        const tenNguoiNhan = document.querySelector('.chat-name');
-        tenNguoiNhan.textContent = ten;
-
         // Xóa trạng thái cũ (nếu có)
         const trangThaiCu = document.querySelector('.chat-header .online, .chat-header .offline');
         if (trangThaiCu) {
@@ -77,11 +72,6 @@ cacMucBanBe.forEach(function(banBe) {
         trangThaiNguoiNhan.textContent = trangThai === 'online' ? 'trực tuyến' : 'ngoại tuyến';
         trangThaiNguoiNhan.className = trangThai;
         trangThaiNguoiNhan.style.marginLeft = '5px';
-
-        tenNguoiNhan.parentNode.insertBefore(trangThaiNguoiNhan, tenNguoiNhan.nextSibling);
-
-        // Hiển thị hộp thoại chat
-        hopThoaiChat.style.display = 'block';
     });
 });
 const cacNhom = document.querySelectorAll('.group');
