@@ -416,7 +416,7 @@ function validateFormInputs4() {
     const projectLocationXValue4 = document.getElementById(
         "project-location-x-4"
     ).value;
-    const projectLocationYValue3 = document.getElementById(
+    const projectLocationYValue4 = document.getElementById(
         "project-location-y-4"
     ).value;
 
@@ -660,4 +660,122 @@ cancelBtn8.onclick = function () {
 }
 cancelBtn9.onclick = function () {
     closeModal4();
+}
+
+// Hiển thị thẻ input-link mặc định nếu lựa chọn là "link"
+const infoInput = document.querySelectorAll('.input-link');
+infoInput.forEach(function (input) {
+    input.style.display = "block";
+    const infoType =  document.querySelectorAll('.infoType');
+    infoType.forEach(function (inf) {
+        inf.addEventListener("change", function () {
+            const infoType = this.value;
+            const infoFiles = document.querySelectorAll('.input-file');
+            infoFiles.forEach(function (infoFile) {
+                if (infoType === "link") {
+                    input.style.display = "block";
+                    infoFile.style.display = "none";
+                } else if (infoType === "file") {
+                    input.style.display = "none";
+                    infoFile.style.display = "block";
+                }
+            });
+            })
+    });
+
+})
+function removeSelectedImage() {
+    var select = document.getElementById('imageFiles');
+    var selected = select.selectedIndex;
+    if (selected >= 0) {
+        select.remove(selected);
+    }
+}
+function updateImageOptions() {
+    var input = document.getElementById('imageInput');
+    var select = document.getElementById('imageFiles');
+    select.innerHTML = '';
+
+    for (var i = 0; i < input.files.length; i++) {
+        var option = document.createElement('option');
+        option.value = input.files[i].name;
+        option.text = input.files[i].name;
+        select.add(option);
+    }
+}
+function removeSelectedImage1() {
+    var select = document.getElementById('imageFiles-1');
+    var selected = select.selectedIndex;
+    if (selected >= 0) {
+        select.remove(selected);
+    }
+}
+function updateImageOptions1() {
+    var input = document.getElementById('imageInput-1');
+    var select = document.getElementById('imageFiles-1');
+    select.innerHTML = '';
+
+    for (var i = 0; i < input.files.length; i++) {
+        var option = document.createElement('option');
+        option.value = input.files[i].name;
+        option.text = input.files[i].name;
+        select.add(option);
+    }
+}
+function removeSelectedImage2() {
+    var select = document.getElementById('imageFiles-2');
+    var selected = select.selectedIndex;
+    if (selected >= 0) {
+        select.remove(selected);
+    }
+}
+function updateImageOptions2() {
+    var input = document.getElementById('imageInput-2');
+    var select = document.getElementById('imageFiles-2');
+    select.innerHTML = '';
+
+    for (var i = 0; i < input.files.length; i++) {
+        var option = document.createElement('option');
+        option.value = input.files[i].name;
+        option.text = input.files[i].name;
+        select.add(option);
+    }
+}
+function removeSelectedImage3() {
+    var select = document.getElementById('imageFiles-3');
+    var selected = select.selectedIndex;
+    if (selected >= 0) {
+        select.remove(selected);
+    }
+}
+function updateImageOptions3() {
+    var input = document.getElementById('imageInput-3');
+    var select = document.getElementById('imageFiles-3');
+    select.innerHTML = '';
+
+    for (var i = 0; i < input.files.length; i++) {
+        var option = document.createElement('option');
+        option.value = input.files[i].name;
+        option.text = input.files[i].name;
+        select.add(option);
+    }
+}
+function removeSelectedImage4() {
+    var select = document.getElementById('imageFiles-4');
+    var selected = select.selectedIndex;
+    if (selected >= 0) {
+        select.remove(selected);
+    }
+}
+function updateImageOptions4() {
+    var input = document.getElementById('imageInput-4');
+    var select = document.getElementById('imageFiles-4');
+    select.innerHTML = '';
+
+    for (var i = 0; i < input.files.length; i++) {
+        var option = document.createElement('option');
+        option.value = input.files[i].name;
+        option.text = input.files[i].name;
+        select.add(option);
+    }
 }

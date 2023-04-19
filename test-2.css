@@ -1,7 +1,66 @@
-.user-status.online {
-    background-color: green;
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-.user-status.offline {
-    background-color: red;
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+input, select {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.select-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select-wrapper .select {
+    width: 60%;
+}
+
+.select-wrapper .input {
+    width: 35%;
+}
+
+.info-input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-input-wrapper .input-file {
+    display: none;
 }

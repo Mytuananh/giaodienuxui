@@ -512,59 +512,183 @@
                                     <!-- Modal content -->
                                     <div class="modal-content">
                                         <span class="close">&times;</span>
-                                        <h2>Thông tin chung</h2>
-                                        <form>
-                                            <div class="form-group">
-                                                <label for="project-code-1">Mã công trình:</label>
-                                                <select id="project-code-1" name="project-code-1">
-                                                    <option value="K">K</option>
-                                                    <option value="TB">TB</option>
-                                                    <option value="KT">KT</option>
-                                                    <option value="C">C</option>
-                                                    <option value="CTTK">CTTK</option>
-                                                </select>
-                                                <input type="text" id="project-code-num-1" name="project-code-num-1" placeholder="Số thứ tự">
-                                                <span class="error-message" id="project-code-error-1"></span>
+                                        <div class="infor-CT">
+                                            <div class="name-CT">Thông tin chung:
+                                                <span class="name-1-CT">Công Trình Cống</span>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="project-name-1">Tên công trình:</label>
-                                                <input type="text" id="project-name-1" name="project-name-1">
-                                                <span class="error-message" id="project-name-error-1"></span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="project-location">Vị trí, địa điểm:</label>
-                                                <input type="text" id="project-location-name-1" name="project-location-name-1" placeholder="Tên địa điểm">
-                                                <input type="text" id="project-location-x-1" name="project-location-x-1" placeholder="Tọa độ X">
-                                                <input type="text" id="project-location-y-1" name="project-location-y-1" placeholder="Tọa độ Y">
-                                                <span class="error-message" id="project-location-error-1"></span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="project-scale-1">Quy mô:</label>
-                                                <input type="text" id="project-scale-1" name="project-scale-1">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="project-equipment-1">Thiết bị:</label>
-                                                <input type="text" id="project-equipment-1" name="project-equipment-1">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="related-projects-1">Công trình liên quan:</label>
-                                                <select id="related-projects-1" name="related-projects-1">
-                                                    <option value="none">Không có</option>
-                                                    <option value="project1">Công trình 1</option>
-                                                    <option value="project2">Công trình 2</option>
-                                                    <option value="project3">Công trình 3</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="other-info-1">Thông tin khác:</label>
-                                                <input type="text" id="other-info-1" name="other-info-1">
-                                                <input type="file" id="file-upload-1" name="file-upload-1" multiple>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="button" id="saveBtn-1">Lưu thông tin</button>
-                                                <button type="button" id="cancelBtn-1">Hủy bỏ</button>
-                                            </div>
-                                        </form>
+                                        </div>
+                                        <div class="form-start">
+                                            <table style="overflow: auto">
+                                                <thead>
+                                                <tr>
+                                                    <th>TT</th>
+                                                    <th>Hạng mục</th>
+                                                    <th>Nhập thông tin mô tả</th>
+                                                    <th>Nhập dữ liệu</th>
+                                                    <th>Ghi chú</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <!-- Dòng 1 -->
+                                                <tr>
+                                                    <td>01</td>
+                                                    <td>Mã công trình (ID)</td>
+                                                    <td>
+                                                        <div class="select-wrapper">
+                                                            <select id="project-code-1" name="project-code-1" class="select">
+                                                                <option>C</option>
+                                                                <option>K</option>
+                                                                <option>CT</option>
+                                                                <option>TB</option>
+                                                                <option>KT</option>
+                                                                <option>CTTK</option>
+                                                                <option>CTK</option>
+                                                            </select>
+                                                            <span>STT:</span>
+                                                            <input id="project-code-num-1" name="project-code-num-1" class="input" type="text">
+                                                            <span class="error-message" id="project-code-error-1"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 2 -->
+                                                <tr>
+                                                    <td>02</td>
+                                                    <td>Tên công trình</td>
+                                                    <td>
+                                                        <input type="text" id="project-name-1" name="project-name-1">
+                                                        <span class="error-message" id="project-name-error-1"></span>
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 3 -->
+                                                <tr>
+                                                    <td>03</td>
+                                                    <td>Vị trí/Địa điểm</td>
+                                                    <td>
+                                                        <input type="text" id="project-location-name-1" name="project-location-name-1">
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 4 -->
+                                                <tr>
+                                                    <td></td>
+                                                    <td>Tọa độ</td>
+                                                    <td>
+                                                        <div class="coordinates">
+                                                            <input type="text" placeholder="Tọa độ X" id="project-location-x-1" name="project-location-x-1">
+                                                            <input type="text" placeholder="Tọa độ Y" id="project-location-y-1" name="project-location-y-1">
+                                                            <span class="error-message" id="project-location-error-1"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 5 -->
+                                                <tr>
+                                                    <td>04</td>
+                                                    <td>Quy mô</td>
+                                                    <td><input type="text" id="project-scale-1" name="project-scale-1"></td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 6 -->
+                                                <tr>
+                                                    <td>05</td>
+                                                    <td>Thiết bị vận hành</td>
+                                                    <td>
+                                                        <input type="text" id="project-equipment-1" name="project-equipment-1">
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 7 -->
+                                                <tr>
+                                                    <td>06</td>
+                                                    <td>Công trình liên quan</td>
+                                                    <td>
+                                                        <input type="text"  readonly placeholder="0 công trình" id="related-projects-1" name="related-projects-1">
+                                                    </td>
+                                                    <td>
+                                                        <div class="autocomplete">
+                                                            <input type="text" id="search-1" placeholder="Tìm kiếm công trình">
+                                                        </div>
+                                                    </td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 9 -->
+                                                <tr>
+                                                    <td>08</td>
+                                                    <td>Thông tin khác</td>
+                                                    <td><input type="text"></td>
+                                                    <td>
+                                                        <div class="info-input-wrapper">
+                                                            <select class="infoType">
+                                                                <option value="link">Link</option>
+                                                                <option value="file">File</option>
+                                                            </select>
+                                                            <input type="text" class="input-link"  placeholder="Nhập link">
+                                                            <input type="file" class="input-file"  style="display:none;" multiple>
+                                                        </div>
+                                                    </td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 10 -->
+                                                <tr>
+                                                    <td>09</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles-1" multiple></select>
+                                                        <button onclick="removeSelectedImage1()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput-1" name="imageInput" onchange="updateImageOptions1()" multiple>
+                                                    </td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="save-noti">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <!-- Dòng 1 -->
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        Ghi chú: <input type="text">
+                                                    </td>
+                                                    <td>
+                                                        Thông báo tới:
+                                                        <select class="select">
+                                                            <option>Không thông báo</option>
+                                                            <option>Toàn công ty</option>
+                                                            <option>Ban giám đốc</option>
+                                                            <option>Phòng Kế hoạch - kỹ thuật</option>
+                                                            <option>Trà (PTP KHKT)</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <button type="submit" class="butt-can" id="cancelBtn-1">Hủy</button>
+                                                        <button type="submit" class="butt-sav" id="saveBtn-1">Lưu lại</button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- The Modal Thong Tin Quan Ly -->
@@ -706,59 +830,183 @@
                                     <!-- Modal content -->
                                     <div class="modal-content">
                                         <span class="close-2">&times;</span>
-                                        <h2>Thông tin công trình</h2>
-                                        <form>
-                                            <div class="form-group">
-                                                <label for="project-code">Mã công trình:</label>
-                                                <select id="project-code" name="project-code">
-                                                    <option value="K">K</option>
-                                                    <option value="TB">TB</option>
-                                                    <option value="KT">KT</option>
-                                                    <option value="C">C</option>
-                                                    <option value="CTTK">CTTK</option>
-                                                </select>
-                                                <input type="text" id="project-code-num" name="project-code-num" placeholder="Số thứ tự">
-                                                <span class="error-message" id="project-code-error"></span>
+                                        <div class="infor-CT">
+                                            <div class="name-CT">Thông tin chung:
+                                                <span class="name-1-CT">Công Trình Trạm Bơm</span>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="project-name">Tên công trình:</label>
-                                                <input type="text" id="project-name" name="project-name">
-                                                <span class="error-message" id="project-name-error"></span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="project-location">Vị trí, địa điểm:</label>
-                                                <input type="text" id="project-location-name" name="project-location-name" placeholder="Tên địa điểm">
-                                                <input type="text" id="project-location-x" name="project-location-x" placeholder="Tọa độ X">
-                                                <input type="text" id="project-location-y" name="project-location-y" placeholder="Tọa độ Y">
-                                                <span class="error-message" id="project-location-error"></span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="project-scale">Quy mô:</label>
-                                                <input type="text" id="project-scale" name="project-scale">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="project-equipment">Thiết bị:</label>
-                                                <input type="text" id="project-equipment" name="project-equipment">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="related-projects">Công trình liên quan:</label>
-                                                <select id="related-projects" name="related-projects">
-                                                    <option value="none">Không có</option>
-                                                    <option value="project1">Công trình 1</option>
-                                                    <option value="project2">Công trình 2</option>
-                                                    <option value="project3">Công trình 3</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="other-info">Thông tin khác:</label>
-                                                <input type="text" id="other-info" name="other-info">
-                                                <input type="file" id="file-upload" name="file-upload" multiple>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="button" id="saveBtn">Lưu thông tin</button>
-                                                <button type="button" id="cancelBtn">Hủy bỏ</button>
-                                            </div>
-                                        </form>
+                                        </div>
+                                        <div class="form-start">
+                                            <table style="overflow: auto">
+                                                <thead>
+                                                <tr>
+                                                    <th>TT</th>
+                                                    <th>Hạng mục</th>
+                                                    <th>Nhập thông tin mô tả</th>
+                                                    <th>Nhập dữ liệu</th>
+                                                    <th>Ghi chú</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <!-- Dòng 1 -->
+                                                <tr>
+                                                    <td>01</td>
+                                                    <td>Mã công trình (ID)</td>
+                                                    <td>
+                                                        <div class="select-wrapper">
+                                                            <select id="project-code" name="project-code" class="select">
+                                                                <option>C</option>
+                                                                <option>K</option>
+                                                                <option>CT</option>
+                                                                <option>TB</option>
+                                                                <option>KT</option>
+                                                                <option>CTTK</option>
+                                                                <option>CTK</option>
+                                                            </select>
+                                                            <span>STT:</span>
+                                                            <input id="project-code-num" name="project-code-num" class="input" type="text">
+                                                            <span class="error-message" id="project-code-error"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 2 -->
+                                                <tr>
+                                                    <td>02</td>
+                                                    <td>Tên công trình</td>
+                                                    <td>
+                                                        <input type="text" id="project-name" name="project-name">
+                                                        <span class="error-message" id="project-name-error"></span>
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 3 -->
+                                                <tr>
+                                                    <td>03</td>
+                                                    <td>Vị trí/Địa điểm</td>
+                                                    <td>
+                                                        <input type="text" id="project-location-name" name="project-location-name">
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 4 -->
+                                                <tr>
+                                                    <td></td>
+                                                    <td>Tọa độ</td>
+                                                    <td>
+                                                        <div class="coordinates">
+                                                            <input type="text" placeholder="Tọa độ X" id="project-location-x" name="project-location-x">
+                                                            <input type="text" placeholder="Tọa độ Y" id="project-location-y" name="project-location-y">
+                                                            <span class="error-message" id="project-location-error"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 5 -->
+                                                <tr>
+                                                    <td>04</td>
+                                                    <td>Quy mô</td>
+                                                    <td><input type="text" id="project-scale" name="project-scale"></td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 6 -->
+                                                <tr>
+                                                    <td>05</td>
+                                                    <td>Thiết bị vận hành</td>
+                                                    <td>
+                                                        <input type="text" id="project-equipment" name="project-equipment">
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 7 -->
+                                                <tr>
+                                                    <td>06</td>
+                                                    <td>Công trình liên quan</td>
+                                                    <td>
+                                                        <input type="text"  readonly placeholder="0 công trình" id="selectedProjects" name="selectedProjects">
+                                                    </td>
+                                                    <td>
+                                                        <div class="autocomplete">
+                                                            <input type="text" id="search" placeholder="Tìm kiếm công trình">
+                                                        </div>
+                                                    </td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 9 -->
+                                                <tr>
+                                                    <td>08</td>
+                                                    <td>Thông tin khác</td>
+                                                    <td><input type="text"></td>
+                                                    <td>
+                                                        <div class="info-input-wrapper">
+                                                            <select class="infoType">
+                                                                <option value="link">Link</option>
+                                                                <option value="file">File</option>
+                                                            </select>
+                                                            <input type="text" class="input-link" placeholder="Nhập link">
+                                                            <input type="file" class="input-file" style="display:none;" multiple>
+                                                        </div>
+                                                    </td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 10 -->
+                                                <tr>
+                                                    <td>09</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles" multiple></select>
+                                                        <button onclick="removeSelectedImage()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput" name="imageInput" onchange="updateImageOptions()" multiple>
+                                                    </td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="save-noti">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <!-- Dòng 1 -->
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        Ghi chú: <input type="text">
+                                                    </td>
+                                                    <td>
+                                                        Thông báo tới:
+                                                        <select class="select">
+                                                            <option>Không thông báo</option>
+                                                            <option>Toàn công ty</option>
+                                                            <option>Ban giám đốc</option>
+                                                            <option>Phòng Kế hoạch - kỹ thuật</option>
+                                                            <option>Trà (PTP KHKT)</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <button type="submit" class="butt-can" id="cancelBtn">Hủy</button>
+                                                        <button type="submit" class="butt-sav" id="saveBtn">Lưu lại</button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- The Modal Thong Tin Quan Ly -->
@@ -900,59 +1148,183 @@
                                     <!-- Modal content -->
                                     <div class="modal-content">
                                         <span class="close-4">&times;</span>
-                                        <h2>Thông tin chung</h2>
-                                        <form>
-                                            <div class="form-group">
-                                                <label for="project-code-2">Mã công trình:</label>
-                                                <select id="project-code-2" name="project-code-2">
-                                                    <option value="K">K</option>
-                                                    <option value="TB">TB</option>
-                                                    <option value="KT">KT</option>
-                                                    <option value="C">C</option>
-                                                    <option value="CTTK">CTTK</option>
-                                                </select>
-                                                <input type="text" id="project-code-num-2" name="project-code-num-2" placeholder="Số thứ tự">
-                                                <span class="error-message" id="project-code-error-2"></span>
+                                        <div class="infor-CT">
+                                            <div class="name-CT">Thông tin chung:
+                                                <span class="name-1-CT">Công Trình Kênh Cấp I</span>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="project-name-2">Tên công trình:</label>
-                                                <input type="text" id="project-name-2" name="project-name-1">
-                                                <span class="error-message" id="project-name-error-2"></span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="project-location">Vị trí, địa điểm:</label>
-                                                <input type="text" id="project-location-name-2" name="project-location-name-2" placeholder="Tên địa điểm">
-                                                <input type="text" id="project-location-x-2" name="project-location-x-2" placeholder="Tọa độ X">
-                                                <input type="text" id="project-location-y-2" name="project-location-y-2" placeholder="Tọa độ Y">
-                                                <span class="error-message" id="project-location-error-2"></span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="project-scale-2">Quy mô:</label>
-                                                <input type="text" id="project-scale-2" name="project-scale-2">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="project-equipment-2">Thiết bị:</label>
-                                                <input type="text" id="project-equipment-2" name="project-equipment-2">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="related-projects-2">Công trình liên quan:</label>
-                                                <select id="related-projects-2" name="related-projects-2">
-                                                    <option value="none">Không có</option>
-                                                    <option value="project1">Công trình 1</option>
-                                                    <option value="project2">Công trình 2</option>
-                                                    <option value="project3">Công trình 3</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="other-info-2">Thông tin khác:</label>
-                                                <input type="text" id="other-info-2" name="other-info-2">
-                                                <input type="file" id="file-upload-2" name="file-upload-2" multiple>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="button" id="saveBtn-2">Lưu thông tin</button>
-                                                <button type="button" id="cancelBtn-2">Hủy bỏ</button>
-                                            </div>
-                                        </form>
+                                        </div>
+                                        <div class="form-start">
+                                            <table style="overflow: auto">
+                                                <thead>
+                                                <tr>
+                                                    <th>TT</th>
+                                                    <th>Hạng mục</th>
+                                                    <th>Nhập thông tin mô tả</th>
+                                                    <th>Nhập dữ liệu</th>
+                                                    <th>Ghi chú</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <!-- Dòng 1 -->
+                                                <tr>
+                                                    <td>01</td>
+                                                    <td>Mã công trình (ID)</td>
+                                                    <td>
+                                                        <div class="select-wrapper">
+                                                            <select id="project-code-2" name="project-code-2" class="select">
+                                                                <option>C</option>
+                                                                <option>K</option>
+                                                                <option>CT</option>
+                                                                <option>TB</option>
+                                                                <option>KT</option>
+                                                                <option>CTTK</option>
+                                                                <option>CTK</option>
+                                                            </select>
+                                                            <span>STT:</span>
+                                                            <input id="project-code-num-2" name="project-code-num-2" class="input" type="text">
+                                                            <span class="error-message" id="project-code-error-2"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 2 -->
+                                                <tr>
+                                                    <td>02</td>
+                                                    <td>Tên công trình</td>
+                                                    <td>
+                                                        <input type="text" id="project-name-2" name="project-name-2">
+                                                        <span class="error-message" id="project-name-error-2"></span>
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 3 -->
+                                                <tr>
+                                                    <td>03</td>
+                                                    <td>Vị trí/Địa điểm</td>
+                                                    <td>
+                                                        <input type="text" id="project-location-name-2" name="project-location-name-2">
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 4 -->
+                                                <tr>
+                                                    <td></td>
+                                                    <td>Tọa độ</td>
+                                                    <td>
+                                                        <div class="coordinates">
+                                                            <input type="text" placeholder="Tọa độ X" id="project-location-x-2" name="project-location-x-2">
+                                                            <input type="text" placeholder="Tọa độ Y" id="project-location-y-2" name="project-location-y-2">
+                                                            <span class="error-message" id="project-location-error-2"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 5 -->
+                                                <tr>
+                                                    <td>04</td>
+                                                    <td>Quy mô</td>
+                                                    <td><input type="text" id="project-scale-2" name="project-scale-2"></td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 6 -->
+                                                <tr>
+                                                    <td>05</td>
+                                                    <td>Thiết bị vận hành</td>
+                                                    <td>
+                                                        <input type="text" id="project-equipment-2" name="project-equipment-2">
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 7 -->
+                                                <tr>
+                                                    <td>06</td>
+                                                    <td>Công trình liên quan</td>
+                                                    <td>
+                                                        <input type="text"  readonly placeholder="0 công trình" id="related-projects-2" name="related-projects-2">
+                                                    </td>
+                                                    <td>
+                                                        <div class="autocomplete">
+                                                            <input type="text" id="search-2" placeholder="Tìm kiếm công trình">
+                                                        </div>
+                                                    </td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 9 -->
+                                                <tr>
+                                                    <td>08</td>
+                                                    <td>Thông tin khác</td>
+                                                    <td><input type="text"></td>
+                                                    <td>
+                                                        <div class="info-input-wrapper">
+                                                            <select class="infoType">
+                                                                <option value="link">Link</option>
+                                                                <option value="file">File</option>
+                                                            </select>
+                                                            <input type="text" class="input-link" placeholder="Nhập link">
+                                                            <input type="file" class="input-file" style="display:none;" multiple>
+                                                        </div>
+                                                    </td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 10 -->
+                                                <tr>
+                                                    <td>09</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles-2" multiple></select>
+                                                        <button onclick="removeSelectedImage2()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput-2" name="imageInput" onchange="updateImageOptions2()" multiple>
+                                                    </td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="save-noti">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <!-- Dòng 1 -->
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        Ghi chú: <input type="text">
+                                                    </td>
+                                                    <td>
+                                                        Thông báo tới:
+                                                        <select class="select">
+                                                            <option>Không thông báo</option>
+                                                            <option>Toàn công ty</option>
+                                                            <option>Ban giám đốc</option>
+                                                            <option>Phòng Kế hoạch - kỹ thuật</option>
+                                                            <option>Trà (PTP KHKT)</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <button type="submit" class="butt-can" id="cancelBtn-2">Hủy</button>
+                                                        <button type="submit" class="butt-sav" id="saveBtn-2">Lưu lại</button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- The Modal Thong Tin Quan Ly -->
@@ -1094,59 +1466,183 @@
                                     <!-- Modal content -->
                                     <div class="modal-content">
                                         <span class="close-6">&times;</span>
-                                        <h2>Thông tin chung</h2>
-                                        <form>
-                                            <div class="form-group">
-                                                <label for="project-code-3">Mã công trình:</label>
-                                                <select id="project-code-3" name="project-code-3">
-                                                    <option value="K">K</option>
-                                                    <option value="TB">TB</option>
-                                                    <option value="KT">KT</option>
-                                                    <option value="C">C</option>
-                                                    <option value="CTTK">CTTK</option>
-                                                </select>
-                                                <input type="text" id="project-code-num-3" name="project-code-num-3" placeholder="Số thứ tự">
-                                                <span class="error-message" id="project-code-error-3"></span>
+                                        <div class="infor-CT">
+                                            <div class="name-CT">Thông tin chung:
+                                                <span class="name-1-CT">Công Trình Kênh Tưới Sau TB</span>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="project-name-3">Tên công trình:</label>
-                                                <input type="text" id="project-name-3" name="project-name-3">
-                                                <span class="error-message" id="project-name-error-3"></span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="project-location">Vị trí, địa điểm:</label>
-                                                <input type="text" id="project-location-name-3" name="project-location-name-3" placeholder="Tên địa điểm">
-                                                <input type="text" id="project-location-x-3" name="project-location-x-3" placeholder="Tọa độ X">
-                                                <input type="text" id="project-location-y-3" name="project-location-y-3" placeholder="Tọa độ Y">
-                                                <span class="error-message" id="project-location-error-3"></span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="project-scale-3">Quy mô:</label>
-                                                <input type="text" id="project-scale-3" name="project-scale-3">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="project-equipment-3">Thiết bị:</label>
-                                                <input type="text" id="project-equipment-3" name="project-equipment-3">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="related-projects-3">Công trình liên quan:</label>
-                                                <select id="related-projects-3" name="related-projects-3">
-                                                    <option value="none">Không có</option>
-                                                    <option value="project1">Công trình 1</option>
-                                                    <option value="project2">Công trình 2</option>
-                                                    <option value="project3">Công trình 3</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="other-info-3">Thông tin khác:</label>
-                                                <input type="text" id="other-info-3" name="other-info-3">
-                                                <input type="file" id="file-upload-3" name="file-upload-3" multiple>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="button" id="saveBtn-3">Lưu thông tin</button>
-                                                <button type="button" id="cancelBtn-3">Hủy bỏ</button>
-                                            </div>
-                                        </form>
+                                        </div>
+                                        <div class="form-start">
+                                            <table style="overflow: auto">
+                                                <thead>
+                                                <tr>
+                                                    <th>TT</th>
+                                                    <th>Hạng mục</th>
+                                                    <th>Nhập thông tin mô tả</th>
+                                                    <th>Nhập dữ liệu</th>
+                                                    <th>Ghi chú</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <!-- Dòng 1 -->
+                                                <tr>
+                                                    <td>01</td>
+                                                    <td>Mã công trình (ID)</td>
+                                                    <td>
+                                                        <div class="select-wrapper">
+                                                            <select id="project-code-3" name="project-code-3" class="select">
+                                                                <option>C</option>
+                                                                <option>K</option>
+                                                                <option>CT</option>
+                                                                <option>TB</option>
+                                                                <option>KT</option>
+                                                                <option>CTTK</option>
+                                                                <option>CTK</option>
+                                                            </select>
+                                                            <span>STT:</span>
+                                                            <input id="project-code-num-3" name="project-code-num-3" class="input" type="text">
+                                                            <span class="error-message" id="project-code-error-3"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 2 -->
+                                                <tr>
+                                                    <td>02</td>
+                                                    <td>Tên công trình</td>
+                                                    <td>
+                                                        <input type="text" id="project-name-3" name="project-name-3">
+                                                        <span class="error-message" id="project-name-error-3"></span>
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 3 -->
+                                                <tr>
+                                                    <td>03</td>
+                                                    <td>Vị trí/Địa điểm</td>
+                                                    <td>
+                                                        <input type="text" id="project-location-name-3" name="project-location-name-3">
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 4 -->
+                                                <tr>
+                                                    <td></td>
+                                                    <td>Tọa độ</td>
+                                                    <td>
+                                                        <div class="coordinates">
+                                                            <input type="text" placeholder="Tọa độ X" id="project-location-x-3" name="project-location-x-3">
+                                                            <input type="text" placeholder="Tọa độ Y" id="project-location-y-3" name="project-location-y-3">
+                                                            <span class="error-message" id="project-location-error-3"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 5 -->
+                                                <tr>
+                                                    <td>04</td>
+                                                    <td>Quy mô</td>
+                                                    <td><input type="text" id="project-scale-3" name="project-scale-3"></td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 6 -->
+                                                <tr>
+                                                    <td>05</td>
+                                                    <td>Thiết bị vận hành</td>
+                                                    <td>
+                                                        <input type="text" id="project-equipment-3" name="project-equipment-3">
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 7 -->
+                                                <tr>
+                                                    <td>06</td>
+                                                    <td>Công trình liên quan</td>
+                                                    <td>
+                                                        <input type="text"  readonly placeholder="0 công trình" id="related-projects-3" name="related-projects-3">
+                                                    </td>
+                                                    <td>
+                                                        <div class="autocomplete">
+                                                            <input type="text" id="search-3" placeholder="Tìm kiếm công trình">
+                                                        </div>
+                                                    </td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 9 -->
+                                                <tr>
+                                                    <td>08</td>
+                                                    <td>Thông tin khác</td>
+                                                    <td><input type="text"></td>
+                                                    <td>
+                                                        <div class="info-input-wrapper">
+                                                            <select class="infoType">
+                                                                <option value="link">Link</option>
+                                                                <option value="file">File</option>
+                                                            </select>
+                                                            <input type="text" class="input-link" placeholder="Nhập link">
+                                                            <input type="file" class="input-file" style="display:none;" multiple>
+                                                        </div>
+                                                    </td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 10 -->
+                                                <tr>
+                                                    <td>09</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles-3" multiple></select>
+                                                        <button onclick="removeSelectedImage3()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput-3" name="imageInput" onchange="updateImageOptions3()" multiple>
+                                                    </td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="save-noti">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <!-- Dòng 1 -->
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        Ghi chú: <input type="text">
+                                                    </td>
+                                                    <td>
+                                                        Thông báo tới:
+                                                        <select class="select">
+                                                            <option>Không thông báo</option>
+                                                            <option>Toàn công ty</option>
+                                                            <option>Ban giám đốc</option>
+                                                            <option>Phòng Kế hoạch - kỹ thuật</option>
+                                                            <option>Trà (PTP KHKT)</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <button type="submit" class="butt-can" id="cancelBtn-3">Hủy</button>
+                                                        <button type="submit" class="butt-sav" id="saveBtn-3">Lưu lại</button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- The Modal Thong Tin Quan Ly -->
@@ -1288,59 +1784,183 @@
                                     <!-- Modal content -->
                                     <div class="modal-content">
                                         <span class="close-8">&times;</span>
-                                        <h2>Thông tin chung</h2>
-                                        <form>
-                                            <div class="form-group">
-                                                <label for="project-code-4">Mã công trình:</label>
-                                                <select id="project-code-4" name="project-code-4">
-                                                    <option value="K">K</option>
-                                                    <option value="TB">TB</option>
-                                                    <option value="KT">KT</option>
-                                                    <option value="C">C</option>
-                                                    <option value="CTTK">CTTK</option>
-                                                </select>
-                                                <input type="text" id="project-code-num-4" name="project-code-num-4" placeholder="Số thứ tự">
-                                                <span class="error-message" id="project-code-error-4"></span>
+                                        <div class="infor-CT">
+                                            <div class="name-CT">Thông tin chung:
+                                                <span class="name-1-CT">Công Trình Trên Kênh</span>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="project-name-4">Tên công trình:</label>
-                                                <input type="text" id="project-name-4" name="project-name-4">
-                                                <span class="error-message" id="project-name-error-4"></span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="project-location">Vị trí, địa điểm:</label>
-                                                <input type="text" id="project-location-name-4" name="project-location-name-4" placeholder="Tên địa điểm">
-                                                <input type="text" id="project-location-x-4" name="project-location-x-4" placeholder="Tọa độ X">
-                                                <input type="text" id="project-location-y-4" name="project-location-y-4" placeholder="Tọa độ Y">
-                                                <span class="error-message" id="project-location-error-4"></span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="project-scale-4">Quy mô:</label>
-                                                <input type="text" id="project-scale-4" name="project-scale-4">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="project-equipment-4">Thiết bị:</label>
-                                                <input type="text" id="project-equipment-4" name="project-equipment-4">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="related-projects-4">Công trình liên quan:</label>
-                                                <select id="related-projects-4" name="related-projects-4">
-                                                    <option value="none">Không có</option>
-                                                    <option value="project1">Công trình 1</option>
-                                                    <option value="project2">Công trình 2</option>
-                                                    <option value="project3">Công trình 3</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="other-info-4">Thông tin khác:</label>
-                                                <input type="text" id="other-info-4" name="other-info-4">
-                                                <input type="file" id="file-upload-4" name="file-upload-4" multiple>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="button" id="saveBtn-4">Lưu thông tin</button>
-                                                <button type="button" id="cancelBtn-4">Hủy bỏ</button>
-                                            </div>
-                                        </form>
+                                        </div>
+                                        <div class="form-start">
+                                            <table style="overflow: auto">
+                                                <thead>
+                                                <tr>
+                                                    <th>TT</th>
+                                                    <th>Hạng mục</th>
+                                                    <th>Nhập thông tin mô tả</th>
+                                                    <th>Nhập dữ liệu</th>
+                                                    <th>Ghi chú</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <!-- Dòng 1 -->
+                                                <tr>
+                                                    <td>01</td>
+                                                    <td>Mã công trình (ID)</td>
+                                                    <td>
+                                                        <div class="select-wrapper">
+                                                            <select id="project-code-4" name="project-code-4" class="select">
+                                                                <option>C</option>
+                                                                <option>K</option>
+                                                                <option>CT</option>
+                                                                <option>TB</option>
+                                                                <option>KT</option>
+                                                                <option>CTTK</option>
+                                                                <option>CTK</option>
+                                                            </select>
+                                                            <span>STT:</span>
+                                                            <input id="project-code-num-4" name="project-code-num-4" class="input" type="text">
+                                                            <span class="error-message" id="project-code-error-4"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 2 -->
+                                                <tr>
+                                                    <td>02</td>
+                                                    <td>Tên công trình</td>
+                                                    <td>
+                                                        <input type="text" id="project-name-4" name="project-name-4">
+                                                        <span class="error-message" id="project-name-error-4"></span>
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 3 -->
+                                                <tr>
+                                                    <td>03</td>
+                                                    <td>Vị trí/Địa điểm</td>
+                                                    <td>
+                                                        <input type="text" id="project-location-name-4" name="project-location-name-4">
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 4 -->
+                                                <tr>
+                                                    <td></td>
+                                                    <td>Tọa độ</td>
+                                                    <td>
+                                                        <div class="coordinates">
+                                                            <input type="text" placeholder="Tọa độ X" id="project-location-x-4" name="project-location-x-4">
+                                                            <input type="text" placeholder="Tọa độ Y" id="project-location-y-4" name="project-location-y-4">
+                                                            <span class="error-message" id="project-location-error-4"></span>
+                                                        </div>
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 5 -->
+                                                <tr>
+                                                    <td>04</td>
+                                                    <td>Quy mô</td>
+                                                    <td><input type="text" id="project-scale-4" name="project-scale-4"></td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 6 -->
+                                                <tr>
+                                                    <td>05</td>
+                                                    <td>Thiết bị vận hành</td>
+                                                    <td>
+                                                        <input type="text" id="project-equipment-4" name="project-equipment-4">
+                                                    </td>
+                                                    <td></td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 7 -->
+                                                <tr>
+                                                    <td>06</td>
+                                                    <td>Công trình liên quan</td>
+                                                    <td>
+                                                        <input type="text"  readonly placeholder="0 công trình" id="related-projects-4" name="related-projects-4">
+                                                    </td>
+                                                    <td>
+                                                        <div class="autocomplete">
+                                                            <input type="text" id="search-4" placeholder="Tìm kiếm công trình">
+                                                        </div>
+                                                    </td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 9 -->
+                                                <tr>
+                                                    <td>08</td>
+                                                    <td>Thông tin khác</td>
+                                                    <td><input type="text"></td>
+                                                    <td>
+                                                        <div class="info-input-wrapper">
+                                                            <select class="infoType">
+                                                                <option value="link">Link</option>
+                                                                <option value="file">File</option>
+                                                            </select>
+                                                            <input type="text" class="input-link" placeholder="Nhập link">
+                                                            <input type="file" class="input-file" style="display:none;" multiple>
+                                                        </div>
+                                                    </td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                <!-- Dòng 10 -->
+                                                <tr>
+                                                    <td>09</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles-4" multiple></select>
+                                                        <button onclick="removeSelectedImage4()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput-4" name="imageInput" onchange="updateImageOptions4()" multiple>
+                                                    </td>
+                                                    <td><input type="text"></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="save-noti">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <!-- Dòng 1 -->
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        Ghi chú: <input type="text">
+                                                    </td>
+                                                    <td>
+                                                        Thông báo tới:
+                                                        <select class="select">
+                                                            <option>Không thông báo</option>
+                                                            <option>Toàn công ty</option>
+                                                            <option>Ban giám đốc</option>
+                                                            <option>Phòng Kế hoạch - kỹ thuật</option>
+                                                            <option>Trà (PTP KHKT)</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <button type="submit" class="butt-can" id="cancelBtn-4">Hủy</button>
+                                                        <button type="submit" class="butt-sav" id="saveBtn-4">Lưu lại</button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- The Modal Thong Tin Quan Ly -->

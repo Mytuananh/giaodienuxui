@@ -6,72 +6,175 @@
     <link rel="stylesheet" href="test-2.css">
 </head>
 <body>
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <title>Bảng chat giống Facebook Messenger</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
-</head>
-<body>
-<div class="message-list">
-    <div class="message-item" onclick="openChat('Người dùng 1')">
-        <span>Người dùng 1</span>
-    </div>
-    <div class="message-item" onclick="openChat('Người dùng 2')">
-        <span>Người dùng 2</span>
-    </div>
-    <div class="message-item" onclick="openChat('Người dùng 3')">
-        <span>Người dùng 3</span>
-    </div>
-    <div class="message-item" onclick="openChat('Người dùng 4')">
-        <span>Người dùng 4</span>
-    </div>
-</div>
-<div class="chat-container">
-<div class="chat-wrapper hidden" id="chat-wrapper">
-    <div class="chat-header">
-        <div class="user-info">
-            <img src="avatar1.png" alt="Avatar" class="avatar">
-            <span>Tên người dùng</span>
-            <div class="online-indicator"></div>
-        </div>
-        <button onclick="toggleChat()" class="close-btn">&times;</button>
-    </div>
-    <div class="chat-content">
-        <!-- Thêm các tin nhắn vào đây -->
-        <div class="message received">
-            <div class="message-text">Xin chào!</div>
-            <div class="message-time">10:00 AM, 01-01-2023</div>
-        </div>
-        <div class="message sent">
-            <div class="message-text">Chào bạn!</div>
-            <div class="message-time">10:02 AM, 01-01-2023</div>
-        </div>
-    </div>
-    <div class="chat-input">
-        <button type="button" class="icon-btn">
-            <label for="file-upload">
-                📎
-                <input type="file" id="file-upload" class="hidden" onchange="uploadFile()">
-            </label>
-        </button>
-        <button type="button" class="icon-btn">
-            <label for="image-upload">
-                🖼️
-                <input type="file" id="image-upload" class="hidden" accept="image/*" onchange="uploadImage()">
-            </label>
-        </button>
-        <input type="text" placeholder="Nhập tin nhắn...">
-        <button type="submit" onclick="event.preventDefault(); sendMessage();">Gửi</button>
-    </div>
-</div>
-
-</div>
-</body>
-</html>
-
+<table>
+    <thead>
+    <tr>
+        <th>TT</th>
+        <th>Hạng mục</th>
+        <th>Nhập thông tin mô tả</th>
+        <th>Nhập dữ liệu</th>
+        <th>Ghi chú</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Dòng 1 -->
+    <tr>
+        <td>01</td>
+        <td>Mã công trình (ID)</td>
+        <td>
+            <div class="select-wrapper">
+                <select class="select">
+                    <option>C</option>
+                    <option>K</option>
+                    <option>CT</option>
+                    <option>TB</option>
+                    <option>KT</option>
+                    <option>CTTK</option>
+                    <option>CTK</option>
+                </select>
+                <span>STT:</span>
+                <input class="input" type="text">
+            </div>
+        </td>
+        <td></td>
+        <td><input type="text"></td>
+    </tr>
+    <!-- Dòng 2 -->
+    <tr>
+        <td>02</td>
+        <td>Tên công trình</td>
+        <td><input type="text"></td>
+        <td></td>
+        <td><input type="text"></td>
+    </tr>
+    <!-- Dòng 3 -->
+    <tr>
+        <td>03</td>
+        <td>Vị trí/Địa điểm</td>
+        <td><input type="text"></td>
+        <td></td>
+        <td><input type="text"></td>
+    </tr>
+    <!-- Dòng 4 -->
+    <tr>
+        <td></td>
+        <td>Tọa độ</td>
+        <td>
+            <div>
+                <label for="coordX">Tọa độ X:</label>
+                <input type="text" id="coordX">
+            </div>
+            <div>
+                <label for="coordY">Tọa độ Y:</label>
+                <input type="text" id="coordY">
+            </div>
+        </td>
+        <td></td>
+        <td><input type="text"></td>
+    </tr>
+    <!-- Dòng 5 -->
+    <tr>
+        <td>04</td>
+        <td>Quy mô</td>
+        <td><input type="text"></td>
+        <td></td>
+        <td><input type="text"></td>
+    </tr>
+    <!-- Dòng 6 -->
+    <tr>
+        <td>05</td>
+        <td>Thiết bị vận hành</td>
+        <td><input type="text"></td>
+        <td></td>
+        <td><input type="text"></td>
+    </tr>
+    <!-- Dòng 7 -->
+    <tr>
+        <td>06</td>
+        <td>Công trình liên quan</td>
+        <td><input type="text" readonly value="02 công trình"></td>
+        <td><input type="search" placeholder="Tìm kiếm" id="searchInput"></td>
+        <td><input type="text"></td>
+    </tr>
+    <!-- Dòng 8 -->
+    <tr>
+        <td>07</td>
+        <td>Năm XD/nâng cấp</td>
+        <td><input type="text"></td>
+        <td></td>
+        <td><input type="text"></td>
+    </tr>
+    <!-- Dòng 9 -->
+    <tr>
+        <td>08</td>
+        <td>Thông tin khác</td>
+        <td><input type="text"></td>
+        <td>
+            <div class="info-input-wrapper">
+                <select id="infoType">
+                    <option value="link">Link</option>
+                    <option value="file">File</option>
+                </select>
+                <input type="text" class="input-link" id="infoInput" placeholder="Nhập link">
+                <input type="file" class="input-file" id="infoFile" style="display:none;" multiple>
+            </div>
+        </td>
+        <td><input type="text"></td>
+    </tr>
+    <!-- Dòng 10 -->
+    <tr>
+        <td></td>
+        <td>Hình ảnh công trình</td>
+        <td>
+            <select id="imageList">
+                <!-- Các option sẽ được thêm vào sau khi tải lên ảnh -->
+            </select>
+        </td>
+        <td><input type="file" id="imageUpload" multiple></td>
+        <td><input type="text"></td>
+    </tr>
+    </tbody>
+</table>
+<div class="save-noti">
+    <table>
+        <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Dòng 1 -->
+        <tr>
+            <td></td>
+            <td colspan="3"></td>
+            <td>
+                <div class="select-wrapper">
+                    <span>Ghi chú:</span>
+                    <input type="text">
+                </div>
+            </td>
+            <td>
+                <div class="select-wrapper">
+                    <label> Thông báo tới:
+                        <select class="select">
+                            <option>Không thông báo</option>
+                            <option>Toàn công ty</option>
+                            <option>Ban giám đốc</option>
+                            <option>Phòng Kế hoạch - kỹ thuật</option>
+                            <option>Trà (PTP KHKT)</option>
+                        </select></label>
+                </div></td>
+            <td>
+                <button type="submit">Hủy</button>
+                <button type="submit">Lưu lại</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 <script src="test-2.js"></script>
 </body>
 </html>

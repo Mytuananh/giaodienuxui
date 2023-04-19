@@ -6,7 +6,6 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4);
 }
 
 
@@ -15,15 +14,178 @@
 .infor-CT{
     width: 100%;
     height: 10%;
-    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
 }
 .form-start{
     width: 100%;
-    height: 90%;
-    border: 1px solid;
+    height: 70%;
 }
 .name-CT{
-    width: 80%;
+    width: 100%;
     height: 100%;
-    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name-1-CT{
+    background-color: #FFD5AE;
+    border: 0.5px solid #B6BACC;
+    border-radius: 5px;
+    width: 30vh;
+    text-align: center;
+    height: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+td, tr {
+    border: none;
+}
+th {
+    color: #808080;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+input, select {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 0.5px solid #B6BACC;
+    border-radius: 5px;
+}
+
+.select-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.select-wrapper span{
+   right: 0;
+}
+.select-wrapper .select {
+    width: 40%;
+}
+
+.select-wrapper .input {
+    width: 50%;
+}
+
+.info-input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-input-wrapper .input-file {
+    display: none;
+}
+
+.select-wrapper1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select-wrapper1 .select {
+    width: 40%;
+}
+.select-wrapper1 .input {
+    width: 40%;
+}
+.info-input-wrapper1 .input-file {
+    display: none;
+}
+.coordinates {
+    display: flex;
+    justify-content: space-between;
+}
+
+.coordinates input {
+    width: 48%;
+}
+
+.autocomplete {
+    position: relative;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+    background-color: #e9e9e9;
+}
+.save-noti{
+    width: 100%;
+    height: 20%;
+}
+table td:nth-child(2) {
+    text-align: left;
+}
+#infoType{
+    width: 20%;
+}
+.butt-can{
+    width: 30%;
+    height: 3vh;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+}
+.butt-can:hover{
+    background-color: #4B5580;
+    color: white;
+}
+.butt-sav{
+    width: 30%;
+    height: 3vh;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+}
+.butt-sav:hover{
+    background-color: #4B5580;
+    color: white;
 }
