@@ -104,8 +104,21 @@ body{
     margin-left: 20%;
     cursor: pointer;
 }
+.border-mess{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #4B5580B2;
+    border-radius: 50px;
+    width: 100%;
+    height: 100%;
+    background-color: #d3f8f8;
+}
+.border-mess i{
+transform: scale(60%);
+}
 .messenger-icon {
-    position: relative;
+    position: relative
 }
 .messenger-icon:hover {
     scale: 105%;
@@ -133,6 +146,19 @@ body{
     justify-content: center;
     font-size: 3vh;
     cursor: pointer;
+}
+.border-notification{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #4B5580B2;
+    border-radius: 50px;
+    width: 100%;
+    height: 100%;
+    background-color: #d3f8f8;
+}
+.border-notification i{
+    transform: scale(60%);
 }
 .ava{
     width: 10%;
@@ -169,7 +195,7 @@ body{
     cursor: pointer;
 }
 .side-menu:hover{
-    scale: 110%;
+    scale: 105%;
 }
 .body-qlct{
     width: 100%;
@@ -280,7 +306,7 @@ nav i {
 }
 .tabs {
     width: 100%;
-    height: 15%;
+    height: 12%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -447,6 +473,7 @@ nav i {
     text-align: center;
     position: relative;
     margin-right: 0;
+    display: inline-block;
 }
 .m-t-3 i{
     position: absolute;
@@ -484,6 +511,7 @@ nav i {
     background-color: white;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     border: 1px white;
+    padding-left: 10px;
 }
 .content-qlct{
     width: 100%;
@@ -1413,10 +1441,6 @@ tr:hover{
 }
 
 /*------------------------------------------------------menu-ellipsis-----------------------------------------------*/
-.ellipsis-menu {
-    position: relative;
-    display: inline-block;
-}
 
 .menu-ellipsis1 {
     display: none;
@@ -1444,4 +1468,14 @@ tr:hover{
 
 .menu-item-ell:hover {
     background-color: #f1f1f1;
+}
+/*----------------------------------------------------------fix-------------------------------------------------------*/
+
+.links {
+    height: 3%;
+    width: 99%;
+    margin-left: 1%;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
 }
