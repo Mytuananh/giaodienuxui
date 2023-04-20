@@ -516,6 +516,7 @@ nav i {
 }
 .m-t-3 i:hover{
     scale: 105%;
+
 }
 .search-boxx {
     display: flex;
@@ -1041,7 +1042,7 @@ table td:nth-child(2) {
     border-radius: 5px;
     position: absolute;
     bottom: 0;
-    right: 10vh;
+    margin-right: 150px ;
 }
 
 .chat-header {
@@ -1333,8 +1334,8 @@ table td:nth-child(2) {
     background-color: #F9F7F7;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     display: none;
-    width: 26vh;
-    height: 37vh;
+    width: 35vh;
+    height: 39vh;
     overflow: auto;
 }
 .new-mess{
@@ -1344,8 +1345,8 @@ table td:nth-child(2) {
     background-color: #F9F7F7;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     display: none;
-    width: 26vh;
-    height: 37vh;
+    width: 35vh;
+    height: 39vh;
     overflow: auto;
 }
 .search-box input {
@@ -1660,7 +1661,8 @@ table td:nth-child(2) {
 }
 
 .menu-item-ell:hover {
-    background-color: #f1f1f1;
+    background-color: #2956c0;
+    color: white;
 }
 .menu-item-ell-nav {
     color: white;
