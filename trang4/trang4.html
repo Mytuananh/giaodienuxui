@@ -6,6 +6,9 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="trang4.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaOulQACiJzBfqumbsqg_-vKha8fCnL-s"
+            async defer></script>
+
 
 </head>
 <body>
@@ -522,7 +525,7 @@
                         <td>03</td>
                         <td style="text-align: left">Vị trí/địa điểm</td>
                         <td>Tả Văn Úc - xã Quang Hưng, huyện An Lão</td>
-                        <td onclick="Hp()" style="cursor: pointer; font-style: italic; color: #3600D0">Xem Gmaps</td>
+                        <td style="cursor: pointer; font-style: italic; color: #3600D0" id="maps-link">Xem Gmaps</td>
                     </tr>
                     <tr>
                         <td>04</td>
@@ -611,13 +614,75 @@
                     <div class="tab-infor" id="histories-tab">Lịch sử sửa chữa</div>
                 </div>
                 <div class="tab-content-infor active" id="file-content">
-
+                    <div class="tit-tit-1">Mục 08: Thông tin khác</div>
+                    <div class="tit-tit-2">
+                        <div class="tit-2-2">
+                            <div class="tit-img">
+                                <div class="border-tit-img">PDF</div>
+                            </div>
+                            <div class="tit-cont">Quyết định 3802/QĐ-UBND v/v phê duyệt thuyết minh dự án KHCN cấp thành phố DA873</div>
+                            <div class="tit-icon">
+                                <div class="tit-watch">
+                                    <div class="icon-1-tit"><i class="fas fa-eye" style="color: #4B5580"></i></div>
+                                    <div class="icon-1-tit-cont">Xem</div>
+                                </div>
+                                <div class="tit-down">
+                                    <div class="icon-1-tit"><i class="fas fa-arrow-circle-down" style="color: #4B5580"></i></div>
+                                    <div class="icon-1-tit-cont">Tải về</div>
+                                </div>
+                            </div>
+                            <div class="tit-user">
+                                <div class="tit-user-one">Nguyễn Anh Tuấn</div>
+                                <div class="tit-user-time">15:02 ngày 10/3/2023</div>
+                            </div>
+                        </div>
+                        <div class="tit-2-2">
+                            <div class="tit-img">
+                                <div class="border-tit-img-1">Word</div>
+                            </div>
+                            <div class="tit-cont">Quyết định 3802/QĐ-UBND v/v phê duyệt thuyết minh dự án KHCN cấp thành phố DA873</div>
+                            <div class="tit-icon">
+                                <div class="tit-watch">
+                                    <div class="icon-1-tit"><i class="fas fa-eye" style="color: #4B5580"></i></div>
+                                    <div class="icon-1-tit-cont">Xem</div>
+                                </div>
+                                <div class="tit-down">
+                                    <div class="icon-1-tit"><i class="fas fa-arrow-circle-down" style="color: #4B5580"></i></div>
+                                    <div class="icon-1-tit-cont">Tải về</div>
+                                </div>
+                            </div>
+                            <div class="tit-user">
+                                <div class="tit-user-one">Nguyễn Anh Tuấn</div>
+                                <div class="tit-user-time">15:02 ngày 10/3/2023</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="tab-content-infor" id="image-content">
+                    <div class="content-file">
+                        <div class="content-file-b">
+                            <div class="carousel-nav">
+                                <button class="prev">&#10094;</button>
+                                <div class="image-counter"></div>
+                                <button class="next">&#10095;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-file-1">
+                        <div class="carousel-container">
+                            <div class="carousel-slide">
+                                <img src="anh4/cau%20doi.jpg" alt="Image 1">
+                                <img src="anh4/DSC_0027.jpg" alt="Image 2">
+                                <img src="anh4/z3927205997615_915fe7224ed9c946315a7da6a635629d.jpg" alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="tab-content-infor" id="link-content">
                 </div>
                 <div class="tab-content-infor" id="map-content">
+                    <div class="map-tit">Google My Maps</div>
+                    <div class="map-link" id="map-link"></div>
                 </div>
                 <div class="tab-content-infor" id="shares-content">
                 </div>
@@ -635,5 +700,6 @@
 <script src="trang4-menu-ellipsis.js"></script>
 <script src="trang4-menu-new-mess.js"></script>
 <script src="trang4-mess.js"></script>
+<script src="trang4-map.js"></script>
 </body>
 </html>
