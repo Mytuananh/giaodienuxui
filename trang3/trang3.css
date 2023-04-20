@@ -600,6 +600,19 @@ table input, select {
     width: 50%;
 }
 
+.select-wrapper2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.select-wrapper2 span{
+    right: 0;
+}
+.select-wrapper2 .select {
+    width: 100%;
+}
+
+
 .info-input-wrapper {
     display: flex;
     justify-content: space-between;
@@ -840,15 +853,15 @@ table td:nth-child(2) {
 }
 
 /* Close Button */
-.modal .close,.modal .close-1,.modal .close-2,.modal .close-3,.modal .close-4, .modal .close-5, .modal .close-6, .modal .close-7,.modal .close-8,.modal .close-9 {
+.modal .close,.modal .close-1,.modal .close-2,.modal .close-3,.modal .close-4, .modal .close-5, .modal .close-6, .modal .close-7,.modal .close-8,.modal .close-9,.modal .close-10,.modal .close-11,.modal .close-12,.modal .close-13,.modal .close-14 {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
 }
-.modal.close:hover,.modal.close-1:hover,.modal.close-2:hover, .modal.close-3:hover, .modal.close-4:hover, .modal.close-5:hover, .modal.close-6:hover, .modal.close-7:hover, .modal.close-8:hover, .modal.close-9:hover,
-.modal.close:focus,.modal.close-1:focus,.modal.close-2:focus, .modal.close-3:focus,.modal.close-4:focus, .modal.close-5:focus, .modal.close-6:focus, .modal.close-7:focus, .modal.close-8:focus, .modal.close-9:focus {
+.modal.close:hover,.modal.close-1:hover,.modal.close-2:hover, .modal.close-3:hover, .modal.close-4:hover, .modal.close-5:hover, .modal.close-6:hover, .modal.close-7:hover, .modal.close-8:hover, .modal.close-9:hover, .modal.close-10:hover,.modal.close-11:hover,.modal.close-12:hover,.modal.close-13:hover,.modal.close-14:hover,
+.modal.close:focus,.modal.close-1:focus,.modal.close-2:focus, .modal.close-3:focus,.modal.close-4:focus, .modal.close-5:focus, .modal.close-6:focus, .modal.close-7:focus, .modal.close-8:focus, .modal.close-9:focus, .modal.close-10:focus, .modal.close-11:focus,.modal.close-12:focus,.modal.close-13:focus,.modal.close-14:focus  {
     color: black;
     text-decoration: none;
     cursor: pointer;

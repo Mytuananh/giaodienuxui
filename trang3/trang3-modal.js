@@ -18,6 +18,11 @@ const modal6 = document.getElementById('myModal-3');
 const modal7 = document.getElementById('myModal4');
 const modal8 = document.getElementById('myModal-4');
 const modal9 = document.getElementById('myModal5');
+const modal10 = document.getElementById('myModal6');
+const modal11 = document.getElementById('myModal7');
+const modal12 = document.getElementById('myModal8');
+const modal13= document.getElementById('myModal9');
+const modal14= document.getElementById('myModal10');
 // Get the <span> element that closes the modal
 const span = document.getElementsByClassName("close")[0];
 const span1 = document.getElementsByClassName("close-1")[0];
@@ -29,6 +34,11 @@ const span6 = document.getElementsByClassName("close-6")[0];
 const span7 = document.getElementsByClassName("close-7")[0];
 const span8 = document.getElementsByClassName("close-8")[0];
 const span9 = document.getElementsByClassName("close-9")[0];
+const span10 = document.getElementsByClassName("close-10")[0];
+const span11 = document.getElementsByClassName("close-11")[0];
+const span12 = document.getElementsByClassName("close-12")[0];
+const span13 = document.getElementsByClassName("close-13")[0];
+const span14 = document.getElementsByClassName("close-14")[0];
 // Get the buttons to save and cancel changes
 const saveBtn = document.getElementById("saveBtn");
 const cancelBtn = document.getElementById("cancelBtn");
@@ -50,6 +60,16 @@ const saveBtn8 = document.getElementById("saveBtn-4");
 const cancelBtn8 = document.getElementById("cancelBtn-4");
 const saveBtn9 = document.getElementById("saveBtn1-5");
 const cancelBtn9 = document.getElementById("cancelBtn1-5");
+const cancelBtnHs = document.getElementById("cancelBtn-hs");
+const saveBtnHS = document.getElementById("saveBtn1-hs");
+const cancelBtnHs1 = document.getElementById("cancelBtn-hs-1");
+const saveBtnHS1 = document.getElementById("saveBtn1-hs-1");
+const cancelBtnHs2 = document.getElementById("cancelBtn-hs-2");
+const saveBtnHS2 = document.getElementById("saveBtn1-hs-2");
+const cancelBtnHs3 = document.getElementById("cancelBtn-hs-3");
+const saveBtnHS3 = document.getElementById("saveBtn1-hs-3");
+const cancelBtnHs4 = document.getElementById("cancelBtn-hs-4");
+const saveBtnHS4 = document.getElementById("saveBtn1-hs-4");
 // Get the form and all input fields
 const form = document.querySelector("form");
 const inputFields = form.querySelectorAll("input, select");
@@ -65,26 +85,31 @@ addNewBtn.addEventListener('click', function () {
     functionList.style.display = "block";
     modal.style.display = "none";
     modal1.style.display = "none";
+    modal11.style.display = "none";
 });
 addNewBtn1.addEventListener('click', function () {
     functionList1.style.display = "block";
     modal2.style.display = "none";
     modal3.style.display = "none";
+    modal10.style.display = "none";
 });
 addNewBtn2.addEventListener('click', function () {
     functionList2.style.display = "block";
     modal4.style.display = "none";
     modal5.style.display = "none";
+    modal12.style.display = "none";
 });
 addNewBtn3.addEventListener('click', function () {
     functionList3.style.display = "block";
     modal6.style.display = "none";
     modal7.style.display = "none";
+    modal13.style.display = "none";
 });
 addNewBtn4.addEventListener('click', function () {
     functionList4.style.display = "block";
     modal8.style.display = "none";
     modal9.style.display = "none";
+    modal14.style.display = "none";
 });
 // Hide the function list when any function is clicked, except for "thongTinChung", and show the modal
 functionList.addEventListener('click', function (event) {
@@ -93,11 +118,19 @@ functionList.addEventListener('click', function (event) {
         functionList.style.display = "none";
         modal1.style.display = "none";
         modal.style.display = "block"
+        modal11.style.display = "none";
     }
     if (functionName === "thongTinQuanLy") {
+        modal11.style.display = "none";
         modal.style.display = 'none';
         functionList.style.display = "none";
         modal1.style.display = "block"
+    }
+    if (functionName === "hoSoCongTrinh") {
+        modal.style.display = 'none';
+        functionList.style.display = "none";
+        modal1.style.display = "none"
+        modal11.style.display = "block";
     }
 });
 functionList1.addEventListener('click', function (event) {
@@ -106,11 +139,19 @@ functionList1.addEventListener('click', function (event) {
         functionList1.style.display = "none";
         modal3.style.display = "none";
         modal2.style.display = "block"
+        modal10.style.display = "none";
     }
     if (functionName === "thongTinQuanLy") {
         modal2.style.display = 'none';
         functionList1.style.display = "none";
         modal3.style.display = "block"
+        modal10.style.display = "none";
+    }
+    if (functionName === "hoSoCongTrinh") {
+        modal2.style.display = 'none';
+        functionList1.style.display = "none";
+        modal3.style.display = "none"
+        modal10.style.display = "block";
     }
 });
 functionList2.addEventListener('click', function (event) {
@@ -119,11 +160,19 @@ functionList2.addEventListener('click', function (event) {
         functionList2.style.display = "none";
         modal5.style.display = "none";
         modal4.style.display = "block"
+        modal12.style.display = "none";
     }
     if (functionName === "thongTinQuanLy") {
         modal4.style.display = 'none';
         functionList2.style.display = "none";
         modal5.style.display = "block"
+        modal12.style.display = "none";
+    }
+    if (functionName === "hoSoCongTrinh") {
+        modal4.style.display = 'none';
+        functionList2.style.display = "none";
+        modal5.style.display = "none"
+        modal12.style.display = "block";
     }
 });
 functionList3.addEventListener('click', function (event) {
@@ -132,11 +181,19 @@ functionList3.addEventListener('click', function (event) {
         functionList3.style.display = "none";
         modal7.style.display = "none";
         modal6.style.display = "block"
+        modal13.style.display = "none";
     }
     if (functionName === "thongTinQuanLy") {
         modal6.style.display = 'none';
         functionList3.style.display = "none";
         modal7.style.display = "block"
+        modal13.style.display = "none";
+    }
+    if (functionName === "hoSoCongTrinh") {
+        modal6.style.display = 'none';
+        functionList3.style.display = "none";
+        modal7.style.display = "none"
+        modal13.style.display = "block";
     }
 });
 functionList4.addEventListener('click', function (event) {
@@ -145,11 +202,19 @@ functionList4.addEventListener('click', function (event) {
         functionList4.style.display = "none";
         modal9.style.display = "none";
         modal8.style.display = "block"
+        modal14.style.display = "none";
     }
     if (functionName === "thongTinQuanLy") {
         modal8.style.display = 'none';
         functionList4.style.display = "none";
         modal9.style.display = "block"
+        modal14.style.display = "none";
+    }
+    if (functionName === "hoSoCongTrinh") {
+        modal8.style.display = 'none';
+        functionList4.style.display = "none";
+        modal9.style.display = "none"
+        modal14.style.display = "block";
     }
 });
 // Get the error message elements
@@ -157,26 +222,51 @@ const projectCodeError = document.getElementById("project-code-error");
 const projectNameError = document.getElementById("project-name-error");
 const projectLocationError = document.getElementById("project-location-error");
 const projectHistoryError = document.getElementById("project-history-error");
+const projectCodeHSError = document.getElementById("project-code-error-hs");
+const projectNameHsError = document.getElementById("project-name-error-hs");
+const projectLocationNameHsError = document.getElementById("project-location-name-error-hs");
+const projectLocationHsError = document.getElementById("project-location-error-hs");
+const projectDvlhsError = document.getElementById("project-dvlhs-error-hs");
 
 const projectCodeError1 = document.getElementById("project-code-error-1");
 const projectNameError1 = document.getElementById("project-name-error-1");
 const projectLocationError1 = document.getElementById("project-location-error-1");
 const projectHistoryError1 = document.getElementById("project-history-error-1");
+const projectCodeHSError1 = document.getElementById("project-code-error-hs-1");
+const projectNameHsError1 = document.getElementById("project-name-error-hs-1");
+const projectLocationNameHsError1 = document.getElementById("project-location-name-error-hs-1");
+const projectLocationHsError1 = document.getElementById("project-location-error-hs-1");
+const projectDvlhsError1 = document.getElementById("project-dvlhs-error-hs-1");
 
 const projectCodeError2 = document.getElementById("project-code-error-2");
 const projectNameError2 = document.getElementById("project-name-error-2");
 const projectLocationError2 = document.getElementById("project-location-error-2");
 const projectHistoryError2 = document.getElementById("project-history-error-2");
+const projectCodeHSError2 = document.getElementById("project-code-error-hs-2");
+const projectNameHsError2 = document.getElementById("project-name-error-hs-2");
+const projectLocationNameHsError2 = document.getElementById("project-location-name-error-hs-2");
+const projectLocationHsError2 = document.getElementById("project-location-error-hs-2");
+const projectDvlhsError2 = document.getElementById("project-dvlhs-error-hs-2");
 
 const projectCodeError3 = document.getElementById("project-code-error-3");
 const projectNameError3 = document.getElementById("project-name-error-3");
 const projectLocationError3 = document.getElementById("project-location-error-3");
 const projectHistoryError3 = document.getElementById("project-history-error-3");
+const projectCodeHSError3 = document.getElementById("project-code-error-hs-3");
+const projectNameHsError3 = document.getElementById("project-name-error-hs-3");
+const projectLocationNameHsError3 = document.getElementById("project-location-name-error-hs-3");
+const projectLocationHsError3 = document.getElementById("project-location-error-hs-3");
+const projectDvlhsError3 = document.getElementById("project-dvlhs-error-hs-3");
 
 const projectCodeError4 = document.getElementById("project-code-error-4");
 const projectNameError4 = document.getElementById("project-name-error-4");
 const projectLocationError4 = document.getElementById("project-location-error-4");
 const projectHistoryError4 = document.getElementById("project-history-error-4");
+const projectCodeHSError4 = document.getElementById("project-code-error-hs-4");
+const projectNameHsError4 = document.getElementById("project-name-error-hs-4");
+const projectLocationNameHsError4 = document.getElementById("project-location-name-error-hs-4");
+const projectLocationHsError4 = document.getElementById("project-location-error-hs-4");
+const projectDvlhsError4 = document.getElementById("project-dvlhs-error-hs-4");
 // Function to clear all input fields in the form
 function clearFormInputs() {
     inputFields.forEach((field) => {
@@ -235,7 +325,42 @@ function validateFormInputs() {
     } else {
         projectHistoryError.textContent = "";
     }
-
+    const projectCodeHSErrorValue1 = document.getElementById("project-code-hs-1").value;
+    if (projectCodeHSErrorValue1 === "") {
+        projectCodeHSError1.textContent = "Chưa nhập mã hồ sơ";
+        isValid = false;
+    } else {
+        projectCodeHSError1.textContent = "";
+    }
+    const projectNameHsErrorValue1 = document.getElementById("project-name-hs-1").value;
+    if (projectNameHsErrorValue1 === "") {
+        projectNameHsError1.textContent = "Chưa nhập tên hồ sơ công trình";
+        isValid = false;
+    } else {
+        projectNameHsError1.textContent = "";
+    }
+    const projectLocationNameHsErrorValue1 = document.getElementById("project-location-name-hs-1").value;
+    if (projectLocationNameHsErrorValue1 === "") {
+        projectLocationNameHsError1.textContent = "Chưa điền địa điểm công trình";
+        isValid = false;
+    } else {
+        projectLocationNameHsError1.textContent = "";
+    }
+    const projectLocationHsErrorValueX1 = document.getElementById("project-location-x-hs-1").value;
+    const projectLocationHsErrorValueY1 = document.getElementById("project-location-y-hs-1").value;
+    if (projectLocationHsErrorValueX1 === "" || projectLocationHsErrorValueY1 === "") {
+        projectLocationHsError1.textContent = "Chưa nhập tọa độ";
+        isValid = false;
+    } else {
+        projectLocationHsError1.textContent = "";
+    }
+    const projectDvlhsErrorValue1 = document.getElementById("project-dvlhs-hs-1").value;
+    if (projectDvlhsErrorValue1 === "") {
+        projectDvlhsError1.textContent =  "Chưa nhập đơn vị lập hồ sơ";
+        isValid = false;
+    } else {
+        projectDvlhsError1.textContent =  "";
+    }
     return isValid;
 }
 function validateFormInputs1() {
@@ -288,7 +413,42 @@ function validateFormInputs1() {
     } else {
         projectHistoryError1.textContent = "";
     }
-
+    const projectCodeHSErrorValue = document.getElementById("project-code-hs").value;
+    if (projectCodeHSErrorValue === "") {
+        projectCodeHSError.textContent = "Chưa nhập mã hồ sơ";
+        isValid = false;
+    } else {
+        projectCodeHSError.textContent = "";
+    }
+    const projectNameHsErrorValue = document.getElementById("project-name-hs").value;
+    if (projectNameHsErrorValue === "") {
+        projectNameHsError.textContent = "Chưa nhập tên hồ sơ công trình";
+        isValid = false;
+    } else {
+        projectNameHsError.textContent = "";
+    }
+    const projectLocationNameHsErrorValue = document.getElementById("project-location-name-hs").value;
+    if (projectLocationNameHsErrorValue === "") {
+        projectLocationNameHsError.textContent = "Chưa điền địa điểm công trình";
+        isValid = false;
+    } else {
+        projectLocationNameHsError.textContent = "";
+    }
+    const projectLocationHsErrorValueX = document.getElementById("project-location-x-hs").value;
+    const projectLocationHsErrorValueY = document.getElementById("project-location-y-hs").value;
+    if (projectLocationHsErrorValueX === "" || projectLocationHsErrorValueY === "") {
+        projectLocationHsError.textContent = "Chưa nhập tọa độ";
+        isValid = false;
+    } else {
+        projectLocationHsError.textContent = "";
+    }
+    const projectDvlhsErrorValue = document.getElementById("project-dvlhs-hs").value;
+    if (projectDvlhsErrorValue === "") {
+        projectDvlhsError.textContent =  "Chưa nhập đơn vị lập hồ sơ";
+        isValid = false;
+    } else {
+        projectDvlhsError.textContent =  "";
+    }
     return isValid;
 }
 function validateFormInputs2() {
@@ -339,7 +499,42 @@ function validateFormInputs2() {
     } else {
         projectHistoryError2.textContent = "";
     }
-
+    const projectCodeHSErrorValue2 = document.getElementById("project-code-hs-2").value;
+    if (projectCodeHSErrorValue2 === "") {
+        projectCodeHSError2.textContent = "Chưa nhập mã hồ sơ";
+        isValid = false;
+    } else {
+        projectCodeHSError2.textContent = "";
+    }
+    const projectNameHsErrorValue2 = document.getElementById("project-name-hs-2").value;
+    if (projectNameHsErrorValue2 === "") {
+        projectNameHsError2.textContent = "Chưa nhập tên hồ sơ công trình";
+        isValid = false;
+    } else {
+        projectNameHsError2.textContent = "";
+    }
+    const projectLocationNameHsErrorValue2 = document.getElementById("project-location-name-hs-2").value;
+    if (projectLocationNameHsErrorValue2 === "") {
+        projectLocationNameHsError2.textContent = "Chưa điền địa điểm công trình";
+        isValid = false;
+    } else {
+        projectLocationNameHsError2.textContent = "";
+    }
+    const projectLocationHsErrorValueX2 = document.getElementById("project-location-x-hs-2").value;
+    const projectLocationHsErrorValueY2 = document.getElementById("project-location-y-hs-2").value;
+    if (projectLocationHsErrorValueX2 === "" || projectLocationHsErrorValueY2 === "") {
+        projectLocationHsError2.textContent = "Chưa nhập tọa độ";
+        isValid = false;
+    } else {
+        projectLocationHsError2.textContent = "";
+    }
+    const projectDvlhsErrorValue2 = document.getElementById("project-dvlhs-hs-2").value;
+    if (projectDvlhsErrorValue2 === "") {
+        projectDvlhsError2.textContent =  "Chưa nhập đơn vị lập hồ sơ";
+        isValid = false;
+    } else {
+        projectDvlhsError2.textContent =  "";
+    }
     return isValid;
 }
 function validateFormInputs3() {
@@ -390,7 +585,42 @@ function validateFormInputs3() {
     } else {
         projectHistoryError3.textContent = "";
     }
-
+    const projectCodeHSErrorValue3 = document.getElementById("project-code-hs-3").value;
+    if (projectCodeHSErrorValue3 === "") {
+        projectCodeHSError3.textContent = "Chưa nhập mã hồ sơ";
+        isValid = false;
+    } else {
+        projectCodeHSError3.textContent = "";
+    }
+    const projectNameHsErrorValue3 = document.getElementById("project-name-hs-3").value;
+    if (projectNameHsErrorValue3 === "") {
+        projectNameHsError3.textContent = "Chưa nhập tên hồ sơ công trình";
+        isValid = false;
+    } else {
+        projectNameHsError3.textContent = "";
+    }
+    const projectLocationNameHsErrorValue3 = document.getElementById("project-location-name-hs-3").value;
+    if (projectLocationNameHsErrorValue3 === "") {
+        projectLocationNameHsError3.textContent = "Chưa điền địa điểm công trình";
+        isValid = false;
+    } else {
+        projectLocationNameHsError3.textContent = "";
+    }
+    const projectLocationHsErrorValueX3 = document.getElementById("project-location-x-hs-3").value;
+    const projectLocationHsErrorValueY3 = document.getElementById("project-location-y-hs-3").value;
+    if (projectLocationHsErrorValueX3 === "" || projectLocationHsErrorValueY3 === "") {
+        projectLocationHsError3.textContent = "Chưa nhập tọa độ";
+        isValid = false;
+    } else {
+        projectLocationHsError3.textContent = "";
+    }
+    const projectDvlhsErrorValue3 = document.getElementById("project-dvlhs-hs-3").value;
+    if (projectDvlhsErrorValue3 === "") {
+        projectDvlhsError3.textContent =  "Chưa nhập đơn vị lập hồ sơ";
+        isValid = false;
+    } else {
+        projectDvlhsError3.textContent =  "";
+    }
     return isValid;
 }
 function validateFormInputs4() {
@@ -440,6 +670,42 @@ function validateFormInputs4() {
         isValid = false;
     } else {
         projectHistoryError4.textContent = "";
+    }
+    const projectCodeHSErrorValue4 = document.getElementById("project-code-hs-4").value;
+    if (projectCodeHSErrorValue4 === "") {
+        projectCodeHSError4.textContent = "Chưa nhập mã hồ sơ";
+        isValid = false;
+    } else {
+        projectCodeHSError4.textContent = "";
+    }
+    const projectNameHsErrorValue4 = document.getElementById("project-name-hs-4").value;
+    if (projectNameHsErrorValue4 === "") {
+        projectNameHsError4.textContent = "Chưa nhập tên hồ sơ công trình";
+        isValid = false;
+    } else {
+        projectNameHsError4.textContent = "";
+    }
+    const projectLocationNameHsErrorValue4 = document.getElementById("project-location-name-hs-4").value;
+    if (projectLocationNameHsErrorValue4 === "") {
+        projectLocationNameHsError4.textContent = "Chưa điền địa điểm công trình";
+        isValid = false;
+    } else {
+        projectLocationNameHsError4.textContent = "";
+    }
+    const projectLocationHsErrorValueX4 = document.getElementById("project-location-x-hs-4").value;
+    const projectLocationHsErrorValueY4 = document.getElementById("project-location-y-hs-4").value;
+    if (projectLocationHsErrorValueX4 === "" || projectLocationHsErrorValueY4 === "") {
+        projectLocationHsError4.textContent = "Chưa nhập tọa độ";
+        isValid = false;
+    } else {
+        projectLocationHsError4.textContent = "";
+    }
+    const projectDvlhsErrorValue4 = document.getElementById("project-dvlhs-hs-4").value;
+    if (projectDvlhsErrorValue4 === "") {
+        projectDvlhsError4.textContent =  "Chưa nhập đơn vị lập hồ sơ";
+        isValid = false;
+    } else {
+        projectDvlhsError4.textContent =  "";
     }
     return isValid;
 }
@@ -501,22 +767,27 @@ function saveFormData4() {
 function closeModal() {
     modal.style.display = "none";
     modal1.style.display = "none";
+    modal11.style.display = "none";
 }
 function closeModal1() {
     modal2.style.display = "none";
     modal3.style.display = "none";
+    modal10.style.display = "none";
 }
 function closeModal2() {
     modal4.style.display = "none";
     modal5.style.display = "none";
+    modal12.style.display = "none";
 }
 function closeModal3() {
     modal6.style.display = "none";
     modal7.style.display = "none";
+    modal13.style.display = "none";
 }
 function closeModal4() {
     modal8.style.display = "none";
     modal9.style.display = "none";
+    modal14.style.display = "none";
 }
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
@@ -525,10 +796,16 @@ span.onclick = function () {
 span1.onclick = function () {
     closeModal1();
 };
+span10.onclick = function () {
+    closeModal1();
+};
 span2.onclick = function () {
     closeModal();
 };
 span3.onclick = function () {
+    closeModal();
+};
+span11.onclick = function () {
     closeModal();
 };
 span4.onclick = function () {
@@ -537,10 +814,16 @@ span4.onclick = function () {
 span5.onclick = function () {
     closeModal2();
 };
+span12.onclick = function () {
+    closeModal2();
+};
 span6.onclick = function () {
     closeModal3();
 };
 span7.onclick = function () {
+    closeModal3();
+};
+span13.onclick = function () {
     closeModal3();
 };
 span8.onclick = function () {
@@ -549,13 +832,18 @@ span8.onclick = function () {
 span9.onclick = function () {
     closeModal4();
 };
+span14.onclick = function () {
+    closeModal4();
+};
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
     if (event.target === modal) {
         closeModal();
     }
-
     if (event.target === modal1) {
+        closeModal();
+    }
+    if (event.target === modal11) {
         closeModal();
     }
     if (event.target === modal2) {
@@ -564,10 +852,16 @@ window.onclick = function (event) {
     if (event.target === modal3) {
         closeModal1();
     }
+    if (event.target === modal10) {
+        closeModal1();
+    }
     if (event.target === modal4) {
         closeModal2();
     }
     if (event.target === modal5) {
+        closeModal2();
+    }
+    if (event.target === modal12) {
         closeModal2();
     }
     if (event.target === modal6) {
@@ -576,10 +870,16 @@ window.onclick = function (event) {
     if (event.target === modal7) {
         closeModal3();
     }
+    if (event.target === modal13) {
+        closeModal3();
+    }
     if (event.target === modal8) {
         closeModal4();
     }
     if (event.target === modal9) {
+        closeModal4();
+    }
+    if (event.target === modal14) {
         closeModal4();
     }
     if (event.target !== functionList1 && event.target !== addNewBtn1) {
@@ -606,10 +906,16 @@ saveBtn.onclick = function () {
 saveBtn1.onclick = function () {
     saveFormData();
 }
+saveBtnHS1.onclick = function () {
+    saveFormData();
+}
 saveBtn2.onclick = function () {
     saveFormData1();
 }
 saveBtn3.onclick = function () {
+    saveFormData1();
+}
+saveBtnHS.onclick = function () {
     saveFormData1();
 }
 saveBtn4.onclick = function () {
@@ -618,16 +924,25 @@ saveBtn4.onclick = function () {
 saveBtn5.onclick = function () {
     saveFormData2();
 }
+saveBtnHS2.onclick = function () {
+    saveFormData2();
+}
 saveBtn6.onclick = function () {
     saveFormData3();
 }
 saveBtn7.onclick = function () {
     saveFormData3();
 }
+saveBtnHS3.onclick = function () {
+    saveFormData3();
+}
 saveBtn8.onclick = function () {
     saveFormData4();
 }
 saveBtn9.onclick = function () {
+    saveFormData4();
+}
+saveBtnHS4.onclick = function () {
     saveFormData4();
 }
 // When the user clicks the cancel button, close the modal
@@ -637,10 +952,16 @@ cancelBtn.onclick = function () {
 cancelBtn1.onclick = function () {
     closeModal();
 }
+cancelBtnHs1.onclick = function () {
+    closeModal();
+}
 cancelBtn2.onclick = function () {
     closeModal1();
 }
 cancelBtn3.onclick = function () {
+    closeModal1();
+}
+cancelBtnHs.onclick = function () {
     closeModal1();
 }
 cancelBtn4.onclick = function () {
@@ -649,16 +970,25 @@ cancelBtn4.onclick = function () {
 cancelBtn5.onclick = function () {
     closeModal2();
 }
+cancelBtnHs2.onclick = function () {
+    closeModal2();
+}
 cancelBtn6.onclick = function () {
     closeModal3();
 }
 cancelBtn7.onclick = function () {
     closeModal3();
 }
+cancelBtnHs3.onclick = function () {
+    closeModal3();
+}
 cancelBtn8.onclick = function () {
     closeModal4();
 }
 cancelBtn9.onclick = function () {
+    closeModal4();
+}
+cancelBtnHs4.onclick = function () {
     closeModal4();
 }
 
