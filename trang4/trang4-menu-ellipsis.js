@@ -54,3 +54,32 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+/*--------------------------------------------------------Ellipsis Thong tin chung-----------------------------------=*/
+document.addEventListener('DOMContentLoaded', function () {
+    var ellipsisMenuPast = document.querySelectorAll('.past-title-2');
+
+    ellipsisMenuPast.forEach(function (ellipsisMenu) {
+        var ellipsisBtnPast = ellipsisMenu.querySelector('.ellipsis-menu');
+        var menu = ellipsisMenu.querySelector('.menu-ellipsis1-past');
+        var menuItems = ellipsisMenu.querySelectorAll('.menu-item-ell-past');
+
+        ellipsisBtnPast.addEventListener('click', function () {
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        menuItems.forEach(function (menuItem) {
+            menuItem.addEventListener('click', function () {
+                menu.style.display = 'none';
+                // Thực hiện chức năng tương ứng với từng lựa chọn ở đây
+            });
+        });
+    });
+
+    document.addEventListener('click', function (event) {
+        var openMenu = document.querySelector('.menu[style="display: block;"]');
+        if (openMenu && !event.target.closest('.ellipsis-menu')) {
+            openMenu.style.display = 'none';
+        }
+    });
+});
