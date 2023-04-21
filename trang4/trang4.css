@@ -1690,7 +1690,6 @@ table tr:nth-child(even) {
 .history-cont{
     width: 100%;
     height: 100%;
-    border: 1px solid;
     overflow: auto;
 }
 .history-cont img{
@@ -1724,4 +1723,295 @@ table tr:nth-child(even) {
 .menu-item-ell-past:hover {
     background-color: #efb6b6;
     color: black;
+}
+/*---------------------------------------------------modal------------------------------------------------------------*/
+
+/*---------------------------modal doan code 2----------------------------------*//* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    box-sizing: border-box;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* Close Button */
+.modal .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.modal.close:hover,
+.modal.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Form Styling */
+.modal .form-group {
+    margin-bottom: 1rem;
+}
+
+.modal label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.modal input[type="text"],
+.modal select,
+.modal textarea {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal select option[value="none"] {
+    color: #aaa;
+}
+
+/* Button Styling */
+.modal button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0.25rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background-color: #3e8e41;
+}
+
+.modal button:active {
+    background-color: #3e8e41;
+    transform: translateY(2px);
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+td, tr {
+    border: none;
+}
+th {
+    color: #808080;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+tr:hover{
+    color: #2F76FF;
+}
+.icon-delete{
+    cursor: pointer;
+}
+.icon-delete i:hover{
+    scale: 105%;
+}
+table input, select {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 0.5px solid #B6BACC;
+    border-radius: 5px;
+}
+.select-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.select-wrapper span{
+    right: 0;
+}
+.select-wrapper .select {
+    width: 40%;
+}
+
+.select-wrapper .input {
+    width: 50%;
+}
+
+.select-wrapper2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.select-wrapper2 span{
+    right: 0;
+}
+.select-wrapper2 .select {
+    width: 100%;
+}
+
+
+.info-input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-input-wrapper .input-file {
+    display: none;
+}
+
+.select-wrapper1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select-wrapper1 .select {
+    width: 40%;
+}
+.select-wrapper1 .input {
+    width: 40%;
+}
+.info-input-wrapper1 .input-file {
+    display: none;
+}
+.coordinates {
+    display: flex;
+    justify-content: space-between;
+}
+
+.coordinates input {
+    width: 48%;
+}
+
+.autocomplete {
+    position: relative;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+    background-color: #e9e9e9;
+}
+.save-noti{
+    width: 100%;
+    height: 20%;
+}
+table td:nth-child(2) {
+    text-align: left;
+}
+#infoType{
+    width: 30%;
+}
+#infoType-1{
+    width: 30%;
+}
+.butt-can{
+    width: 30%;
+    height: 4vh;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+}
+.butt-can:hover{
+    background-color: #4B5580;
+    color: white;
+}
+.butt-sav{
+    width: 30%;
+    height: 4vh;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+}
+.butt-sav:hover{
+    background-color: #4B5580;
+    color: white;
+}
+.infor-CT{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+.form-start{
+    width: 100%;
+    height: 70%;
+}
+.name-CT{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name-1-CT{
+    background-color: #FFD5AE;
+    border: 0.5px solid #B6BACC;
+    border-radius: 5px;
+    width: 30vh;
+    text-align: center;
+    height: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

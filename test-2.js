@@ -1,56 +1,21 @@
-// Hiển thị thẻ input-link mặc định nếu lựa chọn là "link"
-const infoInput = document.getElementById("infoInput");
-infoInput.style.display = "block";
+// Lấy thẻ a và modal
+var openModal = document.getElementById("open-modal");
+var modal = document.getElementById("modal");
 
-document.getElementById("infoType").addEventListener("change", function () {
-    const infoType = this.value;
-    const infoFile = document.getElementById("infoFile");
-
-    if (infoType === "link") {
-        infoInput.style.display = "block";
-        infoFile.style.display = "none";
-    } else {
-        infoInput.style.display = "none";
-        infoFile.style.display = "block";
-    }
+// Thêm sự kiện click vào thẻ a
+openModal.addEventListener("click", function() {
+    modal.style.display = "block"; // Hiển thị modal
 });
 
-document.getElementById("imageUpload").addEventListener("change", function () {
-    const imageList = document.getElementById("imageList");
-
-    Array.from(this.files).forEach((file) => {
-        const option = document.createElement("option");
-        option.text = file.name;
-        option.value = URL.createObjectURL(file);
-        imageList.add(option);
-    });
+// Thêm sự kiện click vào nút đóng modal
+var closeBtn = document.getElementsByClassName("close")[0];
+closeBtn.addEventListener("click", function() {
+    modal.style.display = "none"; // Ẩn modal
 });
 
-document.getElementById("imageList").addEventListener("dblclick", function () {
-    const selectedIndex = this.selectedIndex;
-    if (selectedIndex !== -1) {
-        this.remove(selectedIndex);
-    }
-});
-
-document.getElementById("searchInput").addEventListener("input", function () {
-    // Tìm kiếm công trình và đổ dữ liệu vào danh sách tìm kiếm
-    // Đây chỉ là một ví dụ, bạn có thể thay đổi hàm tìm kiếm và đổ dữ liệu theo yêu cầu của bạn
-    const searchValue = this.value.toLowerCase();
-    const searchResultList = document.getElementById("searchResultList");
-    const exampleData = ["Công trình 1", "Công trình 2", "Công trình 3", "Công trình 4", "Công trình 5"];
-
-    if (searchValue !== "") {
-        searchResultList.innerHTML = "";
-
-        exampleData.forEach((item) => {
-            if (item.toLowerCase().includes(searchValue)) {
-                const option = document.createElement("option");
-                option.text = item;
-                searchResultList.add(option);
-            }
-        });
-    } else {
-        searchResultList.innerHTML = "";
+// Thêm sự kiện click vào nền mờ của modal để ẩn modal
+window.addEventListener("click", function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none"; // Ẩn modal
     }
 });

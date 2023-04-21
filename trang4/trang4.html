@@ -10,6 +10,7 @@
             async defer></script>
 
 
+
 </head>
 <body>
 <div class="nav-bar">
@@ -494,11 +495,181 @@
                     <div class="title-tit-2">Cập nhật: 15:02 ngày 10/3/2023  |  bởi Nguyễn Anh Tuấn (KHKT)</div>
                 </div>
                 <div class="past-title-2" id="menu-ellipsis-past">
-                    <div class="ellipsis-menu"><i class="fas fa-ellipsis-v" style="color: #ffffff;"></i></div>
+                    <div class="ellipsis-menu" id="addNewBtn"><i class="fas fa-ellipsis-v" style="color: #ffffff;"></i></div>
                     <div class="menu-ellipsis1-past">
                         <a class="menu-item-ell-past"><i class="fas fa-file-alt"></i> Xuất báo cáo</a>
-                        <a class="menu-item-ell-past"><i class="fas fa-pencil-alt"></i> Chỉnh sửa/cập nhật</a>
+                        <a class="menu-item-ell-past" id="menu-ellipsis1-past"><i class="fas fa-pencil-alt"></i> Chỉnh sửa/cập nhật</a>
                         <a class="menu-item-ell-past"><i class="fas fa-trash"></i> Xóa thông tin</a>
+                    </div>
+                    <!-- The Modal Thong Tin Chung -->
+                    <div id="myModal-past" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <div class="infor-CT">
+                                <div class="name-CT">Thông tin chung:
+                                    <span class="name-1-CT">Công Trình Cống</span>
+                                </div>
+                            </div>
+                            <div class="form-start">
+                                <table style="overflow: auto">
+                                    <thead>
+                                    <tr>
+                                        <th>TT</th>
+                                        <th>Hạng mục</th>
+                                        <th>Nhập thông tin mô tả</th>
+                                        <th>Nhập dữ liệu</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <!-- Dòng 1 -->
+                                    <tr>
+                                        <td>01</td>
+                                        <td>Mã công trình (ID)</td>
+                                        <td>
+                                            <div class="select-wrapper">
+                                                <select id="project-code-1" name="project-code-1" class="select">
+                                                    <option>C</option>
+                                                    <option>K</option>
+                                                    <option>CT</option>
+                                                    <option>TB</option>
+                                                    <option>KT</option>
+                                                    <option>CTTK</option>
+                                                    <option>CTK</option>
+                                                </select>
+                                                <span>STT:</span>
+                                                <input id="project-code-num-1" name="project-code-num-1" class="input" type="text">
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <!-- Dòng 2 -->
+                                    <tr>
+                                        <td>02</td>
+                                        <td>Tên công trình</td>
+                                        <td>
+                                            <input type="text" id="project-name-1" name="project-name-1">
+                                        <td></td>
+                                    </tr>
+                                    <!-- Dòng 3 -->
+                                    <tr>
+                                        <td>03</td>
+                                        <td>Vị trí/Địa điểm</td>
+                                        <td>
+                                            <input type="text" id="project-location-name-1" name="project-location-name-1">
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <!-- Dòng 4 -->
+                                    <tr>
+                                        <td></td>
+                                        <td>Tọa độ</td>
+                                        <td>
+                                            <div class="coordinates">
+                                                <input type="text" placeholder="Tọa độ X" id="project-location-x-1" name="project-location-x-1">
+                                                <input type="text" placeholder="Tọa độ Y" id="project-location-y-1" name="project-location-y-1">
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <!-- Dòng 5 -->
+                                    <tr>
+                                        <td>04</td>
+                                        <td>Quy mô</td>
+                                        <td><input type="text" id="project-scale-1" name="project-scale-1"></td>
+                                        <td></td>
+                                    </tr>
+                                    <!-- Dòng 6 -->
+                                    <tr>
+                                        <td>05</td>
+                                        <td>Thiết bị vận hành</td>
+                                        <td>
+                                            <input type="text" id="project-equipment-1" name="project-equipment-1">
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <!-- Dòng 7 -->
+                                    <tr>
+                                        <td>06</td>
+                                        <td>Công trình liên quan</td>
+                                        <td>
+                                            <input type="text"  readonly placeholder="0 công trình" id="related-projects-1" name="related-projects-1">
+                                        </td>
+                                        <td>
+                                            <div class="autocomplete">
+                                                <input type="text" id="search-1" placeholder="Tìm kiếm công trình">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- Dòng 9 -->
+                                    <tr>
+                                        <td>08</td>
+                                        <td>Thông tin khác</td>
+                                        <td><input type="text"></td>
+                                        <td>
+                                            <div class="info-input-wrapper">
+                                                <select class="infoType">
+                                                    <option value="link">Link</option>
+                                                    <option value="file">File</option>
+                                                </select>
+                                                <input type="text" class="input-link"  placeholder="Nhập link">
+                                                <input type="file" class="input-file"  style="display:none;" multiple>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- Dòng 10 -->
+                                    <tr>
+                                        <td>09</td>
+                                        <td>Thông tin hình ảnh</td>
+                                        <td>
+                                            <select id="imageFiles-1" multiple></select>
+                                            <button onclick="removeSelectedImage1()">Xóa ảnh</button>
+                                        </td>
+                                        <td>
+                                            <input type="file" id="imageInput-1" name="imageInput" onchange="updateImageOptions1()" multiple>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="save-noti">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <!-- Dòng 1 -->
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            Ghi chú: <input type="text">
+                                        </td>
+                                        <td>
+                                            Thông báo tới:
+                                            <select class="select">
+                                                <option>Không thông báo</option>
+                                                <option>Toàn công ty</option>
+                                                <option>Ban giám đốc</option>
+                                                <option>Phòng Kế hoạch - kỹ thuật</option>
+                                                <option>Trà (PTP KHKT)</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <button type="submit" class="butt-can" id="cancelBtn-1">Hủy</button>
+                                            <button type="submit" class="butt-sav" id="saveBtn-1">Lưu lại</button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -770,11 +941,11 @@
                             <td style="text-align: left">Bùi Thị Phương</td>
                             <td>15:02 ngày 10/3/2023</td>
                         </tr>
-                            <tr style="background-color: white; cursor: pointer;" >
-                                <td><img src="anh4/anh-nen-mau-trang-001.jpg"></td>
-                                <td style="text-align: left">Nguyễn Mai Phương</td>
-                                <td>15:02 ngày 10/3/2023</td>
-                            </tr>
+                        <tr style="background-color: white; cursor: pointer;" >
+                            <td><img src="anh4/anh-nen-mau-trang-001.jpg"></td>
+                            <td style="text-align: left">Nguyễn Mai Phương</td>
+                            <td>15:02 ngày 10/3/2023</td>
+                        </tr>
                         </table>
                     </div>
 
@@ -792,5 +963,6 @@
 <script src="trang4-menu-new-mess.js"></script>
 <script src="trang4-mess.js"></script>
 <script src="trang4-map.js"></script>
+<script src="trang4-modal.js"></script>
 </body>
 </html>

@@ -1,66 +1,36 @@
-* {
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+/* Hiển thị modal */
+.modal {
+    display: none; /* Ẩn modal mặc định */
+    position: fixed; /* Hiển thị modal trên phần còn lại của trang web */
+    z-index: 1; /* Hiển thị modal trên tất cả các phần tử khác trên trang web */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Hiển thị thanh cuộn khi nội dung quá dài */
+    background-color: rgba(0, 0, 0, 0.4); /* Màu nền mờ */
 }
 
-body {
-    margin: 0;
+/* Hiển thị nội dung của modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
     padding: 20px;
-    background-color: #f0f0f0;
+    border: 1px solid #888;
+    width: 80%;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    background-color: #ffffff;
+/* Hiển thị nút đóng modal */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-th, td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-}
-
-th {
-    background-color: #007bff;
-    color: #ffffff;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-tbody tr:hover {
-    background-color: #ddd;
-}
-
-input, select {
-    width: 100%;
-    padding: 5px;
-    margin: 5px 0;
-}
-
-.select-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.select-wrapper .select {
-    width: 60%;
-}
-
-.select-wrapper .input {
-    width: 35%;
-}
-
-.info-input-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.info-input-wrapper .input-file {
-    display: none;
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
