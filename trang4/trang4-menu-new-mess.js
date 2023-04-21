@@ -216,3 +216,14 @@ searchInput.addEventListener("keyup", (e) => {
         friend.style.display = friendName.includes(searchTerm) ? "block" : "none";
     });
 });
+/*-----------------------------------------------------------delete-share--------------------------------------------*/
+document.getElementById('share-cancel').addEventListener("click", function() {
+    let deleteColumns = document.getElementsByClassName("delete-user-share");
+    for (let i = 0; i < deleteColumns.length; i++) {
+        if (deleteColumns[i].style.display === "none") {
+            deleteColumns[i].style.display = "table-cell";
+        } else {
+            deleteColumns[i].style.display = "none";
+        }
+    }
+});
