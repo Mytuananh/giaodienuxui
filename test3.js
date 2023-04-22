@@ -1,68 +1,54 @@
-// Hàm kiểm tra tên đăng nhập
-function validateUsername(username) {
-    return username.trim().length > 0;
-}
+const carousel = document.querySelector('.carousel');
+const carouselItems = document.querySelectorAll('.carousel-item');
 
-// Hàm kiểm tra email
-function validateEmail(email) {
-    var emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
-    return emailRegex.test(email);
-}
+let isDragging = false;
+let startX;
+let currentTranslate = 0;
+let prevTranslate = 0;
+let animationID;
 
-// Hàm kiểm tra mật khẩu
-function validatePassword(password) {
-    var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-    return passwordRegex.test(password);
-}
+carouselItems.forEach((item, index) => {
+    item.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX - carousel.offsetLeft;
+        prevTranslate = currentTranslate;
+        item.classList.add('active');
+        cancelAnimationFrame(animationID);
+    });
 
-// Hàm kiểm tra số điện thoại
-function validatePhone(phone) {
-    var phoneRegex = /^0[0-9]{9}$/;
-    return phoneRegex.test(phone);
-}
-
-$(document).ready(function () {
-    $('form').on('submit', function (event) {
-        event.preventDefault();
-
-        // Ẩn thông báo lỗi
-        $('.error-message').hide();
-
-        var username = $('#username').val();
-        var email = $('#email').val();
-        var phone = $('#phone').val();
-        var password = $('#password').val();
-        var confirmPassword = $('#confirm-password').val();
-
-        if (!validateUsername(username)) {
-            $('#error-username').text('Tên đăng nhập không được bỏ trống.').show();
-            return;
+    item.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            const x = e.pageX - carousel.offsetLeft;
+            const distance = x - startX;
+            currentTranslate = prevTranslate + distance;
+            carouselItems.forEach((item, i) => {
+                if (i !== index) {
+                    item.style.transform = `translateX(${currentTranslate}px)`;
+                }
+            });
         }
+    });
 
-        if (!validateEmail(email)) {
-            $('#error-email').text('Email không hợp lệ. Vui lòng kiểm tra lại.').show();
-            return;
-        }
+    item.addEventListener('mouseup', () => {
+        isDragging = false;
+        carouselItems.forEach((item) => {
+            item.classList.remove('active');
+        });
+        animate();
+    });
 
-        if (!validatePhone(phone)) {
-            $('#error-phone').text('Số điện thoại không hợp lệ. Vui lòng kiểm tra lại.').show();
-            return;
-        }
-
-        if (!validatePassword(password)) {
-            $('#error-password').text('Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường và số.').show();
-            return;
-        }
-
-        if (password !== confirmPassword) {
-            $('#error-confirm-password').text('Mật khẩu không khớp. Vui lòng kiểm tra lại.').show();
-            return;
-        }
-
-        // Thực hiện việc đăng ký tại đây (gọi API, lưu vào cơ sở dữ liệu, ...)
-        alert('Đăng ký thành công!');
-
-        // Xóa dữ liệu trên form
-        $('form')[0].reset();
+    item.addEventListener('mouseleave', () => {
+        isDragging = false;
+        carouselItems.forEach((item) => {
+            item.classList.remove('active');
+        });
+        animate();
     });
 });
+
+function animate() {
+    animationID = requestAnimationFrame(animate);
+    carouselItems.forEach((item) => {
+        item.style.transform = `translateX(${currentTranslate}px)`;
+    });
+}
