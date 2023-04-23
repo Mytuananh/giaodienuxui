@@ -27,7 +27,7 @@ const scrollLeftButton = document.querySelector('.scroll-left');
 const scrollRightButton = document.querySelector('.scroll-right');
 let currentIndex = 0;
 // Thay đổi trong phần JavaScript
-const visibleSongs = 1; // Số lượng bài hát hiển thị cùng một lúc
+const visibleSongs = 5; // Số lượng bài hát hiển thị cùng một lúc
 
 
 // Thay đổi trong phần JavaScript
