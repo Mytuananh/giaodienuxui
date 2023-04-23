@@ -21,3 +21,43 @@ tabs.forEach((tab, index) => {
         pane.classList.add("active");
     };
 });
+/*-------------------------------------------------------------------------------------------------------------------*/
+const songList = document.querySelector('.tab-list');
+const scrollLeftButton = document.querySelector('.scroll-left');
+const scrollRightButton = document.querySelector('.scroll-right');
+let currentIndex = 0;
+// Thay đổi trong phần JavaScript
+const visibleSongs = 5; // Số lượng bài hát hiển thị cùng một lúc
+
+
+// Thay đổi trong phần JavaScript
+scrollLeftButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex -= visibleSongs;
+        if (currentIndex < 0) {
+            currentIndex = 0;
+        }
+        updateCarousel();
+    }
+});
+
+scrollRightButton.addEventListener('click', () => {
+    if (currentIndex < songList.childElementCount - visibleSongs) {
+        currentIndex += visibleSongs;
+        if (currentIndex > songList.childElementCount - visibleSongs) {
+            currentIndex = songList.childElementCount - visibleSongs;
+        }
+        updateCarousel();
+    }
+});
+
+function updateCarousel() {
+    const transformValue = -currentIndex * 29;
+    songList.style.transform = `translateX(${transformValue}vh)`;
+
+    // Cập nhật trạng thái nút mũi tên
+    scrollLeftButton.classList.toggle('hidden', currentIndex === 0);
+    scrollLeftButton.classList.toggle('visible', currentIndex !== 0);
+    scrollRightButton.classList.toggle('hidden', currentIndex >= songList.childElementCount - visibleSongs);
+    scrollRightButton.classList.toggle('visible', currentIndex < songList.childElementCount - visibleSongs);
+}

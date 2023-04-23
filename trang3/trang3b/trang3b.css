@@ -340,9 +340,10 @@ nav i {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid;
 }
 .tab-item-hs {
-    width: 13%;
+    width: 28vh;
     text-align: center;
     color: #100f0f;
     background-color: #ECECEC;
@@ -356,7 +357,7 @@ nav i {
     box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
 }
 .tab-i{
-    width: 16%;
+    width: 30vh;
     text-align: center;
     background-color: blue;
     cursor: pointer;
@@ -1699,6 +1700,32 @@ table td:nth-child(2) {
     width: 99%;
     margin-left: 1%;
     font-size: 13px;
+    display: flex;
+    align-items: center;
+}
+.tab-list {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.tabs a {
+    cursor: pointer;
+    font-size: 30px;
+    padding: 4px 8px;
+}
+/* Thêm vào phần CSS hiện tại */
+.tabs a.hidden {
+    display: none;
+}
+
+.tabs a.visible {
+    display: inline-block;
+}
+.carousel-tab{
+    overflow: hidden;
+    width: 147vh;
+    height: 100%;
     display: flex;
     align-items: center;
 }

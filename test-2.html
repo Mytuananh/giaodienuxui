@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="test-2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous"/>
 </head>
 <body>
-<a href="#" id="open-modal">Mở modal</a>
-
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Đây là nội dung modal</p>
+<div class="container">
+    <!-- Thay đổi trong phần HTML -->
+    <button class="scroll-left hidden"><i class="fas fa-chevron-circle-left"></i></button>
+    <div class="carousel-tab">
+        <div class="song-list">
+            <div class="song">Bài hát 1</div>
+            <div class="song">Bài hát 2</div>
+            <div class="song">Bài hát 3</div>
+            <div class="song">Bài hát 4</div>
+            <div class="song">Bài hát 5</div>
+            <div class="song">Bài hát 6</div>
+            <div class="song">Bài hát 7</div>
+            <div class="song">Bài hát 8</div>
+            <!-- Thêm các bài hát khác -->
+        </div>
     </div>
+    <button class="scroll-right"><i class="fas fa-chevron-circle-right"></i></button>
 </div>
-
 <script src="test-2.js"></script>
 </body>
 </html>
