@@ -357,7 +357,7 @@ nav i {
     box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
 }
 .tab-i{
-    width: 30vh;
+    width: 16%;
     text-align: center;
     background-color: blue;
     cursor: pointer;
@@ -1705,6 +1705,7 @@ table td:nth-child(2) {
 }
 .tab-list {
     display: flex;
+
     height: 100%;
     align-items: center;
     justify-content: center;
@@ -1712,7 +1713,7 @@ table td:nth-child(2) {
 .tabs a {
     cursor: pointer;
     font-size: 30px;
-    padding: 4px 8px;
+
 }
 /* Thêm vào phần CSS hiện tại */
 .tabs a.hidden {
@@ -1724,7 +1725,7 @@ table td:nth-child(2) {
 }
 .carousel-tab{
     overflow: hidden;
-    width: 147vh;
+    width: 145vh;
     height: 100%;
     display: flex;
     align-items: center;

@@ -27,7 +27,7 @@ const scrollLeftButton = document.querySelector('.scroll-left');
 const scrollRightButton = document.querySelector('.scroll-right');
 let currentIndex = 0;
 // Thay đổi trong phần JavaScript
-const visibleSongs = 5; // Số lượng bài hát hiển thị cùng một lúc
+const visibleSongs = 1; // Số lượng bài hát hiển thị cùng một lúc
 
 
 // Thay đổi trong phần JavaScript
@@ -52,7 +52,7 @@ scrollRightButton.addEventListener('click', () => {
 });
 
 function updateCarousel() {
-    const transformValue = -currentIndex * 29;
+    const transformValue = -currentIndex * 29.2;
     songList.style.transform = `translateX(${transformValue}vh)`;
 
     // Cập nhật trạng thái nút mũi tên
