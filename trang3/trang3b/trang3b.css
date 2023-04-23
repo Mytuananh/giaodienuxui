@@ -336,12 +336,13 @@ nav i {
 }
 .tabs {
     width: 100%;
-    height: 12%;
+    height: 11%;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid;
 }
+
 .tab-item-hs {
     width: 28vh;
     text-align: center;
@@ -1696,16 +1697,22 @@ table td:nth-child(2) {
 /*----------------------------------------------------------fix-------------------------------------------------------*/
 
 .links {
-    height: 3%;
-    width: 99%;
+    height: 4%;
+    width: 98%;
     margin-left: 1%;
     font-size: 13px;
     display: flex;
     align-items: center;
+
 }
 .tab-list {
     display: flex;
-
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.tab-list-1 {
+    display: flex;
     height: 100%;
     align-items: center;
     justify-content: center;
@@ -1713,8 +1720,8 @@ table td:nth-child(2) {
 .tabs a {
     cursor: pointer;
     font-size: 30px;
-
 }
+
 /* Thêm vào phần CSS hiện tại */
 .tabs a.hidden {
     display: none;
@@ -1723,10 +1730,29 @@ table td:nth-child(2) {
 .tabs a.visible {
     display: inline-block;
 }
+
 .carousel-tab{
     overflow: hidden;
     width: 145vh;
     height: 100%;
     display: flex;
     align-items: center;
+}
+.links-1{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+.links-2{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.links-2 select{
+    width: 20%;
+    height: 80%;
+    margin-left: 79%;
 }
