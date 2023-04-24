@@ -340,7 +340,6 @@ nav i {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid;
 }
 
 .tab-item-hs {
@@ -855,15 +854,15 @@ table td:nth-child(2) {
 }
 
 /* Close Button */
-.modal .close,.modal .close-1,.modal .close-2,.modal .close-3,.modal .close-4, .modal .close-5, .modal .close-6, .modal .close-7,.modal .close-8,.modal .close-9,.modal .close-10,.modal .close-11,.modal .close-12,.modal .close-13,.modal .close-14 {
+.modal .close,.modal .close-1,.modal .close-2,.modal .close-3,.modal .close-4, .modal .close-5, .modal .close-6, .modal .close-7,.modal .close-8,.modal .close-9,.modal .close-10,.modal .close-11,.modal .close-12,.modal .close-13,.modal .close-14, .modal .close-khac, .modal .close-khac-1, .modal .close-khac-2 {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
 }
-.modal.close:hover,.modal.close-1:hover,.modal.close-2:hover, .modal.close-3:hover, .modal.close-4:hover, .modal.close-5:hover, .modal.close-6:hover, .modal.close-7:hover, .modal.close-8:hover, .modal.close-9:hover, .modal.close-10:hover,.modal.close-11:hover,.modal.close-12:hover,.modal.close-13:hover,.modal.close-14:hover,
-.modal.close:focus,.modal.close-1:focus,.modal.close-2:focus, .modal.close-3:focus,.modal.close-4:focus, .modal.close-5:focus, .modal.close-6:focus, .modal.close-7:focus, .modal.close-8:focus, .modal.close-9:focus, .modal.close-10:focus, .modal.close-11:focus,.modal.close-12:focus,.modal.close-13:focus,.modal.close-14:focus  {
+.modal.close:hover,.modal.close-1:hover,.modal.close-2:hover, .modal.close-3:hover, .modal.close-4:hover, .modal.close-5:hover, .modal.close-6:hover, .modal.close-7:hover, .modal.close-8:hover, .modal.close-9:hover, .modal.close-10:hover,.modal.close-11:hover,.modal.close-12:hover,.modal.close-13:hover,.modal.close-14:hover,.modal.close-khac:hover, .modal.close-khac-1:hover, .modal.close-khac-2:hover,
+.modal.close:focus,.modal.close-1:focus,.modal.close-2:focus, .modal.close-3:focus,.modal.close-4:focus, .modal.close-5:focus, .modal.close-6:focus, .modal.close-7:focus, .modal.close-8:focus, .modal.close-9:focus, .modal.close-10:focus, .modal.close-11:focus,.modal.close-12:focus,.modal.close-13:focus,.modal.close-14:focus, .modal.close-khac:focus, .modal.close-khac-1:focus, .modal.close-khac-2:focus  {
     color: black;
     text-decoration: none;
     cursor: pointer;
@@ -1733,7 +1732,14 @@ table td:nth-child(2) {
 
 .carousel-tab{
     overflow: hidden;
-    width: 145vh;
+    width: 147vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.carousel-tab-1{
+    overflow: hidden;
+    width: 148vh;
     height: 100%;
     display: flex;
     align-items: center;
@@ -1752,7 +1758,7 @@ table td:nth-child(2) {
     align-items: center;
 }
 .links-2 select{
-    width: 20%;
-    height: 80%;
+    width: 35%;
+    height: 90%;
     margin-left: 79%;
 }

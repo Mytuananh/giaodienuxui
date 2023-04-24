@@ -3,11 +3,13 @@ const addNewBtn1 = document.getElementById('addNewBtn-1');
 const addNewBtn2 = document.getElementById('addNewBtn-2');
 const addNewBtn3 = document.getElementById('addNewBtn-3');
 const addNewBtn4 = document.getElementById('addNewBtn-4');
+const addNewBtnKhac = document.getElementById('addNewKhac');
 const functionList = document.getElementById('functionList');
 const functionList1 = document.getElementById('functionList-1');
 const functionList2 = document.getElementById('functionList-2');
 const functionList3 = document.getElementById('functionList-3');
 const functionList4 = document.getElementById('functionList-4');
+const functionListKhac = document.getElementById('functionListKhac');
 const modal = document.getElementById('myModal');
 const modal1 = document.getElementById('myModal1');
 const modal2 = document.getElementById('myModal-1');
@@ -23,6 +25,9 @@ const modal11 = document.getElementById('myModal7');
 const modal12 = document.getElementById('myModal8');
 const modal13= document.getElementById('myModal9');
 const modal14= document.getElementById('myModal10');
+const modalKhac= document.getElementById('myModalKhac');
+const modalKhac1= document.getElementById('myModalKhac1');
+const modalKhac2= document.getElementById('myModalKhac2');
 // Get the <span> element that closes the modal
 const span = document.getElementsByClassName("close")[0];
 const span1 = document.getElementsByClassName("close-1")[0];
@@ -39,6 +44,9 @@ const span11 = document.getElementsByClassName("close-11")[0];
 const span12 = document.getElementsByClassName("close-12")[0];
 const span13 = document.getElementsByClassName("close-13")[0];
 const span14 = document.getElementsByClassName("close-14")[0];
+const spanKhac = document.getElementsByClassName("close-khac")[0];
+const spanKhac1 = document.getElementsByClassName("close-khac-1")[0];
+const spanKhac2 = document.getElementsByClassName("close-khac-2")[0];
 // Get the buttons to save and cancel changes
 const saveBtn = document.getElementById("saveBtn");
 const cancelBtn = document.getElementById("cancelBtn");
@@ -70,6 +78,12 @@ const cancelBtnHs3 = document.getElementById("cancelBtn-hs-3");
 const saveBtnHS3 = document.getElementById("saveBtn1-hs-3");
 const cancelBtnHs4 = document.getElementById("cancelBtn-hs-4");
 const saveBtnHS4 = document.getElementById("saveBtn1-hs-4");
+const cancelBtnKhac = document.getElementById("cancelBtn-khac");
+const saveBtnKhac = document.getElementById("saveBtn-khac");
+const saveBtnKhac1 = document.getElementById("saveBtn1-khac");
+const cancelBtnKhac1 = document.getElementById("cancelBtn1-khac");
+const cancelBtnHsKhac = document.getElementById("cancelBtn-hs-khac");
+const saveBtnHSKhac = document.getElementById("saveBtn1-hs-khac");
 // Get the form and all input fields
 const form = document.querySelector("form");
 const inputFields = form.querySelectorAll("input, select");
@@ -80,6 +94,7 @@ functionList1.style.display = "none";
 functionList2.style.display = "none";
 functionList3.style.display = "none";
 functionList4.style.display = "none";
+functionListKhac.style.display = "none";
 // Show the function list when addNewBtn is clicked and hide the modal
 addNewBtn.addEventListener('click', function () {
     functionList.style.display = "block";
@@ -111,6 +126,12 @@ addNewBtn4.addEventListener('click', function () {
     modal9.style.display = "none";
     modal14.style.display = "none";
 });
+addNewBtnKhac.addEventListener('click',function () {
+    functionListKhac.style.display = "block";
+    modalKhac.style.display = "none";
+    modalKhac1.style.display = "none";
+    modalKhac2.style.display = "none";
+})
 // Hide the function list when any function is clicked, except for "thongTinChung", and show the modal
 functionList.addEventListener('click', function (event) {
     const functionName = event.target.getAttribute('data-function');
@@ -217,6 +238,27 @@ functionList4.addEventListener('click', function (event) {
         modal14.style.display = "block";
     }
 });
+functionListKhac.addEventListener('click', function (event) {
+    const functionName = event.target.getAttribute('data-function');
+    if (functionName === "thongTinChung") {
+        functionListKhac.style.display = "none";
+        modalKhac.style.display = "block";
+        modalKhac1.style.display = "none";
+        modalKhac2.style.display = "none";
+    }
+    if (functionName === "thongTinQuanLy") {
+        modalKhac.style.display = 'none';
+        functionListKhac.style.display = "none";
+        modalKhac1.style.display = "block"
+        modalKhac2.style.display = "none"
+    }
+    if (functionName === "hoSoCongTrinh") {
+        modalKhac.style.display = 'none';
+        functionListKhac.style.display = "none";
+        modalKhac1.style.display = "none"
+        modalKhac2.style.display = "block";
+    }
+});
 // Get the error message elements
 const projectCodeError = document.getElementById("project-code-error");
 const projectNameError = document.getElementById("project-name-error");
@@ -267,6 +309,16 @@ const projectNameHsError4 = document.getElementById("project-name-error-hs-4");
 const projectLocationNameHsError4 = document.getElementById("project-location-name-error-hs-4");
 const projectLocationHsError4 = document.getElementById("project-location-error-hs-4");
 const projectDvlhsError4 = document.getElementById("project-dvlhs-error-hs-4");
+
+const projectCodeErrorKhac = document.getElementById("project-code-error-khac");
+const projectNameErrorKhac = document.getElementById("project-name-error-khac");
+const projectLocationErrorKhac = document.getElementById("project-location-error-khac");
+const projectHistoryErrorKhac = document.getElementById("project-history-error-khac");
+const projectCodeHSErrorKhac = document.getElementById("project-code-error-hs--khac");
+const projectNameHsErrorKhac = document.getElementById("project-name-error-hs-khac");
+const projectLocationNameHsErrorKhac = document.getElementById("project-location-name-error-hs-khac");
+const projectLocationHsErrorKhac = document.getElementById("project-location-error-hs-khac");
+const projectDvlhsErrorKhac = document.getElementById("project-dvlhs-error-hs-khac");
 // Function to clear all input fields in the form
 function clearFormInputs() {
     inputFields.forEach((field) => {
@@ -709,397 +761,575 @@ function validateFormInputs4() {
     }
     return isValid;
 }
+
+function validateFormInputsKhac() {
+    let isValid = true;
+    const projectCodeValueKhac = document.getElementById("project-code-num-khac").value;
+    if (projectCodeValueKhac === "") {
+        projectCodeErrorKhac.textContent = "Chưa nhập mã công trình!";
+        isValid = false;
+    } else {
+        projectCodeErrorKhac.textContent = "";
+    }
+
+    const projectNameValueKhac = document.getElementById("project-name-khac").value;
+    if (projectNameValueKhac === "") {
+        projectNameErrorKhac.textContent = "Chưa điền tên công trình";
+        isValid = false;
+    } else {
+        projectNameErrorKhac.textContent = "";
+    }
+    const projectLocationNameValueKhac = document.getElementById(
+        "project-location-name-khac"
+    ).value;
+    const projectLocationXValueKhac = document.getElementById(
+        "project-location-x-khac"
+    ).value;
+    const projectLocationYValueKhac = document.getElementById(
+        "project-location-y-khac"
+    ).value;
+
+    if (
+        projectLocationNameValueKhac === "" ||
+        projectLocationXValueKhac === "" ||
+        projectLocationYValueKhac === ""
+    ) {
+        projectLocationErrorKhac.textContent = "Chưa nhập vị trí hoặc địa điểm hoặc tọa độ";
+        isValid = false;
+    } else {
+        projectLocationErrorKhac.textContent = "";
+    }
+    const projectHistoryValueKhac = document.getElementById(
+        "project-history-khac"
+    ).value;
+    if (
+        projectHistoryValueKhac === ""
+    ) {
+        projectHistoryErrorKhac.textContent = "Chưa nhập thông tin lịch sử xây dựng công trình";
+        isValid = false;
+    } else {
+        projectHistoryErrorKhac.textContent = "";
+    }
+    const projectCodeHSErrorValueKhac = document.getElementById("project-code-hs-khac").value;
+    if (projectCodeHSErrorValueKhac === "") {
+        projectCodeHSErrorKhac.textContent = "Chưa nhập mã hồ sơ";
+        isValid = false;
+    } else {
+        projectCodeHSErrorKhac.textContent = "";
+    }
+    const projectNameHsErrorValueKhac = document.getElementById("project-name-hs-khac").value;
+    if (projectNameHsErrorValueKhac === "") {
+        projectNameHsErrorKhac.textContent = "Chưa nhập tên hồ sơ công trình";
+        isValid = false;
+    } else {
+        projectNameHsErrorKhac.textContent = "";
+    }
+    const projectLocationNameHsErrorValueKhac = document.getElementById("project-location-name-hs-khac").value;
+    if (projectLocationNameHsErrorValueKhac === "") {
+        projectLocationNameHsErrorKhac.textContent = "Chưa điền địa điểm công trình";
+        isValid = false;
+    } else {
+        projectLocationNameHsErrorKhac.textContent = "";
+    }
+    const projectLocationHsErrorValueXKhac = document.getElementById("project-location-x-hs-khac").value;
+    const projectLocationHsErrorValueYKhac = document.getElementById("project-location-y-hs-khac").value;
+    if (projectLocationHsErrorValueXKhac === "" || projectLocationHsErrorValueYKhac === "") {
+        projectLocationHsErrorKhac.textContent = "Chưa nhập tọa độ";
+        isValid = false;
+    } else {
+        projectLocationHsErrorKhac.textContent = "";
+    }
+    const projectDvlhsErrorValueKhac = document.getElementById("project-dvlhs-hs-khac").value;
+    if (projectDvlhsErrorValueKhac === "") {
+        projectDvlhsErrorKhac.textContent = "Chưa nhập đơn vị lập hồ sơ";
+        isValid = false;
+    } else {
+        projectDvlhsErrorKhac.textContent = "";
+    }
+    return isValid;
+}
 // Function to save the form data
-function saveFormData() {
-    if (validateFormInputs()) {
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-        // Do something with the form data, e.g. send it to the server
-        console.log(data);
-        closeModal();
-        clearFormInputs();
+    function saveFormData() {
+        if (validateFormInputs()) {
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            // Do something with the form data, e.g. send it to the server
+            console.log(data);
+            closeModal();
+            clearFormInputs();
+        }
     }
-}
-function saveFormData1() {
-    if (validateFormInputs1()) {
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-        // Do something with the form data, e.g. send it to the server
-        console.log(data);
-        closeModal1();
-        clearFormInputs();
-    }
-}
 
-function saveFormData2() {
-    if (validateFormInputs2()) {
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-        // Do something with the form data, e.g. send it to the server
-        console.log(data);
-        closeModal2();
-        clearFormInputs();
+    function saveFormData1() {
+        if (validateFormInputs1()) {
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            // Do something with the form data, e.g. send it to the server
+            console.log(data);
+            closeModal1();
+            clearFormInputs();
+        }
     }
-}
 
-function saveFormData3() {
-    if (validateFormInputs3()) {
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-        // Do something with the form data, e.g. send it to the server
-        console.log(data);
-        closeModal3();
-        clearFormInputs();
+    function saveFormData2() {
+        if (validateFormInputs2()) {
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            // Do something with the form data, e.g. send it to the server
+            console.log(data);
+            closeModal2();
+            clearFormInputs();
+        }
     }
-}
 
-function saveFormData4() {
-    if (validateFormInputs4()) {
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-        // Do something with the form data, e.g. send it to the server
-        console.log(data);
-        closeModal4();
-        clearFormInputs();
+    function saveFormData3() {
+        if (validateFormInputs3()) {
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            // Do something with the form data, e.g. send it to the server
+            console.log(data);
+            closeModal3();
+            clearFormInputs();
+        }
     }
-}
+
+    function saveFormData4() {
+        if (validateFormInputs4()) {
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            // Do something with the form data, e.g. send it to the server
+            console.log(data);
+            closeModal4();
+            clearFormInputs();
+        }
+    }
+
+    function saveFormDataKhac() {
+        if (validateFormInputsKhac()) {
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            // Do something with the form data, e.g. send it to the server
+            console.log(data);
+            closeModalKhac();
+            clearFormInputs();
+        }
+    }
+
 // Function to close the modal
-function closeModal() {
-    modal.style.display = "none";
-    modal1.style.display = "none";
-    modal11.style.display = "none";
-}
-function closeModal1() {
-    modal2.style.display = "none";
-    modal3.style.display = "none";
-    modal10.style.display = "none";
-}
-function closeModal2() {
-    modal4.style.display = "none";
-    modal5.style.display = "none";
-    modal12.style.display = "none";
-}
-function closeModal3() {
-    modal6.style.display = "none";
-    modal7.style.display = "none";
-    modal13.style.display = "none";
-}
-function closeModal4() {
-    modal8.style.display = "none";
-    modal9.style.display = "none";
-    modal14.style.display = "none";
-}
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    closeModal1();
-};
-span1.onclick = function () {
-    closeModal1();
-};
-span10.onclick = function () {
-    closeModal1();
-};
-span2.onclick = function () {
-    closeModal();
-};
-span3.onclick = function () {
-    closeModal();
-};
-span11.onclick = function () {
-    closeModal();
-};
-span4.onclick = function () {
-    closeModal2();
-};
-span5.onclick = function () {
-    closeModal2();
-};
-span12.onclick = function () {
-    closeModal2();
-};
-span6.onclick = function () {
-    closeModal3();
-};
-span7.onclick = function () {
-    closeModal3();
-};
-span13.onclick = function () {
-    closeModal3();
-};
-span8.onclick = function () {
-    closeModal4();
-};
-span9.onclick = function () {
-    closeModal4();
-};
-span14.onclick = function () {
-    closeModal4();
-};
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    if (event.target === modal) {
-        closeModal();
+    function closeModal() {
+        modal.style.display = "none";
+        modal1.style.display = "none";
+        modal11.style.display = "none";
     }
-    if (event.target === modal1) {
-        closeModal();
-    }
-    if (event.target === modal11) {
-        closeModal();
-    }
-    if (event.target === modal2) {
-        closeModal1();
-    }
-    if (event.target === modal3) {
-        closeModal1();
-    }
-    if (event.target === modal10) {
-        closeModal1();
-    }
-    if (event.target === modal4) {
-        closeModal2();
-    }
-    if (event.target === modal5) {
-        closeModal2();
-    }
-    if (event.target === modal12) {
-        closeModal2();
-    }
-    if (event.target === modal6) {
-        closeModal3();
-    }
-    if (event.target === modal7) {
-        closeModal3();
-    }
-    if (event.target === modal13) {
-        closeModal3();
-    }
-    if (event.target === modal8) {
-        closeModal4();
-    }
-    if (event.target === modal9) {
-        closeModal4();
-    }
-    if (event.target === modal14) {
-        closeModal4();
-    }
-    if (event.target !== functionList1 && event.target !== addNewBtn1) {
-        functionList1.style.display = "none";
-    }
-    if (event.target !== functionList && event.target !== addNewBtn) {
-        functionList.style.display = "none";
-    }
-    if (event.target !== functionList2 && event.target !== addNewBtn2) {
-        functionList2.style.display = "none";
-    }
-    if (event.target !== functionList3 && event.target !== addNewBtn3) {
-        functionList3.style.display = "none";
-    }
-    if (event.target !== functionList4 && event.target !== addNewBtn4) {
-        functionList4.style.display = "none";
-    }
-};
 
+    function closeModal1() {
+        modal2.style.display = "none";
+        modal3.style.display = "none";
+        modal10.style.display = "none";
+    }
+
+    function closeModal2() {
+        modal4.style.display = "none";
+        modal5.style.display = "none";
+        modal12.style.display = "none";
+    }
+
+    function closeModal3() {
+        modal6.style.display = "none";
+        modal7.style.display = "none";
+        modal13.style.display = "none";
+    }
+
+    function closeModal4() {
+        modal8.style.display = "none";
+        modal9.style.display = "none";
+        modal14.style.display = "none";
+    }
+
+    function closeModalKhac() {
+        modalKhac.style.display = "none";
+        modalKhac1.style.display = "none";
+        modalKhac2.style.display = "none";
+    }
+
+// When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        closeModal1();
+    };
+    span1.onclick = function () {
+        closeModal1();
+    };
+    span10.onclick = function () {
+        closeModal1();
+    };
+    span2.onclick = function () {
+        closeModal();
+    };
+    span3.onclick = function () {
+        closeModal();
+    };
+    span11.onclick = function () {
+        closeModal();
+    };
+    span4.onclick = function () {
+        closeModal2();
+    };
+    span5.onclick = function () {
+        closeModal2();
+    };
+    span12.onclick = function () {
+        closeModal2();
+    };
+    span6.onclick = function () {
+        closeModal3();
+    };
+    span7.onclick = function () {
+        closeModal3();
+    };
+    span13.onclick = function () {
+        closeModal3();
+    };
+    span8.onclick = function () {
+        closeModal4();
+    };
+    span9.onclick = function () {
+        closeModal4();
+    };
+    span14.onclick = function () {
+        closeModal4();
+    };
+    spanKhac.onclick = function () {
+        closeModalKhac();
+    };
+    spanKhac1.onclick = function () {
+    closeModalKhac();
+    };
+    spanKhac2.onclick = function () {
+    closeModalKhac();
+    };
+// When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+        if (event.target === modal1) {
+            closeModal();
+        }
+        if (event.target === modal11) {
+            closeModal();
+        }
+        if (event.target === modal2) {
+            closeModal1();
+        }
+        if (event.target === modal3) {
+            closeModal1();
+        }
+        if (event.target === modal10) {
+            closeModal1();
+        }
+        if (event.target === modal4) {
+            closeModal2();
+        }
+        if (event.target === modal5) {
+            closeModal2();
+        }
+        if (event.target === modal12) {
+            closeModal2();
+        }
+        if (event.target === modal6) {
+            closeModal3();
+        }
+        if (event.target === modal7) {
+            closeModal3();
+        }
+        if (event.target === modal13) {
+            closeModal3();
+        }
+        if (event.target === modal8) {
+            closeModal4();
+        }
+        if (event.target === modal9) {
+            closeModal4();
+        }
+        if (event.target === modal14) {
+            closeModal4();
+        }
+        if (event.target === modalKhac) {
+            closeModalKhac();
+        }
+        if (event.target === modalKhac1) {
+            closeModalKhac();
+        }
+        if (event.target === modalKhac2) {
+            closeModalKhac();
+        }
+        if (event.target !== functionList1 && event.target !== addNewBtn1) {
+            functionList1.style.display = "none";
+        }
+        if (event.target !== functionList && event.target !== addNewBtn) {
+            functionList.style.display = "none";
+        }
+        if (event.target !== functionList2 && event.target !== addNewBtn2) {
+            functionList2.style.display = "none";
+        }
+        if (event.target !== functionList3 && event.target !== addNewBtn3) {
+            functionList3.style.display = "none";
+        }
+        if (event.target !== functionList4 && event.target !== addNewBtn4) {
+            functionList4.style.display = "none";
+        }
+        if (event.target !== functionListKhac && event.target !== addNewBtnKhac) {
+            functionListKhac.style.display = "none";
+        }
+    };
 // When the user clicks the save button, save the form data
-saveBtn.onclick = function () {
-    saveFormData();
-};
-saveBtn1.onclick = function () {
-    saveFormData();
-}
-saveBtnHS1.onclick = function () {
-    saveFormData();
-}
-saveBtn2.onclick = function () {
-    saveFormData1();
-}
-saveBtn3.onclick = function () {
-    saveFormData1();
-}
-saveBtnHS.onclick = function () {
-    saveFormData1();
-}
-saveBtn4.onclick = function () {
-    saveFormData2();
-}
-saveBtn5.onclick = function () {
-    saveFormData2();
-}
-saveBtnHS2.onclick = function () {
-    saveFormData2();
-}
-saveBtn6.onclick = function () {
-    saveFormData3();
-}
-saveBtn7.onclick = function () {
-    saveFormData3();
-}
-saveBtnHS3.onclick = function () {
-    saveFormData3();
-}
-saveBtn8.onclick = function () {
-    saveFormData4();
-}
-saveBtn9.onclick = function () {
-    saveFormData4();
-}
-saveBtnHS4.onclick = function () {
-    saveFormData4();
-}
+    saveBtn.onclick = function () {
+        saveFormData();
+    };
+    saveBtn1.onclick = function () {
+        saveFormData();
+    }
+    saveBtnHS1.onclick = function () {
+        saveFormData();
+    }
+    saveBtn2.onclick = function () {
+        saveFormData1();
+    }
+    saveBtn3.onclick = function () {
+        saveFormData1();
+    }
+    saveBtnHS.onclick = function () {
+        saveFormData1();
+    }
+    saveBtn4.onclick = function () {
+        saveFormData2();
+    }
+    saveBtn5.onclick = function () {
+        saveFormData2();
+    }
+    saveBtnHS2.onclick = function () {
+        saveFormData2();
+    }
+    saveBtn6.onclick = function () {
+        saveFormData3();
+    }
+    saveBtn7.onclick = function () {
+        saveFormData3();
+    }
+    saveBtnHS3.onclick = function () {
+        saveFormData3();
+    }
+    saveBtn8.onclick = function () {
+        saveFormData4();
+    }
+    saveBtn9.onclick = function () {
+        saveFormData4();
+    }
+    saveBtnHS4.onclick = function () {
+        saveFormData4();
+    }
+    saveBtnKhac.onclick = function () {
+        saveFormDataKhac();
+    }
+    saveBtnKhac1.onclick = function () {
+        saveFormDataKhac();
+    }
+    saveBtnHSKhac.onclick = function () {
+    saveFormDataKhac();
+    }
 // When the user clicks the cancel button, close the modal
-cancelBtn.onclick = function () {
-    closeModal();
-};
-cancelBtn1.onclick = function () {
-    closeModal();
-}
-cancelBtnHs1.onclick = function () {
-    closeModal();
-}
-cancelBtn2.onclick = function () {
-    closeModal1();
-}
-cancelBtn3.onclick = function () {
-    closeModal1();
-}
-cancelBtnHs.onclick = function () {
-    closeModal1();
-}
-cancelBtn4.onclick = function () {
-    closeModal2();
-}
-cancelBtn5.onclick = function () {
-    closeModal2();
-}
-cancelBtnHs2.onclick = function () {
-    closeModal2();
-}
-cancelBtn6.onclick = function () {
-    closeModal3();
-}
-cancelBtn7.onclick = function () {
-    closeModal3();
-}
-cancelBtnHs3.onclick = function () {
-    closeModal3();
-}
-cancelBtn8.onclick = function () {
-    closeModal4();
-}
-cancelBtn9.onclick = function () {
-    closeModal4();
-}
-cancelBtnHs4.onclick = function () {
-    closeModal4();
-}
+    cancelBtn.onclick = function () {
+        closeModal();
+    };
+    cancelBtn1.onclick = function () {
+        closeModal();
+    }
+    cancelBtnHs1.onclick = function () {
+        closeModal();
+    }
+    cancelBtn2.onclick = function () {
+        closeModal1();
+    }
+    cancelBtn3.onclick = function () {
+        closeModal1();
+    }
+    cancelBtnHs.onclick = function () {
+        closeModal1();
+    }
+    cancelBtn4.onclick = function () {
+        closeModal2();
+    }
+    cancelBtn5.onclick = function () {
+        closeModal2();
+    }
+    cancelBtnHs2.onclick = function () {
+        closeModal2();
+    }
+    cancelBtn6.onclick = function () {
+        closeModal3();
+    }
+    cancelBtn7.onclick = function () {
+        closeModal3();
+    }
+    cancelBtnHs3.onclick = function () {
+        closeModal3();
+    }
+    cancelBtn8.onclick = function () {
+        closeModal4();
+    }
+    cancelBtn9.onclick = function () {
+        closeModal4();
+    }
+    cancelBtnHs4.onclick = function () {
+        closeModal4();
+    }
+    cancelBtnKhac.onclick = function () {
+        closeModalKhac();
+    }
+    cancelBtnKhac1.onclick = function () {
+        closeModalKhac();
+    }
+    cancelBtnHsKhac.onclick = function () {
+        closeModalKhac();
+    }
 
 // Hiển thị thẻ input-link mặc định nếu lựa chọn là "link"
-const infoInput = document.querySelectorAll('.input-link');
-infoInput.forEach(function (input) {
-    input.style.display = "block";
-    const infoType =  document.querySelectorAll('.infoType');
-    infoType.forEach(function (inf) {
-        inf.addEventListener("change", function () {
-            const infoType = this.value;
-            const infoFiles = document.querySelectorAll('.input-file');
-            infoFiles.forEach(function (infoFile) {
-                if (infoType === "link") {
-                    input.style.display = "block";
-                    infoFile.style.display = "none";
-                } else if (infoType === "file") {
-                    input.style.display = "none";
-                    infoFile.style.display = "block";
-                }
-            });
+    const infoInput = document.querySelectorAll('.input-link');
+    infoInput.forEach(function (input) {
+        input.style.display = "block";
+        const infoType = document.querySelectorAll('.infoType');
+        infoType.forEach(function (inf) {
+            inf.addEventListener("change", function () {
+                const infoType = this.value;
+                const infoFiles = document.querySelectorAll('.input-file');
+                infoFiles.forEach(function (infoFile) {
+                    if (infoType === "link") {
+                        input.style.display = "block";
+                        infoFile.style.display = "none";
+                    } else if (infoType === "file") {
+                        input.style.display = "none";
+                        infoFile.style.display = "block";
+                    }
+                });
             })
-    });
+        });
+    })
 
-})
-function removeSelectedImage() {
-    var select = document.getElementById('imageFiles');
+    function removeSelectedImage() {
+        var select = document.getElementById('imageFiles');
+        var selected = select.selectedIndex;
+        if (selected >= 0) {
+            select.remove(selected);
+        }
+    }
+
+    function updateImageOptions() {
+        var input = document.getElementById('imageInput');
+        var select = document.getElementById('imageFiles');
+        select.innerHTML = '';
+
+        for (var i = 0; i < input.files.length; i++) {
+            var option = document.createElement('option');
+            option.value = input.files[i].name;
+            option.text = input.files[i].name;
+            select.add(option);
+        }
+    }
+
+    function removeSelectedImage1() {
+        var select = document.getElementById('imageFiles-1');
+        var selected = select.selectedIndex;
+        if (selected >= 0) {
+            select.remove(selected);
+        }
+    }
+
+    function updateImageOptions1() {
+        var input = document.getElementById('imageInput-1');
+        var select = document.getElementById('imageFiles-1');
+        select.innerHTML = '';
+
+        for (var i = 0; i < input.files.length; i++) {
+            var option = document.createElement('option');
+            option.value = input.files[i].name;
+            option.text = input.files[i].name;
+            select.add(option);
+        }
+    }
+
+    function removeSelectedImage2() {
+        var select = document.getElementById('imageFiles-2');
+        var selected = select.selectedIndex;
+        if (selected >= 0) {
+            select.remove(selected);
+        }
+    }
+
+    function updateImageOptions2() {
+        var input = document.getElementById('imageInput-2');
+        var select = document.getElementById('imageFiles-2');
+        select.innerHTML = '';
+
+        for (var i = 0; i < input.files.length; i++) {
+            var option = document.createElement('option');
+            option.value = input.files[i].name;
+            option.text = input.files[i].name;
+            select.add(option);
+        }
+    }
+
+    function removeSelectedImage3() {
+        var select = document.getElementById('imageFiles-3');
+        var selected = select.selectedIndex;
+        if (selected >= 0) {
+            select.remove(selected);
+        }
+    }
+
+    function updateImageOptions3() {
+        var input = document.getElementById('imageInput-3');
+        var select = document.getElementById('imageFiles-3');
+        select.innerHTML = '';
+
+        for (var i = 0; i < input.files.length; i++) {
+            var option = document.createElement('option');
+            option.value = input.files[i].name;
+            option.text = input.files[i].name;
+            select.add(option);
+        }
+    }
+
+    function removeSelectedImage4() {
+        var select = document.getElementById('imageFiles-4');
+        var selected = select.selectedIndex;
+        if (selected >= 0) {
+            select.remove(selected);
+        }
+    }
+
+    function updateImageOptions4() {
+        var input = document.getElementById('imageInput-4');
+        var select = document.getElementById('imageFiles-4');
+        select.innerHTML = '';
+
+        for (var i = 0; i < input.files.length; i++) {
+            var option = document.createElement('option');
+            option.value = input.files[i].name;
+            option.text = input.files[i].name;
+            select.add(option);
+        }
+    }
+    function removeSelectedImageKhac() {
+    var select = document.getElementById('imageFiles-khac');
     var selected = select.selectedIndex;
     if (selected >= 0) {
         select.remove(selected);
     }
 }
-function updateImageOptions() {
-    var input = document.getElementById('imageInput');
-    var select = document.getElementById('imageFiles');
-    select.innerHTML = '';
 
-    for (var i = 0; i < input.files.length; i++) {
-        var option = document.createElement('option');
-        option.value = input.files[i].name;
-        option.text = input.files[i].name;
-        select.add(option);
-    }
-}
-function removeSelectedImage1() {
-    var select = document.getElementById('imageFiles-1');
-    var selected = select.selectedIndex;
-    if (selected >= 0) {
-        select.remove(selected);
-    }
-}
-function updateImageOptions1() {
-    var input = document.getElementById('imageInput-1');
-    var select = document.getElementById('imageFiles-1');
-    select.innerHTML = '';
-
-    for (var i = 0; i < input.files.length; i++) {
-        var option = document.createElement('option');
-        option.value = input.files[i].name;
-        option.text = input.files[i].name;
-        select.add(option);
-    }
-}
-function removeSelectedImage2() {
-    var select = document.getElementById('imageFiles-2');
-    var selected = select.selectedIndex;
-    if (selected >= 0) {
-        select.remove(selected);
-    }
-}
-function updateImageOptions2() {
-    var input = document.getElementById('imageInput-2');
-    var select = document.getElementById('imageFiles-2');
-    select.innerHTML = '';
-
-    for (var i = 0; i < input.files.length; i++) {
-        var option = document.createElement('option');
-        option.value = input.files[i].name;
-        option.text = input.files[i].name;
-        select.add(option);
-    }
-}
-function removeSelectedImage3() {
-    var select = document.getElementById('imageFiles-3');
-    var selected = select.selectedIndex;
-    if (selected >= 0) {
-        select.remove(selected);
-    }
-}
-function updateImageOptions3() {
-    var input = document.getElementById('imageInput-3');
-    var select = document.getElementById('imageFiles-3');
-    select.innerHTML = '';
-
-    for (var i = 0; i < input.files.length; i++) {
-        var option = document.createElement('option');
-        option.value = input.files[i].name;
-        option.text = input.files[i].name;
-        select.add(option);
-    }
-}
-function removeSelectedImage4() {
-    var select = document.getElementById('imageFiles-4');
-    var selected = select.selectedIndex;
-    if (selected >= 0) {
-        select.remove(selected);
-    }
-}
-function updateImageOptions4() {
-    var input = document.getElementById('imageInput-4');
-    var select = document.getElementById('imageFiles-4');
+    function updateImageOptionsKhac() {
+    var input = document.getElementById('imageInput-khac');
+    var select = document.getElementById('imageFiles-khac');
     select.innerHTML = '';
 
     for (var i = 0; i < input.files.length; i++) {

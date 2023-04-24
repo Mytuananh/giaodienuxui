@@ -121,7 +121,7 @@ scrollRightButton1.addEventListener('click', () => {
 });
 
 function updateCarousel1() {
-    const transformValue = -currentIndex1 * 29;
+    const transformValue = -currentIndex1 * 29.3;
     songList1.style.transform = `translateX(${transformValue}vh)`;
 
     // Cập nhật trạng thái nút mũi tên
