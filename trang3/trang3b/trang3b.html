@@ -531,7 +531,7 @@
                 </div>
                     <a class="scroll-right"><i class="fas fa-chevron-circle-right"></i></a>
                 </div>
-                <div class="tabs" id="tab-nam-hs-1" style="display: none">
+                <div class="tabsNam" id="tab-nam-hs-1" style="display: none">
                     <div class="tab-i">
                         <div class="name-1-1">Tồng hồ sơ</div>
                         <div class="number-1-1">1111</div>
@@ -539,7 +539,7 @@
                     <a class="scroll-left-1 hidden"><i class="fas fa-chevron-circle-left"></i></a>
                     <div class="carousel-tab-1">
                         <div class="tab-list-1">
-                            <div class="tab-item-hs-nam" data-year="2035">
+                            <div class="tab-item-hs-nam " data-year="2035">
                                 <div class="name-1">Năm 2035</div>
                                 <div class="number-1">152</div>
                             </div>
@@ -549,10 +549,6 @@
                             </div>
                             <div class="tab-item-hs-nam" data-year="2033">
                                 <div class="name-1">Năm 2033</div>
-                                <div class="number-1">152</div>
-                            </div>
-                            <div class="tab-item-hs-nam" data-year="2027">
-                                <div class="name-1">Năm 2027</div>
                                 <div class="number-1">152</div>
                             </div>
                             <div class="tab-item-hs-nam" data-year="2032">
@@ -573,10 +569,6 @@
                             </div>
                             <div class="tab-item-hs-nam" data-year="2028">
                                 <div class="name-1">Năm 2028</div>
-                                <div class="number-1">152</div>
-                            </div>
-                            <div class="tab-item-hs-nam" data-year="2027">
-                                <div class="name-1">Năm 2027</div>
                                 <div class="number-1">152</div>
                             </div>
                             <div class="tab-item-hs-nam" data-year="2027">
@@ -627,7 +619,7 @@
                     </div>
                     <a class="scroll-right-1"><i class="fas fa-chevron-circle-right"></i></a>
                 </div>
-                <div class="tab-content">
+                <div class="tab-content" id="hs1">
                     <div class="tab-pane-hs active">
                         <div class="menu-tit">
                             <div class="menu-tit-1">Danh mục hồ sơ cống dưới đê</div>
@@ -759,18 +751,7 @@
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                <!-- Dòng 10 -->
-                                                <tr>
-                                                    <td>09</td>
-                                                    <td>Thông tin hình ảnh</td>
-                                                    <td>
-                                                        <select id="imageFiles-1" multiple></select>
-                                                        <button onclick="removeSelectedImage1()">Xóa ảnh</button>
-                                                    </td>
-                                                    <td>
-                                                        <input type="file" id="imageInput-1" name="imageInput" onchange="updateImageOptions1()" multiple>
-                                                    </td>
-                                                </tr>
+
                                                 </tbody>
                                             </table>
                                         </div>
@@ -947,8 +928,8 @@
                                     <div class="modal-content">
                                         <span class="close-10">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
-                                                <span class="name-1-CT">Hồ Sơ Công Trình Cống</span>
+                                            <div class="name-CT">Hồ sơ:
+                                                <span class="name-1-CT">Công Trình Cống</span>
                                             </div>
                                         </div>
                                         <div class="form-start">
@@ -1186,6 +1167,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles-1" multiple></select>
+                                                        <button onclick="removeSelectedImage1()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput-1" name="imageInput" onchange="updateImageOptions1()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -1417,18 +1410,7 @@
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                <!-- Dòng 10 -->
-                                                <tr>
-                                                    <td>09</td>
-                                                    <td>Thông tin hình ảnh</td>
-                                                    <td>
-                                                        <select id="imageFiles" multiple></select>
-                                                        <button onclick="removeSelectedImage()">Xóa ảnh</button>
-                                                    </td>
-                                                    <td>
-                                                        <input type="file" id="imageInput" name="imageInput" onchange="updateImageOptions()" multiple>
-                                                    </td>
-                                                </tr>
+
                                                 </tbody>
                                             </table>
                                         </div>
@@ -1604,8 +1586,8 @@
                                     <div class="modal-content">
                                         <span class="close-11">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
-                                                <span class="name-1-CT">Hồ Sơ Công Trình Trạm Bơm</span>
+                                            <div class="name-CT">Hồ sơ:
+                                                <span class="name-1-CT">Công Trình Trạm Bơm</span>
                                             </div>
                                         </div>
                                         <div class="form-start">
@@ -1844,6 +1826,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles" multiple></select>
+                                                        <button onclick="removeSelectedImage()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput" name="imageInput" onchange="updateImageOptions()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -2075,18 +2069,7 @@
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                <!-- Dòng 10 -->
-                                                <tr>
-                                                    <td>09</td>
-                                                    <td>Thông tin hình ảnh</td>
-                                                    <td>
-                                                        <select id="imageFiles-2" multiple></select>
-                                                        <button onclick="removeSelectedImage2()">Xóa ảnh</button>
-                                                    </td>
-                                                    <td>
-                                                        <input type="file" id="imageInput-2" name="imageInput" onchange="updateImageOptions2()" multiple>
-                                                    </td>
-                                                </tr>
+
                                                 </tbody>
                                             </table>
                                         </div>
@@ -2262,8 +2245,8 @@
                                     <div class="modal-content">
                                         <span class="close-12">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
-                                                <span class="name-1-CT">Hồ Sơ Công Trình Kênh Cấp I</span>
+                                            <div class="name-CT">Hồ sơ:
+                                                <span class="name-1-CT">Công Trình Kênh Cấp I</span>
                                             </div>
                                         </div>
                                         <div class="form-start">
@@ -2502,6 +2485,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19 -->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles-2" multiple></select>
+                                                        <button onclick="removeSelectedImage2()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput-2" name="imageInput" onchange="updateImageOptions2()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -2733,18 +2728,6 @@
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                <!-- Dòng 10 -->
-                                                <tr>
-                                                    <td>09</td>
-                                                    <td>Thông tin hình ảnh</td>
-                                                    <td>
-                                                        <select id="imageFiles-3" multiple></select>
-                                                        <button onclick="removeSelectedImage3()">Xóa ảnh</button>
-                                                    </td>
-                                                    <td>
-                                                        <input type="file" id="imageInput-3" name="imageInput" onchange="updateImageOptions3()" multiple>
-                                                    </td>
-                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -2920,8 +2903,8 @@
                                     <div class="modal-content">
                                         <span class="close-13">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
-                                                <span class="name-1-CT">Hồ Sơ Công Trình Kênh Tưới Sau TB</span>
+                                            <div class="name-CT">Hồ sơ:
+                                                <span class="name-1-CT">Công Trình Kênh Tưới Sau TB</span>
                                             </div>
                                         </div>
                                         <div class="form-start">
@@ -3160,6 +3143,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19 -->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles-3" multiple></select>
+                                                        <button onclick="removeSelectedImage3()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput-3" name="imageInput" onchange="updateImageOptions3()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -3391,18 +3386,6 @@
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                <!-- Dòng 10 -->
-                                                <tr>
-                                                    <td>09</td>
-                                                    <td>Thông tin hình ảnh</td>
-                                                    <td>
-                                                        <select id="imageFiles-4" multiple></select>
-                                                        <button onclick="removeSelectedImage4()">Xóa ảnh</button>
-                                                    </td>
-                                                    <td>
-                                                        <input type="file" id="imageInput-4" name="imageInput" onchange="updateImageOptions4()" multiple>
-                                                    </td>
-                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -3578,8 +3561,8 @@
                                     <div class="modal-content">
                                         <span class="close-14">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
-                                                <span class="name-1-CT">Hồ Sơ Công Trình Trên Kênh</span>
+                                            <div class="name-CT">Hồ sơ:
+                                                <span class="name-1-CT">Công Trình Trên Kênh</span>
                                             </div>
                                         </div>
                                         <div class="form-start">
@@ -3818,6 +3801,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19 -->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles-4" multiple></select>
+                                                        <button onclick="removeSelectedImage4()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput-4" name="imageInput" onchange="updateImageOptions4()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -4049,18 +4044,7 @@
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                <!-- Dòng 10 -->
-                                                <tr>
-                                                    <td>09</td>
-                                                    <td>Thông tin hình ảnh</td>
-                                                    <td>
-                                                        <select id="imageFiles-khac" multiple></select>
-                                                        <button onclick="removeSelectedImageKhac()">Xóa ảnh</button>
-                                                    </td>
-                                                    <td>
-                                                        <input type="file" id="imageInput-khac" name="imageInput" onchange="updateImageOptionsKhac()" multiple>
-                                                    </td>
-                                                </tr>
+
                                                 </tbody>
                                             </table>
                                         </div>
@@ -4236,7 +4220,7 @@
                                     <div class="modal-content">
                                         <span class="close-khac-2">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
+                                            <div class="name-CT">Hồ sơ:
                                                 <span class="name-1-CT">Công Trình Khác</span>
                                             </div>
                                         </div>
@@ -4476,6 +4460,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19 -->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles-khac" multiple></select>
+                                                        <button onclick="removeSelectedImageKhac()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput-khac" name="imageInput" onchange="updateImageOptionsKhac()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -4576,8 +4572,8 @@
                             </table>
                         </div>
                     </div>
-
-
+                </div>
+                <div class="tab-content-nam" style="display: none" id="hs2">
                     <div class="tab-pane-hs-nam">
                         <div class="menu-tit">
                             <div class="menu-tit-1">Danh mục hồ sơ năm 2035</div>
@@ -4590,9 +4586,9 @@
                                 <div id="myModalNam2035" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2035">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
+                                            <div class="name-CT">Hồ sơ:
                                                 <span class="name-1-CT">Công Trình Năm 2035</span>
                                             </div>
                                         </div>
@@ -4832,6 +4828,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2035" multiple></select>
+                                                        <button onclick="removeSelectedImage2035()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2035" name="imageInput" onchange="updateImageOptions2035()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -4902,7 +4910,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2035">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -4915,7 +4923,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2035"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -4926,7 +4934,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2035"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -4944,10 +4952,10 @@
                                 <div id="myModalNam2034" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2034">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
-                                                <span class="name-1-CT">Công Trình Năm 2035</span>
+                                            <div class="name-CT">Hồ sơ:
+                                                <span class="name-1-CT">Công Trình Năm 2034</span>
                                             </div>
                                         </div>
                                         <div class="form-start">
@@ -5186,6 +5194,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2034" multiple></select>
+                                                        <button onclick="removeSelectedImage2034()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2034" name="imageInput" onchange="updateImageOptions2034()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -5256,7 +5276,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2034">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -5269,7 +5289,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2034"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -5280,7 +5300,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2034"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -5298,10 +5318,10 @@
                                 <div id="myModalNam2033" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2033">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
-                                                <span class="name-1-CT">Công Trình Năm 2035</span>
+                                            <div class="name-CT">Hồ sơ:
+                                                <span class="name-1-CT">Công Trình Năm 2033</span>
                                             </div>
                                         </div>
                                         <div class="form-start">
@@ -5540,6 +5560,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2033" multiple></select>
+                                                        <button onclick="removeSelectedImage2033()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2033" name="imageInput" onchange="updateImageOptions2033()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -5610,7 +5642,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2033">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -5623,7 +5655,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2033"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -5634,7 +5666,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2033"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -5652,10 +5684,10 @@
                                 <div id="myModalNam2032" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2032">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
-                                                <span class="name-1-CT">Công Trình Năm 2035</span>
+                                            <div class="name-CT">Hồ sơ:
+                                                <span class="name-1-CT">Công Trình Năm 2032</span>
                                             </div>
                                         </div>
                                         <div class="form-start">
@@ -5829,7 +5861,7 @@
                                                     <td>Tiến độ thi công</td>
                                                     <td>
                                                         <div class="select-wrapper">
-                                                            <select id="project-tdtc-hs-nam-2032" name="project-tdtc-hs-nam-2035" class="select">
+                                                            <select id="project-tdtc-hs-nam-2032" name="project-tdtc-hs-nam-2032" class="select">
                                                                 <option>Chưa thi công</option>
                                                                 <option>Thi công được 10%</option>
                                                                 <option>Thi công được 15%</option>
@@ -5893,6 +5925,18 @@
                                                         <input type="text" id="project-note-hs-nam-2032" name="project-note-hs-nam-2032" placeholder="Viết gì đó...">
                                                     </td>
                                                     <td></td>
+                                                </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2032" multiple></select>
+                                                        <button onclick="removeSelectedImage2032()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2032" name="imageInput" onchange="updateImageOptions2032()" multiple>
+                                                    </td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -5964,7 +6008,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2032">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -5977,7 +6021,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2032"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -5988,7 +6032,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2032"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -6006,10 +6050,10 @@
                                 <div id="myModalNam2031" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2031">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
-                                                <span class="name-1-CT">Công Trình Năm 2035</span>
+                                            <div class="name-CT">Hồ sơ:
+                                                <span class="name-1-CT">Công Trình Năm 2031</span>
                                             </div>
                                         </div>
                                         <div class="form-start">
@@ -6248,6 +6292,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2031" multiple></select>
+                                                        <button onclick="removeSelectedImage2031()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2031" name="imageInput" onchange="updateImageOptions2031()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -6318,7 +6374,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2031">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -6331,7 +6387,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2031"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -6342,7 +6398,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2031"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -6360,9 +6416,9 @@
                                 <div id="myModalNam2030" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2030">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
+                                            <div class="name-CT">Hồ sơ:
                                                 <span class="name-1-CT">Công Trình Năm 2030</span>
                                             </div>
                                         </div>
@@ -6602,6 +6658,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2030" multiple></select>
+                                                        <button onclick="removeSelectedImage2030()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2030" name="imageInput" onchange="updateImageOptions2030()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -6672,7 +6740,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2030">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -6685,7 +6753,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2030"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -6696,7 +6764,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2030"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -6714,10 +6782,10 @@
                                 <div id="myModalNam2029" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2029">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
-                                                <span class="name-1-CT">Công Trình Năm 2035</span>
+                                            <div class="name-CT">Hồ sơ:
+                                                <span class="name-1-CT">Công Trình Năm 2029</span>
                                             </div>
                                         </div>
                                         <div class="form-start">
@@ -6956,6 +7024,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2029" multiple></select>
+                                                        <button onclick="removeSelectedImage2029()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2029" name="imageInput" onchange="updateImageOptions2029()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -7026,7 +7106,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2029">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -7039,7 +7119,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2029"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -7050,7 +7130,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2029"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -7065,13 +7145,13 @@
                                     <div class="function-list-item" data-function="hoSoCongTrinh">Hồ sơ công trình</div>
                                 </div>
                                 <!-- The Modal Ho So Cong Trinh -->
-                                <div id="myModalNam2028/" class="modal">
+                                <div id="myModalNam2028" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2028">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
-                                                <span class="name-1-CT">Công Trình Năm 2035</span>
+                                            <div class="name-CT">Hồ sơ:
+                                                <span class="name-1-CT">Công Trình Năm 2028</span>
                                             </div>
                                         </div>
                                         <div class="form-start">
@@ -7310,6 +7390,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2028" multiple></select>
+                                                        <button onclick="removeSelectedImage2028()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2028" name="imageInput" onchange="updateImageOptions2028()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -7380,7 +7472,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2028">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -7393,7 +7485,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2028"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -7404,7 +7496,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2028"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -7422,10 +7514,10 @@
                                 <div id="myModalNam2027" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2027">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
-                                                <span class="name-1-CT">Công Trình Năm 2035</span>
+                                            <div class="name-CT">Hồ sơ:
+                                                <span class="name-1-CT">Công Trình Năm 2027</span>
                                             </div>
                                         </div>
                                         <div class="form-start">
@@ -7664,6 +7756,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2027" multiple></select>
+                                                        <button onclick="removeSelectedImage2027()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2027" name="imageInput" onchange="updateImageOptions2027()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -7734,7 +7838,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2027">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -7747,7 +7851,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2027"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -7758,7 +7862,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2027"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -7776,9 +7880,9 @@
                                 <div id="myModalNam2026" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2026">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
+                                            <div class="name-CT">Hồ sơ:
                                                 <span class="name-1-CT">Công Trình Năm 2026</span>
                                             </div>
                                         </div>
@@ -8018,6 +8122,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2026" multiple></select>
+                                                        <button onclick="removeSelectedImage2026()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2026" name="imageInput" onchange="updateImageOptions2026()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -8088,7 +8204,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2026">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -8101,7 +8217,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2026"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -8112,7 +8228,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2026"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -8130,9 +8246,9 @@
                                 <div id="myModalNam2025" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2025">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
+                                            <div class="name-CT">Hồ sơ:
                                                 <span class="name-1-CT">Công Trình Năm 2025</span>
                                             </div>
                                         </div>
@@ -8372,6 +8488,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2025" multiple></select>
+                                                        <button onclick="removeSelectedImage2025()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2025" name="imageInput" onchange="updateImageOptions2025()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -8442,7 +8570,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2025">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -8455,7 +8583,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2025"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -8466,7 +8594,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2025"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -8484,9 +8612,9 @@
                                 <div id="myModalNam2024" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2024">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
+                                            <div class="name-CT">Hồ sơ:
                                                 <span class="name-1-CT">Công Trình Năm 2024</span>
                                             </div>
                                         </div>
@@ -8726,6 +8854,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2024" multiple></select>
+                                                        <button onclick="removeSelectedImage2024()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2024" name="imageInput" onchange="updateImageOptions2024()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -8796,7 +8936,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2024">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -8809,7 +8949,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2024"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -8820,7 +8960,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2024"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -8838,9 +8978,9 @@
                                 <div id="myModalNam2023" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2023">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
+                                            <div class="name-CT">Hồ sơ:
                                                 <span class="name-1-CT">Công Trình Năm 2023</span>
                                             </div>
                                         </div>
@@ -9080,6 +9220,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2023" multiple></select>
+                                                        <button onclick="removeSelectedImage2023()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2023" name="imageInput" onchange="updateImageOptions2023()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -9150,7 +9302,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2023">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -9163,7 +9315,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2023"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -9174,7 +9326,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2023"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -9192,9 +9344,9 @@
                                 <div id="myModalNam2022" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2022">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
+                                            <div class="name-CT">Hồ sơ:
                                                 <span class="name-1-CT">Công Trình Năm 2022</span>
                                             </div>
                                         </div>
@@ -9434,6 +9586,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2022" multiple></select>
+                                                        <button onclick="removeSelectedImage2022()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2022" name="imageInput" onchange="updateImageOptions2022()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -9504,7 +9668,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2022">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -9517,7 +9681,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2022"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -9528,7 +9692,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2022"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -9546,9 +9710,9 @@
                                 <div id="myModalNam2021" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2021">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
+                                            <div class="name-CT">Hồ sơ:
                                                 <span class="name-1-CT">Công Trình Năm 2021</span>
                                             </div>
                                         </div>
@@ -9788,6 +9952,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2021" multiple></select>
+                                                        <button onclick="removeSelectedImage2021()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2021" name="imageInput" onchange="updateImageOptions2021()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -9858,7 +10034,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2021">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -9871,7 +10047,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2021"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -9882,7 +10058,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2021"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -9900,9 +10076,9 @@
                                 <div id="myModalNam2020" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2020">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
+                                            <div class="name-CT">Hồ sơ:
                                                 <span class="name-1-CT">Công Trình Năm 2020</span>
                                             </div>
                                         </div>
@@ -10142,6 +10318,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2020" multiple></select>
+                                                        <button onclick="removeSelectedImage2020()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2020" name="imageInput" onchange="updateImageOptions2020()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -10212,7 +10400,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2020">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -10225,7 +10413,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2020"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -10236,7 +10424,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2020"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -10254,9 +10442,9 @@
                                 <div id="myModalNam2019" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2019">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
+                                            <div class="name-CT">Hồ sơ:
                                                 <span class="name-1-CT">Công Trình Năm 2019</span>
                                             </div>
                                         </div>
@@ -10496,6 +10684,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2019" multiple></select>
+                                                        <button onclick="removeSelectedImage2019()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2019" name="imageInput" onchange="updateImageOptions2019()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -10566,7 +10766,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2019">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -10579,7 +10779,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2019"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -10590,7 +10790,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2019"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -10608,9 +10808,9 @@
                                 <div id="myModalNam2018" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2018">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
+                                            <div class="name-CT">Hồ sơ:
                                                 <span class="name-1-CT">Công Trình Năm 2018</span>
                                             </div>
                                         </div>
@@ -10850,6 +11050,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2018" multiple></select>
+                                                        <button onclick="removeSelectedImage2018()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2018" name="imageInput" onchange="updateImageOptions2018()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -10920,7 +11132,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2018">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -10933,7 +11145,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2018"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -10944,7 +11156,7 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2018"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -10962,9 +11174,9 @@
                                 <div id="myModalNam2017" class="modal">
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <span class="close-khac-2">&times;</span>
+                                        <span class="close2017">&times;</span>
                                         <div class="infor-CT">
-                                            <div class="name-CT">Hồ sơ công trình:
+                                            <div class="name-CT">Hồ sơ:
                                                 <span class="name-1-CT">Công Trình Năm 2017</span>
                                             </div>
                                         </div>
@@ -11204,6 +11416,18 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
+                                                <!-- Dòng 19-->
+                                                <tr>
+                                                    <td>17</td>
+                                                    <td>Thông tin hình ảnh</td>
+                                                    <td>
+                                                        <select id="imageFiles2017" multiple></select>
+                                                        <button onclick="removeSelectedImage2017()">Xóa ảnh</button>
+                                                    </td>
+                                                    <td>
+                                                        <input type="file" id="imageInput2017" name="imageInput" onchange="updateImageOptions2017()" multiple>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -11274,7 +11498,7 @@
                                     <th>Năm lập HS</th>
                                     <th>Năm hoàn thành</th>
                                     <th>Đơn vị lập HS</th>
-                                    <th style="display:none;" class="deleteColumnKhac">Delete</th>
+                                    <th style="display:none;" class="deleteColumn2017">Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -11287,7 +11511,7 @@
                                     <td>2023</td>
                                     <td>Đang thực hiện</td>
                                     <td>Phòng DA</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2017"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>C01</td>
@@ -11298,14 +11522,12 @@
                                     <td>2018</td>
                                     <td>2020</td>
                                     <td>Phòng QLN&CT</td>
-                                    <td style="display:none;" class="deleteColumnKhac"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
+                                    <td style="display:none;" class="deleteColumn2017"><a class="icon-delete"><i class="fas fa-trash-alt" style="color: #1a0ce4;"></i></a></td>
                                 </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
@@ -11325,6 +11547,6 @@
 <script src="trang3b-mess.js"></script>
 <script src="trang3b-menu-new-mess.js"></script>
 <script src="trang3b-menu-ellipsis.js"></script>
-<script src="ho so theo nam-tab-modal-3b.js"></script>
+<script src="trang3b-tab-mod.js"></script>
 </body>
 </html>
