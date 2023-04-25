@@ -105,15 +105,29 @@ searchInput.addEventListener('input', (e) => {
                         option.value = project;
                         option.textContent = project;
                         option.selected = true;
-                        // Thêm sự kiện click để xóa công trình đã chọn
                         option.addEventListener('click', () => {
                             selectedProjects.remove(option);
                         });
                         selectedProjects.add(option);
                     }
+
+                    // Ẩn search-results khi chọn công trình
+                    searchResults.style.display = 'none';
                 });
                 searchResults.appendChild(result);
             }
         });
+    }
+});
+
+// Ẩn search-results khi di chuyển chuột ra khỏi div search-results
+searchResults.addEventListener('mouseleave', () => {
+    searchResults.style.display = 'none';
+});
+
+// Hiển thị search-results khi ấn vào ô tìm kiếm
+searchInput.addEventListener('focus', () => {
+    if (searchInput.value !== '') {
+        searchResults.style.display = 'block';
     }
 });
