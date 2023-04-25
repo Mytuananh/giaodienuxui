@@ -119,10 +119,11 @@ searchInput.addEventListener('input', (e) => {
         });
     }
 });
-
-// Ẩn search-results khi di chuyển chuột ra khỏi div search-results
-searchResults.addEventListener('mouseleave', () => {
-    searchResults.style.display = 'none';
+// Ẩn search-results khi nhấp chuột ra ngoài màn hình
+document.addEventListener('click', (e) => {
+    if (e.target !== searchInput && e.target !== searchResults) {
+        searchResults.style.display = 'none';
+    }
 });
 
 // Hiển thị search-results khi ấn vào ô tìm kiếm
