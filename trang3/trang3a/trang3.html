@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+
 </head>
 <body>
 <div class="nav-bar">
@@ -620,12 +621,17 @@
                                                     <td>06</td>
                                                     <td>Công trình liên quan</td>
                                                     <td>
-                                                        <input type="text"  readonly placeholder="0 công trình" id="related-projects-1" name="related-projects-1">
+
+                                                        <div>
+                                                            <select multiple id="selectedCT" style="width: 100%;"></select>
+                                                        </div>
+                                                        <div class="autocomplete">
+                                                        <input type="text" placeholder="Tìm kiếm công trình..." id="related-projects-1" name="related-projects-1">
+                                                        <div class="search-results" id="searchResults"></div>
+                                                    </div>
                                                     </td>
                                                     <td>
-                                                        <div class="autocomplete">
-                                                            <input type="text" id="search-1" placeholder="Tìm kiếm công trình">
-                                                        </div>
+
                                                     </td>
                                                 </tr>
                                                 <!-- Dòng 9 -->
@@ -3807,5 +3813,6 @@
 <script src="trang3-mess.js"></script>
 <script src="trang3-menu-new-mess.js"></script>
 <script src="trang3-menu-ellipsis.js"></script>
+<script src="search-CTLQ.js"></script>
 </body>
 </html>

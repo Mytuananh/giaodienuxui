@@ -7,23 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous"/>
 </head>
 <body>
-<div class="container">
-    <!-- Thay đổi trong phần HTML -->
-    <button class="scroll-left hidden"><i class="fas fa-chevron-circle-left"></i></button>
-    <div class="carousel-tab">
-        <div class="song-list">
-            <div class="song">Bài hát 1</div>
-            <div class="song">Bài hát 2</div>
-            <div class="song">Bài hát 3</div>
-            <div class="song">Bài hát 4</div>
-            <div class="song">Bài hát 5</div>
-            <div class="song">Bài hát 6</div>
-            <div class="song">Bài hát 7</div>
-            <div class="song">Bài hát 8</div>
-            <!-- Thêm các bài hát khác -->
-        </div>
-    </div>
-    <button class="scroll-right"><i class="fas fa-chevron-circle-right"></i></button>
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Tìm kiếm công trình...">
+    <div class="search-results" id="searchResults"></div>
+</div>
+<div>
+    <select multiple id="selectedProjects" style="width: 100%; height: 200px;"></select>
 </div>
 <script src="test-2.js"></script>
 </body>

@@ -2247,3 +2247,4 @@ function updateImageOptions2017() {
         select.add(option);
     }
 }
+

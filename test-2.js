@@ -1,33 +1,38 @@
-const songList = document.querySelector('.song-list');
-const scrollLeftButton = document.querySelector('.scroll-left');
-const scrollRightButton = document.querySelector('.scroll-right');
-let currentIndex = 0;
-// Thay đổi trong phần JavaScript
-const visibleSongs = 6; // Số lượng bài hát hiển thị cùng một lúc
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+const selectedProjects = document.getElementById('selectedProjects');
 
+const projects = [
+    'Công trình A',
+    'Công trình B',
+    'Công trình C',
+    'Công trình D',
+];
 
-// Thay đổi trong phần JavaScript
-scrollLeftButton.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
-    }
+searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase();
+    searchResults.innerHTML = '';
+
+    projects.forEach((project) => {
+        if (project.toLowerCase().includes(query)) {
+            const result = document.createElement('div');
+            result.textContent = project;
+            result.addEventListener('click', () => {
+                // Kiểm tra xem công trình đã được chọn chưa
+                const isSelected = Array.from(selectedProjects.options).some(
+                    (option) => option.value === project
+                );
+
+                // Nếu chưa được chọn, thêm công trình vào thẻ <select multiple>
+                if (!isSelected) {
+                    const option = document.createElement('option');
+                    option.value = project;
+                    option.textContent = project;
+                    option.selected = true;
+                    selectedProjects.add(option);
+                }
+            });
+            searchResults.appendChild(result);
+        }
+    });
 });
-
-scrollRightButton.addEventListener('click', () => {
-    if (currentIndex < songList.childElementCount - 1) {
-        currentIndex++;
-        updateCarousel();
-    }
-});
-
-function updateCarousel() {
-    const transformValue = -currentIndex * 100;
-    songList.style.transform = `translateX(${transformValue}px)`;
-
-    // Cập nhật trạng thái nút mũi tên
-    scrollLeftButton.classList.toggle('hidden', currentIndex === 0);
-    scrollLeftButton.classList.toggle('visible', currentIndex !== 0);
-    scrollRightButton.classList.toggle('hidden', currentIndex === songList.childElementCount - 1);
-    scrollRightButton.classList.toggle('visible', currentIndex !== songList.childElementCount - 1);
-}
