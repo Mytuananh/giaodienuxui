@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="trang4c1.css">
+    <link rel="stylesheet" href="trang4c2.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaOulQACiJzBfqumbsqg_-vKha8fCnL-s"
             async defer></script>
 
@@ -488,7 +488,7 @@
     <div class="content" id="content">
         <div class="past-1">
             <div class="past-border">
-            <div class="past-1-1">Quản lý công trình > Hồ sơ công trình > Cống dưới đê > Cống Trung Trang</div>
+            <div class="past-1-1">Quản lý công trình > Hồ sơ công trình > Cống dưới đê > Bảo dưỡng cống Trung Trang 2023 > Tiến độ thi công</div>
             <div class="past-1-2">
                 <div class="past-title-1">
                     <div class="title-tit-1">CỐNG TRUNG TRANG - HỒ SƠ CÔNG TRÌNH</div>
@@ -498,7 +498,6 @@
                     <div class="ellipsis-menu" id="addNewBtn"><i class="fas fa-ellipsis-v" style="color: #ffffff;"></i></div>
                     <div class="menu-ellipsis1-past">
                         <a class="menu-item-ell-past"><i class="fas fa-file-alt"></i> Xuất báo cáo</a>
-                        <a class="menu-item-ell-past" id="menu-ellipsis1-past1"><i class="fas fa-file-alt"></i> Cập nhật tiến độ</a>
                         <a class="menu-item-ell-past" id="menu-ellipsis1-past"><i class="fas fa-pencil-alt"></i> Chỉnh sửa/cập nhật</a>
                         <a class="menu-item-ell-past"><i class="fas fa-trash"></i> Xóa hồ sơ</a>
                     </div>
@@ -506,10 +505,10 @@
                     <div id="myModalHS" class="modal">
                         <!-- Modal content -->
                         <div class="modal-content">
-                            <span class="close">&times;</span>
+                            <span class="close2025">&times;</span>
                             <div class="infor-CT">
                                 <div class="name-CT">Hồ sơ:
-                                    <span class="name-1-CT" style="font-size: 14px">Bảo dưỡng cống Trung Trang 2023</span>
+                                    <span class="name-1-CT" style="font-size: 20px">Bảo dưỡng cống Trung Trang 2023</span>
                                 </div>
                             </div>
                             <div class="form-start">
@@ -795,82 +794,8 @@
                                             </select>
                                         </td>
                                         <td>
-                                            <button type="submit" class="butt-can" id="cancelBtn-1">Hủy</button>
-                                            <button type="submit" class="butt-sav" id="saveBtn-1">Lưu lại</button>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="myModalTD" class="modal">
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                            <span class="closeTD">&times;</span>
-                            <div class="infor-CT">
-                                <div class="name-CT">Hồ sơ:
-                                    <span class="name-1-CT" style="font-size: 14px">Bảo dưỡng cống Trung Trang 2023</span>
-                                </div>
-                            </div>
-                            <div class="form-start">
-                                <table style="overflow: auto">
-                                    <thead>
-                                    <tr>
-                                        <th>TT</th>
-                                        <th>Ngày tháng năm</th>
-                                        <th>Nội dung công việc thực hiện</th>
-                                        <th>Tình trạng nghiệm thu</th>
-                                        <th>Chất lượng công trình</th>
-                                        <th>Ghi chú</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <!-- Dòng 1 -->
-                                    <tr>
-                                        <td>01</td>
-                                        <td><input type="date" id="date-td"></td>
-                                        <td><textarea type="text" id="noi-dung" placeholder="Nội dung công việc..."></textarea></td>
-                                        <td><textarea type="text" id="tinh-trang" placeholder="Tình trạng nghiệm thu..."></textarea></td>
-                                        <td><textarea type="text" id="chat-luong" placeholder="Chất lượng công trình..."></textarea></td>
-                                        <td><textarea type="text" id="ghi-chu" placeholder="Nội dung ghi chú..."></textarea></td>
-                                    </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="save-noti">
-                                <table>
-                                    <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <!-- Dòng 1 -->
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            Ghi chú: <input type="text">
-                                        </td>
-                                        <td>
-                                            Thông báo tới:
-                                            <select class="select">
-                                                <option>Không thông báo</option>
-                                                <option>Toàn công ty</option>
-                                                <option>Ban giám đốc</option>
-                                                <option>Phòng Kế hoạch - kỹ thuật</option>
-                                                <option>Trà (PTP KHKT)</option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <button type="submit" class="butt-can" id="cancelBtn-2">Hủy</button>
-                                            <button type="submit" class="butt-sav" id="saveBtn-2">Lưu lại</button>
+                                            <button type="submit" class="butt-can" id="cancelBtn-hs-nam-2025">Hủy</button>
+                                            <button type="submit" class="butt-sav" id="saveBtn1-hs-nam-2025">Lưu lại</button>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -1253,14 +1178,14 @@
         </div>
     </div>
 </div>
-<script src="trang4c1-sidebar.js"></script>
-<script src="trang4c1-tab.js"></script>
-<script src="trang4c1-select-option.js"></script>
-<script src="trang4c1-carousel.js"></script>
-<script src="trang4c1-menu-ellipsis.js"></script>
-<script src="trang4c1-menu-new-mess.js"></script>
-<script src="trang4c1-mess.js"></script>
-<script src="trang4c1-map.js"></script>
-<script src="trang4c1-modal.js"></script>
+<script src="trang4c2-sidebar.js"></script>
+<script src="trang4c2-tab.js"></script>
+<script src="trang4c2-select-option.js"></script>
+<script src="trang4c2-carousel.js"></script>
+<script src="trang4c2-menu-ellipsis.js"></script>
+<script src="trang4c2-menu-new-mess.js"></script>
+<script src="trang4c2-mess.js"></script>
+<script src="trang4c2-map.js"></script>
+<script src="trang4c2-modal.js"></script>
 </body>
 </html>
