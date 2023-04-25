@@ -822,6 +822,7 @@
                                         <th>Nội dung công việc thực hiện</th>
                                         <th>Tình trạng nghiệm thu</th>
                                         <th>Chất lượng công trình</th>
+                                        <th>Hình ảnh</th>
                                         <th>Ghi chú</th>
                                     </tr>
                                     </thead>
@@ -833,9 +834,9 @@
                                         <td><input type="text" id="noi-dung" placeholder="Nội dung công việc..."></td>
                                         <td><input type="text" id="tinh-trang" placeholder="Tình trạng nghiệm thu..."></td>
                                         <td><input type="text" id="chat-luong" placeholder="Chất lượng công trình..."></td>
+                                        <td><input type="file" id="imageInput-1" name="imageInput"multiple></td>
                                         <td><input type="text" id="ghi-chu" placeholder="Nội dung ghi chú..."></td>
                                     </tr>
-
                                     </tbody>
                                 </table>
                             </div>
@@ -967,13 +968,14 @@
                         <td>13</td>
                         <td style="text-align: left">Thời gian thi công</td>
                         <td>Từ ngày 01/01/2023 đến 01/05/2023</td>
-                        <td>-</td>
+                        <td><input type="checkbox" class="custom-checkbox" id="checkbox1">
+                            <label for="checkbox1">Thi công quá thời gian</label></td>
                     </tr>
                     <tr>
                         <td>13</td>
                         <td style="text-align: left">Tiến độ thi công</td>
                         <td>Thi công được 80%</td>
-                        <td style="cursor: pointer; font-style: italic; color: red; ">Xem tiến độ</td>
+                        <td style="cursor: pointer; font-style: italic; color: blue; ">Xem tiến độ</td>
                     </tr>
                     <tr>
                         <td>14</td>
