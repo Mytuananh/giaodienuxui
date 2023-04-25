@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="trang4b.css">
+    <link rel="stylesheet" href="trang4c1.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaOulQACiJzBfqumbsqg_-vKha8fCnL-s"
             async defer></script>
 
@@ -488,10 +488,10 @@
     <div class="content" id="content">
         <div class="past-1">
             <div class="past-border">
-            <div class="past-1-1">Quản lý công trình > Thông tin quản lý > Cống dưới đê > Cống Trung Trang</div>
+            <div class="past-1-1">Quản lý công trình > Hồ sơ công trình > Cống dưới đê > Cống Trung Trang</div>
             <div class="past-1-2">
                 <div class="past-title-1">
-                    <div class="title-tit-1">CỐNG TRUNG TRANG - THÔNG TIN QUẢN LÝ</div>
+                    <div class="title-tit-1">CỐNG TRUNG TRANG - HỒ SƠ CÔNG TRÌNH</div>
                     <div class="title-tit-2">Cập nhật: 15:02 ngày 10/3/2023  |  bởi Nguyễn Anh Tuấn (KHKT)</div>
                 </div>
                 <div class="past-title-2" id="menu-ellipsis-past">
@@ -499,16 +499,16 @@
                     <div class="menu-ellipsis1-past">
                         <a class="menu-item-ell-past"><i class="fas fa-file-alt"></i> Xuất báo cáo</a>
                         <a class="menu-item-ell-past" id="menu-ellipsis1-past"><i class="fas fa-pencil-alt"></i> Chỉnh sửa/cập nhật</a>
-                        <a class="menu-item-ell-past"><i class="fas fa-trash"></i> Xóa thông tin</a>
+                        <a class="menu-item-ell-past"><i class="fas fa-trash"></i> Xóa hồ sơ</a>
                     </div>
                     <!-- The Modal Thong Tin Chung -->
-                    <div id="myModal-past" class="modal">
+                    <div id="myModalHS" class="modal">
                         <!-- Modal content -->
                         <div class="modal-content">
-                            <span class="close">&times;</span>
+                            <span class="close2025">&times;</span>
                             <div class="infor-CT">
-                                <div class="name-CT">Thông tin chung:
-                                    <span class="name-1-CT">Công Trình Cống</span>
+                                <div class="name-CT">Hồ sơ:
+                                    <span class="name-1-CT" style="font-size: 20px">Bảo dưỡng cống Trung Trang 2023</span>
                                 </div>
                             </div>
                             <div class="form-start">
@@ -525,108 +525,240 @@
                                     <!-- Dòng 1 -->
                                     <tr>
                                         <td>01</td>
-                                        <td>Mã công trình (ID)</td>
+                                        <td>Công trình sửa chữa</td>
                                         <td>
-                                            <div class="select-wrapper">
-                                                <select id="project-code-1" name="project-code-1" class="select">
-                                                    <option>C</option>
-                                                    <option>K</option>
-                                                    <option>CT</option>
-                                                    <option>TB</option>
-                                                    <option>KT</option>
-                                                    <option>CTTK</option>
-                                                    <option>CTK</option>
+                                            <div class="select-wrapper2">
+                                                <select id="project-name-did-hs-nam-2025" name="project-name-did-hs-nam-2025" class="select">
+                                                    <option>Cống Trung Trang</option>
+                                                    <option>Cống Cổ Tiểu</option>
+                                                    <option>Cống Táo</option>
+                                                    <option>Cống Mai Dương</option>
+                                                    <option>Cống Cao Mật</option>
                                                 </select>
-                                                <span>STT:</span>
-                                                <input id="project-code-num-1" name="project-code-num-1" class="input" type="text">
                                             </div>
                                         </td>
-                                        <td></td>
+                                        <td>Mã CT: 01</td>
                                     </tr>
                                     <!-- Dòng 2 -->
                                     <tr>
                                         <td>02</td>
-                                        <td>Tên công trình</td>
+                                        <td>Loại hồ sơ</td>
                                         <td>
-                                            <input type="text" id="project-name-1" name="project-name-1">
+                                            <div class="select-wrapper2">
+                                                <select id="project-type-hs-2025" name="project-type-hs-nam-2025" class="select">
+                                                    <option>Sửa chữa thường xuyên (HS SCTX)</option>
+                                                    <option>Sửa chữa lớn (SCL)</option>
+                                                    <option>Dự Án</option>
+                                                </select>
+                                                <span class="error-message" id="project-type-error-hs-nam-2025"></span>
+                                            </div>
+                                        </td>
                                         <td></td>
                                     </tr>
                                     <!-- Dòng 3 -->
                                     <tr>
                                         <td>03</td>
-                                        <td>Vị trí/Địa điểm</td>
+                                        <td>Mã hồ sơ</td>
                                         <td>
-                                            <input type="text" id="project-location-name-1" name="project-location-name-1">
+                                            <input type="text" id="project-code-hs-nam-2025" name="project-code-hs-nam-2025" placeholder="01.MHS">
+                                            <span class="error-message" id="project-code-error-hs-nam-2025"></span>
                                         </td>
                                         <td></td>
                                     </tr>
                                     <!-- Dòng 4 -->
                                     <tr>
-                                        <td></td>
-                                        <td>Tọa độ</td>
+                                        <td>04</td>
+                                        <td>Tên hồ sơ</td>
                                         <td>
-                                            <div class="coordinates">
-                                                <input type="text" placeholder="Tọa độ X" id="project-location-x-1" name="project-location-x-1">
-                                                <input type="text" placeholder="Tọa độ Y" id="project-location-y-1" name="project-location-y-1">
-                                            </div>
+                                            <input type="text" id="project-name-hs-nam-2025" name="project-name-hs-nam-2025">
+                                            <span class="error-message" id="project-name-error-hs-nam-2025"></span>
                                         </td>
                                         <td></td>
                                     </tr>
                                     <!-- Dòng 5 -->
                                     <tr>
-                                        <td>04</td>
-                                        <td>Quy mô</td>
-                                        <td><input type="text" id="project-scale-1" name="project-scale-1"></td>
+                                        <td>05</td>
+                                        <td>Địa điểm</td>
+                                        <td>
+                                            <input type="text" id="project-location-name-hs-nam-2025" name="project-location-name-hs-nam-2025">
+                                            <span class="error-message" id="project-location-name-error-hs-nam-2025"></span>
+                                        </td>
                                         <td></td>
                                     </tr>
                                     <!-- Dòng 6 -->
                                     <tr>
-                                        <td>05</td>
-                                        <td>Thiết bị vận hành</td>
-                                        <td>
-                                            <input type="text" id="project-equipment-1" name="project-equipment-1">
+                                        <td></td>
+                                        <td>Tọa độ</td>
+                                        <td><div class="coordinates">
+                                            <input type="text" placeholder="Tọa độ X" id="project-location-x-hs-nam-2025" name="project-location-x-hs-nam-2025">
+                                            <input type="text" placeholder="Tọa độ Y" id="project-location-y-hs-nam-2025" name="project-location-y-hs-nam-2025">
+                                            <span class="error-message" id="project-location-error-hs-nam-2025"></span>
+                                        </div>
                                         </td>
                                         <td></td>
                                     </tr>
                                     <!-- Dòng 7 -->
                                     <tr>
                                         <td>06</td>
-                                        <td>Công trình liên quan</td>
+                                        <td>Năm thực hiện</td>
                                         <td>
-                                            <input type="text"  readonly placeholder="0 công trình" id="related-projects-1" name="related-projects-1">
+                                            <input type="date" id="project-time-hs-nam-2025" name="project-time-hs-khac-2025">
                                         </td>
+                                        <td></td>
+                                    </tr>
+                                    <!-- Dòng 8 -->
+                                    <tr>
+                                        <td>07</td>
+                                        <td>Đơn vị lập hồ sơ</td>
                                         <td>
-                                            <div class="autocomplete">
-                                                <input type="text" id="search-1" placeholder="Tìm kiếm công trình">
-                                            </div>
+                                            <input type="text" id="project-dvlhs-hs-nam-2025" name="project-dvlhs-hs-nam-2025">
+                                            <span class="error-message" id="project-dvlhs-error-hs-nam-2025"></span>
                                         </td>
+                                        <td></td>
                                     </tr>
                                     <!-- Dòng 9 -->
                                     <tr>
                                         <td>08</td>
-                                        <td>Thông tin khác</td>
-                                        <td><input type="text"></td>
+                                        <td>Nguồn vốn</td>
                                         <td>
-                                            <div class="info-input-wrapper">
-                                                <select class="infoType">
-                                                    <option value="link">Link</option>
-                                                    <option value="file">File</option>
+                                            <div class="select-wrapper2">
+                                                <select id="project-von-hs-nam-2025" name="project-von-hs-nam-2025" class="select">
+                                                    <option>Nguồn hỗ trợ SC TSCĐ</option>
+                                                    <option>Nguồn thu từ SPDVTL</option>
+                                                    <option>Nguồn vốn điều lệ</option>
+                                                    <option>Nguồn khác</option>
                                                 </select>
-                                                <input type="text" class="input-link"  placeholder="Nhập link">
-                                                <input type="file" class="input-file"  style="display:none;" multiple>
                                             </div>
                                         </td>
+                                        <td></td>
                                     </tr>
                                     <!-- Dòng 10 -->
                                     <tr>
                                         <td>09</td>
+                                        <td>Quyết định phê duyệt dự toán</td>
+                                        <td>
+                                            <div class="coordinates">
+                                                <input type="text" id="project-qd-hs-nam-2025" name="project-qd-hs-nam-2025" placeholder="122/QĐ-TLĐ">
+                                                <input type="date" id="project-date-hs-nam-2025" name="project-date-hs-nam-2025">
+
+                                            </div>
+                                        </td>
+                                        <td> <input type="file" id="file-qdpddt" name="file-qdpddt" multiple></td>
+                                    </tr>
+                                    <!-- Dòng 11 -->
+                                    <tr>
+                                        <td>10</td>
+                                        <td>Giá trị dự toán</td>
+                                        <td>
+                                            <input type="text" id="project-money-dt-hs-nam-2025" name="project-money-dt-hs-nam-2025" placeholder="100.000.000">
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <!-- Dòng 12 -->
+                                    <tr>
+                                        <td>11</td>
+                                        <td>Đơn vị thi công</td>
+                                        <td>
+                                            <input type="text" id="project-dvtc-hs-nam-2025" name="project-dvtc-hs-nam-2025" placeholder="Xí nghiệp xây lắp">
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <!-- Dòng 13 -->
+                                    <tr>
+                                        <td>12</td>
+                                        <td>Thời gian thi công</td>
+                                        <td>
+                                            <div class="select-wrapper">
+                                                <span>Từ:</span>
+                                                <input type="date" id="project-date-start-hs-nam-2025" name="project-date-start-hs-nam-2025">
+                                                <span>Đến:</span>
+                                                <input id="project-date-end-nam-2025" name="project-date-end-nam-2025" type="date">
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <!-- Dòng 14 -->
+                                    <tr>
+                                        <td>13</td>
+                                        <td>Tiến độ thi công</td>
+                                        <td>
+                                            <div class="select-wrapper">
+                                                <select id="project-tdtc-hs-nam-2025" name="project-tdtc-hs-nam-2025" class="select">
+                                                    <option>Chưa thi công</option>
+                                                    <option>Thi công được 10%</option>
+                                                    <option>Thi công được 15%</option>
+                                                    <option>Thi công được 20%</option>
+                                                    <option>Thi công được 25%</option>
+                                                    <option>Thi công được 30%</option>
+                                                    <option>Thi công được 35%</option>
+                                                    <option>Thi công được 40%</option>
+                                                    <option>Thi công được 45%</option>
+                                                    <option>Thi công được 50%</option>
+                                                    <option>Thi công được 55%</option>
+                                                    <option>Thi công được 60%</option>
+                                                    <option>Thi công được 65%</option>
+                                                    <option>Thi công được 70%</option>
+                                                    <option>Thi công được 75%</option>
+                                                    <option>Thi công được 80%</option>
+                                                    <option>Thi công được 85%</option>
+                                                    <option>Thi công được 90%</option>
+                                                    <option>Thi công được 95%</option>
+                                                    <option>Đã thi công xong</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <!-- Dòng 15 -->
+                                    <tr>
+                                        <td>14</td>
+                                        <td>Quyết định phê duyệt quyết toán</td>
+                                        <td>
+                                            <div class="coordinates">
+                                                <input type="text" id="project-qdqt-hs-nam-2025" name="project-qd-hs-nam-2025" placeholder="122/QĐ-TLĐ">
+                                                <input type="date" id="project-date-qdqt-hs-nam-2025" name="project-date-hs-nam-2025">
+
+                                            </div>
+                                        </td>
+                                        <td><input type="file" id="file-qdpdqt" name="file-qdpdqt" multiple></td>
+                                    </tr>
+                                    <!-- Dòng 16-->
+                                    <tr>
+                                        <td>15</td>
+                                        <td>Giá trị quyết toán</td>
+                                        <td>
+                                            <input type="text" id="project-gtqt-hs-nam-2025" name="project-gtqt-hs-nam-2025" placeholder="90.000.000">
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <!-- Dòng 17-->
+                                    <tr>
+                                        <td>15</td>
+                                        <td>Người phụ trách</td>
+                                        <td>
+                                            <input type="text" id="project-npt-hs-nam-2025" name="project-npt-hs-nam-2025" placeholder="Nguyễn Văn A">
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <!-- Dòng 18-->
+                                    <tr>
+                                        <td>16</td>
+                                        <td>Ghi chú</td>
+                                        <td>
+                                            <input type="text" id="project-note-hs-nam-2025" name="project-note-hs-nam-2025" placeholder="Viết gì đó...">
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <!-- Dòng 19-->
+                                    <tr>
+                                        <td>17</td>
                                         <td>Thông tin hình ảnh</td>
                                         <td>
-                                            <select id="imageFiles-1" multiple></select>
-                                            <button onclick="removeSelectedImage1()">Xóa ảnh</button>
+                                            <select id="imageFiles2025" multiple></select>
+                                            <button onclick="removeSelectedImage2025()">Xóa ảnh</button>
                                         </td>
                                         <td>
-                                            <input type="file" id="imageInput-1" name="imageInput" onchange="updateImageOptions1()" multiple>
+                                            <input type="file" id="imageInput2025" name="imageInput" onchange="updateImageOptions2025()" multiple>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -662,8 +794,8 @@
                                             </select>
                                         </td>
                                         <td>
-                                            <button type="submit" class="butt-can" id="cancelBtn-1">Hủy</button>
-                                            <button type="submit" class="butt-sav" id="saveBtn-1">Lưu lại</button>
+                                            <button type="submit" class="butt-can" id="cancelBtn-hs-nam-2025">Hủy</button>
+                                            <button type="submit" class="butt-sav" id="saveBtn1-hs-nam-2025">Lưu lại</button>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -686,33 +818,99 @@
                     <tbody>
                     <tr>
                         <td>01</td>
-                        <td style="text-align: left">Quản lý tài sản</td>
-                        <td>CTY TNHH MTV khai thác CTTL Đa Độ</td>
+                        <td style="text-align: left">Mã công trình(ID)</td>
+                        <td>C04</td>
                         <td>-</td>
                     </tr>
                     <tr>
                         <td>02</td>
-                        <td style="text-align: left">Trạng thái công trình</td>
-                        <td>Đã cắm mốc</td>
+                        <td style="text-align: left">Tên công trình</td>
+                        <td>Cống Trung Trang</td>
                         <td>-</td>
                     </tr>
                     <tr>
                         <td>03</td>
-                        <td style="text-align: left">Vi phạm lấn chiếm</td>
-                        <td>Đang cập nhật</td>
+                        <td style="text-align: left">Loại hồ sơ</td>
+                        <td>Sửa chữa thường xuyên (HS SCTX)</td>
                         <td>-</td>
                     </tr>
                     <tr>
                         <td>04</td>
-                        <td style="text-align: left">Lịch sử công trình</td>
-                        <td>Được xây dựng từ năm 19xx</td>
+                        <td style="text-align: left">Mã hồ sơ</td>
+                        <td>C04.01</td>
                         <td>-</td>
                     </tr>
                     <tr>
                         <td>05</td>
-                        <td style="text-align: left">Lịch sử sửa chữa hồ sơ</td>
-                        <td>2 hồ sơ</td>
-                        <td style="cursor: pointer; font-style: italic; color: #3600D0">Xem Link</td>
+                        <td style="text-align: left">Tên hồ sơ</td>
+                        <td>Bảo dưỡng cống Trung Trang 2023</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>06</td>
+                        <td style="text-align: left">Vị trí/địa điểm</td>
+                        <td>Tả Văn Úc - xã Quang Hưng, huyện An Lão</td>
+                        <td style="cursor: pointer; font-style: italic; color: #3600D0; font-size: 14px" id="maps-link">Xem Gmaps</td>
+                    </tr>
+                    <tr>
+                        <td>07</td>
+                        <td style="text-align: left">Đơn vị lập hồ sơ</td>
+                        <td>Phòng KHKT</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>08</td>
+                        <td style="text-align: left">Người phụ trách</td>
+                        <td>Nguyễn Anh Tuấn</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>09</td>
+                        <td style="text-align: left">Quyết định phê duyệt dự toán</td>
+                        <td>122/QĐ-TLĐ ngày 10/01/2023</td>
+                        <td style="cursor: pointer; font-style: italic; color: #3600D0">Xem file</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td style="text-align: left">Giá trị dự toán</td>
+                        <td>120.000.000</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td style="text-align: left">Nguồn vốn</td>
+                        <td>Nguồn thu từ sản phẩm dịch vụ thủy lợi</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td style="text-align: left">Đơn vị thi công</td>
+                        <td>Trạm khai thác CTTL Trung Trang</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td style="text-align: left">Thời gian thi công</td>
+                        <td>Từ ngày 01/01/2023 đến 01/05/2023</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td style="text-align: left">Tiến độ thi công</td>
+                        <td>Thi công được 80%</td>
+                        <td style="cursor: pointer; font-style: italic; color: red; ">Xem tiến độ</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td style="text-align: left">Quyết định phê duyệt quyết toán</td>
+                        <td>125/QĐ-TLĐ ngày 10/05/2023</td>
+                        <td style="cursor: pointer; font-style: italic; color: #3600D0">Xem file</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td style="text-align: left">Giá trị quyết toán</td>
+                        <td>120.000.000</td>
+                        <td>-</td>
                     </tr>
                     </tbody>
                 </table>
@@ -722,39 +920,29 @@
         <div class="past-2">
             <div class="infor-1">
                 <div class="information">
-                <div class="name-ct">Cống Trung Trang</div>
+                <div class="name-ct">Hồ sơ liên quan: cống Trung Trang</div>
                 <div class="table-name-ct">
                     <table class="table-tab" style="margin-top: 0">
                     <tbody style="font-weight: 600" >
                     <tr style="padding: 0; background-color: white">
-                        <td style="text-align: left; padding: 0">Thông tin chung</td>
-                        <td style="text-align: center; padding: 0">Xem</td>
-                        <td style="text-align: right;font-weight: 400;font-size: 11px;line-height: 13px; padding: 0;font-style: italic;">15:02 ngày 10/3/2023</td>
+                        <td style="text-align: left; padding: 0">01</td>
+                        <td style="text-align: left; color: red; cursor: pointer">Thiết lập trạm điều kiển cống dưới đê (cống Trung Trang, cống Cổ Tiểu 2, Cổ Tiểu 3)</td>
+                        <td style="text-align: right;font-weight: 400;font-size: 13px;line-height: 13px; padding: 0;font-style: italic;">2023</td>
                     </tr>
                     <tr style="padding: 0; background-color: white">
-                        <td style="text-align: left; padding: 0">Thông tin quản lý</td>
-                        <td style="text-align: center; padding: 0">Đang xem</td>
-                        <td style="text-align: right;font-weight: 400;font-size: 11px;line-height: 13px; padding: 0;font-style: italic;">15:02 ngày 10/3/2023</td>
+                        <td style="text-align: left; padding: 0">02</td>
+                        <td style="text-align: left; color: red; cursor: pointer">Bảo dưỡng cống Trung Trung vụ chiêm 2022</td>
+                        <td style="text-align: right;font-weight: 400;font-size: 13px;line-height: 13px; padding: 0;font-style: italic;">2022</td>
                     </tr>
                     <tr style="padding: 0; background-color: white">
-                        <td style="text-align: left; padding: 0">Hồ sơ công trình</td>
-                        <td style="text-align: center; padding: 0">Xem</td>
-                        <td style="text-align: right;font-weight: 400;font-size: 11px;line-height: 13px; padding: 0;font-style: italic;">15:02 ngày 10/3/2023</td>
+                        <td style="text-align: left; padding: 0">03</td>
+                        <td style="text-align: left; color: red; cursor: pointer">Sửa chữa cánh cống Trung Trang</td>
+                        <td style="text-align: right;font-weight: 400;font-size: 13px;line-height: 13px; padding: 0;font-style: italic;">2019</td>
                     </tr>
                     <tr style="padding: 0; background-color: white">
-                        <td style="text-align: left; padding: 0">Hồ sơ vi phạm</td>
-                        <td style="text-align: center; padding: 0">Xem</td>
-                        <td style="text-align: right;font-weight: 400;font-size: 11px;line-height: 13px; padding: 0;font-style: italic;">15:02 ngày 10/3/2023</td>
-                    </tr>
-                    <tr style="padding: 0; background-color: white">
-                        <td style="text-align: left; padding: 0">Hồ sơ vận hành</td>
-                        <td style="text-align: center; padding: 0">Xem</td>
-                        <td style="text-align: right;font-weight: 400;font-size: 11px;line-height: 13px; padding: 0;font-style: italic;">15:02 ngày 10/3/2023</td>
-                    </tr>
-                    <tr style="padding: 0; background-color: white">
-                        <td style="text-align: left; padding: 0">Hồ sơ khác</td>
-                        <td style="text-align: center; padding: 0">Xem</td>
-                        <td style="text-align: right;font-weight: 400;font-size: 11px;line-height: 13px; padding: 0;font-style: italic;">15:02 ngày 10/3/2023</td>
+                        <td style="text-align: left; padding: 0">04</td>
+                        <td style="text-align: left; color: red; cursor: pointer">Sửa chữa hèm cống Trung Trang</td>
+                        <td style="text-align: right;font-weight: 400;font-size: 13px;line-height: 13px; padding: 0;font-style: italic;">2020</td>
                     </tr>
                     </tbody>
                 </table>
@@ -764,26 +952,136 @@
             <div class="infor-2">
                 <div class="infor-2-1">
                 <div class="tabs-information">
-                    <div class="tab-infor active" id="files-tab" style="display: none">Files</div>
+                    <div class="tab-infor active" id="files-tab">Files</div>
+                    <span class="separator">|</span>
+                    <div class="tab-infor" id="images-tab">Ảnh</div>
                     <span class="separator" style="display: none">|</span>
-                    <div class="tab-infor" id="images-tab" style="display: none">Ảnh</div>
-                    <span class="separator" style="display: none">|</span>
-                    <div class="tab-infor" id="links-tab">Links</div>
-                    <span class="separator" style="display: none">|</span>
-                    <div class="tab-infor" id="maps-tab" style="display: none">Maps</div>
+                    <div class="tab-infor" id="links-tab" style="display: none">Links</div>
+                    <span class="separator">|</span>
+                    <div class="tab-infor" id="maps-tab">Maps</div>
                     <span class="separator">|</span>
                     <div class="tab-infor" id="shares-tab">Chia sẻ</div>
                     <span class="separator">|</span>
                     <div class="tab-infor" id="histories-tab">Lịch sử cập nhật</div>
                 </div>
-                <div class="tab-content-infor active" id="file-content"></div>
-                <div class="tab-content-infor" id="image-content"></div>
+                <div class="tab-content-infor active" id="file-content">
+                    <div class="tit-file-hsct-1">
+                    <div class="tit-tit-1">Mục 09: Quyết định phê duyệt dự toán</div>
+                    <div class="tit-tit-2">
+                        <div class="tit-2-2">
+                            <div class="tit-img">
+                                <div class="border-tit-img">PDF</div>
+                            </div>
+                            <div class="tit-cont">Quyết định 3802/QĐ-UBND v/v phê duyệt thuyết minh dự án KHCN cấp thành phố DA873</div>
+                            <div class="tit-icon">
+                                <div class="tit-watch">
+                                    <div class="icon-1-tit"><i class="fas fa-eye" style="color: #4B5580"></i></div>
+                                    <div class="icon-1-tit-cont">Xem</div>
+                                </div>
+                                <div class="tit-down">
+                                    <div class="icon-1-tit"><i class="fas fa-arrow-circle-down" style="color: #4B5580"></i></div>
+                                    <div class="icon-1-tit-cont">Tải về</div>
+                                </div>
+                            </div>
+                            <div class="tit-user">
+                                <div class="tit-user-one">Nguyễn Anh Tuấn</div>
+                                <div class="tit-user-time">15:02 ngày 10/3/2023</div>
+                            </div>
+                        </div>
+                        <div class="tit-2-2">
+                            <div class="tit-img">
+                                <div class="border-tit-img-1">Word</div>
+                            </div>
+                            <div class="tit-cont">Quyết định 3802/QĐ-UBND v/v phê duyệt thuyết minh dự án KHCN cấp thành phố DA873</div>
+                            <div class="tit-icon">
+                                <div class="tit-watch">
+                                    <div class="icon-1-tit"><i class="fas fa-eye" style="color: #4B5580"></i></div>
+                                    <div class="icon-1-tit-cont">Xem</div>
+                                </div>
+                                <div class="tit-down">
+                                    <div class="icon-1-tit"><i class="fas fa-arrow-circle-down" style="color: #4B5580"></i></div>
+                                    <div class="icon-1-tit-cont">Tải về</div>
+                                </div>
+                            </div>
+                            <div class="tit-user">
+                                <div class="tit-user-one">Nguyễn Anh Tuấn</div>
+                                <div class="tit-user-time">15:02 ngày 10/3/2023</div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="tit-file-hsct-2">
+                    <div class="tit-tit-1">Mục 14: Quyết định phê duyệt quyết toán</div>
+                    <div class="tit-tit-2">
+                        <div class="tit-2-2">
+                            <div class="tit-img">
+                                <div class="border-tit-img">PDF</div>
+                            </div>
+                            <div class="tit-cont">Quyết định 3802/QĐ-UBND v/v phê duyệt thuyết minh dự án KHCN cấp thành phố DA873</div>
+                            <div class="tit-icon">
+                                <div class="tit-watch">
+                                    <div class="icon-1-tit"><i class="fas fa-eye" style="color: #4B5580"></i></div>
+                                    <div class="icon-1-tit-cont">Xem</div>
+                                </div>
+                                <div class="tit-down">
+                                    <div class="icon-1-tit"><i class="fas fa-arrow-circle-down" style="color: #4B5580"></i></div>
+                                    <div class="icon-1-tit-cont">Tải về</div>
+                                </div>
+                            </div>
+                            <div class="tit-user">
+                                <div class="tit-user-one">Nguyễn Anh Tuấn</div>
+                                <div class="tit-user-time">15:02 ngày 10/3/2023</div>
+                            </div>
+                        </div>
+                        <div class="tit-2-2">
+                            <div class="tit-img">
+                                <div class="border-tit-img-1">Word</div>
+                            </div>
+                            <div class="tit-cont">Quyết định 3802/QĐ-UBND v/v phê duyệt thuyết minh dự án KHCN cấp thành phố DA873</div>
+                            <div class="tit-icon">
+                                <div class="tit-watch">
+                                    <div class="icon-1-tit"><i class="fas fa-eye" style="color: #4B5580"></i></div>
+                                    <div class="icon-1-tit-cont">Xem</div>
+                                </div>
+                                <div class="tit-down">
+                                    <div class="icon-1-tit"><i class="fas fa-arrow-circle-down" style="color: #4B5580"></i></div>
+                                    <div class="icon-1-tit-cont">Tải về</div>
+                                </div>
+                            </div>
+                            <div class="tit-user">
+                                <div class="tit-user-one">Nguyễn Anh Tuấn</div>
+                                <div class="tit-user-time">15:02 ngày 10/3/2023</div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="tab-content-infor" id="image-content">
+                    <div class="content-file">
+                        <div class="content-file-b">
+                            <div class="carousel-nav">
+                                <button class="prev">&#10094;</button>
+                                <div class="image-counter"></div>
+                                <button class="next">&#10095;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-file-1">
+                        <div class="carousel-container">
+                            <div class="carousel-slide">
+                                <img src="anh4/cau%20doi.jpg" alt="Image 1">
+                                <img src="anh4/DSC_0027.jpg" alt="Image 2">
+                                <img src="anh4/z3927205997615_915fe7224ed9c946315a7da6a635629d.jpg" alt="Image 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="tab-content-infor" id="link-content">
-                    <div class="link-tit">Mục 05: Lịch sử sửa chữa hồ sơ</div>
+                    <div class="link-tit">Mục 06: Công trình liên quan</div>
                     <div class="link-cont">
                         <div class="link-cont-1">
                             <div class="stt-link">01</div>
-                            <div class="tit-link-cont">Hồ sơ sửa chữa cánh cống</div>
+                            <div class="tit-link-cont">Kênh trước cống Trung Trang</div>
                             <div class="user-link">
                                 <div class="user-link-1">Nguyễn Anh Tuấn</div>
                                 <div class="user-link-2">15:02 ngày 10/3/2023</div>
@@ -791,7 +1089,7 @@
                         </div>
                         <div class="link-cont-1">
                             <div class="stt-link">02</div>
-                            <div class="tit-link-cont">Hồ sơ sửa chữa hèm cống</div>
+                            <div class="tit-link-cont">Kênh trục chính sông Đa Độ</div>
                             <div class="user-link">
                                 <div class="user-link-1">Nguyễn Anh Tuấn</div>
                                 <div class="user-link-2">15:02 ngày 10/3/2023</div>
@@ -799,7 +1097,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-content-infor" id="map-content"></div>
+                <div class="tab-content-infor" id="map-content">
+                    <div class="map-tit">Google My Maps</div>
+                    <div class="map-link" id="map-link"></div>
+                </div>
                 <div class="tab-content-infor" id="shares-content">
                     <div class="share-search">
                         <div class="share-search-1">
@@ -877,14 +1178,14 @@
         </div>
     </div>
 </div>
-<script src="trang4b-sidebar.js"></script>
-<script src="trang4b-tab.js"></script>
-<script src="trang4b-select-option.js"></script>
-<script src="trang4b-carousel.js"></script>
-<script src="trang4b-menu-ellipsis.js"></script>
-<script src="trang4b-menu-new-mess.js"></script>
-<script src="trang4b-mess.js"></script>
-<script src="trang4b-map.js"></script>
-<script src="trang4b-modal.js"></script>
+<script src="trang4c1-sidebar.js"></script>
+<script src="trang4c1-tab.js"></script>
+<script src="trang4c1-select-option.js"></script>
+<script src="trang4c1-carousel.js"></script>
+<script src="trang4c1-menu-ellipsis.js"></script>
+<script src="trang4c1-menu-new-mess.js"></script>
+<script src="trang4c1-mess.js"></script>
+<script src="trang4c1-map.js"></script>
+<script src="trang4c1-modal.js"></script>
 </body>
 </html>
