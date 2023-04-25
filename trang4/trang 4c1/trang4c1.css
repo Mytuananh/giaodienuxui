@@ -1752,15 +1752,15 @@ table tr:nth-child(even) {
 }
 
 /* Close Button */
-.modal .close {
+.modal .close, .modal .closeTD {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
 }
-.modal.close:hover,
-.modal.close:focus {
+.modal.close:hover, .modal.closeTD:hover
+.modal.close:focus, .modal.closeTD:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;

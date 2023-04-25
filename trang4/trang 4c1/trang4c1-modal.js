@@ -3,11 +3,13 @@ const functionList1 = document.getElementById('menu-ellipsis1-past1');
 const modal = document.getElementById('myModalHS');
 const modal1 = document.getElementById('myModalTD');
 const span = document.getElementsByClassName("close")[0];
+const span1 = document.getElementsByClassName("closeTD")[0];
 const saveBtn = document.getElementById("saveBtn-1");
-const saveBtn1 = document.getElementById("saveBtn-1");
-const cancelBtn = document.getElementById("cancelBtn-2");
+const saveBtn1 = document.getElementById("saveBtn-2");
+const cancelBtn = document.getElementById("cancelBtn-1");
 const cancelBtn1 = document.getElementById("cancelBtn-2");
-
+const menu = document.getElementById("menu-list");
+const addNew = document.getElementById("addNewBtn11")
 functionList.addEventListener("click", function () {
         modal.style.display = "block";
 });
@@ -17,19 +19,30 @@ functionList1.addEventListener("click", function () {
 function saveFormData() {
         closeModal();
 }
+function saveFormData1() {
+    closeModal1();
+}
 function closeModal() {
     modal.style.display = "none";
+}
+function closeModal1() {
     modal1.style.display = "none";
 }
 span.onclick = function () {
     closeModal();
+};
+span1.onclick = function () {
+    closeModal1();
 };
 window.onclick = function (event) {
     if (event.target === modal) {
         closeModal();
     }
     if (event.target === modal1) {
-        closeModal();
+        closeModal1();
+    }
+    if (event.target !== menu && event.target !== addNew){
+        menu.style.display = "none";
     }
 };
 saveBtn.onclick = function () {
@@ -39,10 +52,10 @@ cancelBtn.onclick = function () {
     closeModal();
 };
 saveBtn1.onclick = function () {
-    saveFormData();
+    saveFormData1();
 };
 cancelBtn1.onclick = function () {
-    closeModal();
+    closeModal1();
 };
 // Hiển thị thẻ input-link mặc định nếu lựa chọn là "link"
 const infoInput = document.querySelectorAll('.input-link');
