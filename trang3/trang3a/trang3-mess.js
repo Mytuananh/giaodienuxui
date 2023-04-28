@@ -128,6 +128,7 @@ function sendMessage(chatBox) {
     }
 }
 function handleEnter(event) {
+    const chatBox = document.querySelector('.chat-box'); // Thêm dòng này để định nghĩa lại biến chatBox
     if (event.keyCode === 13 || event.which === 13) {
         event.preventDefault();
         sendMessage(chatBox);
@@ -346,4 +347,6 @@ function updateAvatarButtonPositions() {
         avatarButton.style.bottom = `${offset}px`;
     });
 }
+
+
 
