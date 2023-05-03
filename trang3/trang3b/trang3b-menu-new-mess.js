@@ -104,3 +104,54 @@ searchInput.addEventListener("keyup", (e) => {
         friend.style.display = friendName.includes(searchTerm) ? "block" : "none";
     });
 });
+
+const chatBox = document.querySelector('.chat-box');
+const chatBoxName = document.querySelector('.chat-box .sender-name');
+const chatBoxStatus = document.querySelector('.chat-box .online-status');
+
+cacMucBanBe.forEach(function(banBe) {
+    banBe.addEventListener('click', function() {
+        const ten = this.querySelector('.friend-name').textContent;
+        const trangThai = this.querySelector('.friend-status').classList.contains('online') ? 'online' : 'offline';
+
+        chatBox.style.display = 'block';
+        chatBoxName.textContent = ten;
+        chatBoxStatus.className = trangThai;
+        chatBoxStatus.textContent = trangThai === 'online' ? 'online' : 'offline';
+        displayChatBox();
+    });
+});
+
+cacNhom.forEach(function(nhom) {
+    nhom.addEventListener('click', function() {
+        const tenNhom = this.querySelector('.group-name').textContent;
+
+        chatBox.style.display = 'block';
+        chatBoxName.textContent = tenNhom;
+        chatBoxStatus.className = '';
+        chatBoxStatus.textContent = '';
+        displayChatBox();
+    });
+});
+
+function displayChatBox() {
+    const chatBox = document.querySelector('.chat-box');
+    chatBox.style.display = 'block';
+    chatBox.style.position = 'fixed';
+    chatBox.style.bottom = '0';
+    chatBox.style.right = '0';
+    updateChatBoxPositions();
+}
+let openChatBoxes = [];
+
+function calculateChatBoxPosition(index) {
+    const chatBoxSpacing = 35;
+    return `${(index + 1) * chatBoxSpacing}vh`;
+}
+
+function updateChatBoxPositions() {
+    openChatBoxes.forEach((box, index) => {
+        const chatBox = document.getElementById(`chat-box-${box}`);
+        chatBox.style.right = calculateChatBoxPosition(index);
+    });
+}

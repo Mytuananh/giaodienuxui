@@ -3,7 +3,9 @@ const newMess = document.querySelector('.icon-secondary');
 const danhSachBanBe = document.querySelector('.friends-list');
 const newList = document.querySelector('.new-mess');
 const cacMucBanBe = document.querySelectorAll('.friend');
-
+const chatBox = document.querySelector('.chat-box');
+const chatBoxName = document.querySelector('.chat-box .sender-name');
+const chatBoxStatus = document.querySelector('.chat-box .online-status');
 const personalTab = document.getElementById('personal-tab');
 const groupTab = document.getElementById('group-tab');
 const personalContent = document.getElementById('personal-content');
@@ -57,9 +59,14 @@ newList.addEventListener('click', function(event) {
 
 cacMucBanBe.forEach(function(banBe) {
     banBe.addEventListener('click', function() {
-        // Lấy tên và trạng thái của bạn bè được click
         const ten = this.querySelector('.friend-name').textContent;
-        const trangThai = this.querySelector('.friend-status').classList.contains('online') ? 'online' : 'offline';
+        const transThai = this.querySelector('.friend-status').classList.contains('online') ? 'online' : 'offline';
+        chatBox.style.display = "block";
+        chatBoxName.textContent = ten;
+        chatBoxStatus.className = transThai;
+        chatBoxStatus.textContent = transThai === 'online' ? 'online' : 'offline';
+        // Lấy tên và trạng thái của bạn bè được click
+
 
         // Xóa trạng thái cũ (nếu có)
         const trangThaiCu = document.querySelector('.chat-header .online, .chat-header .offline');
@@ -69,8 +76,8 @@ cacMucBanBe.forEach(function(banBe) {
 
         // Hiển thị trạng thái online hoặc offline dưới tên người dùng
         const trangThaiNguoiNhan = document.createElement('span');
-        trangThaiNguoiNhan.textContent = trangThai === 'online' ? 'trực tuyến' : 'ngoại tuyến';
-        trangThaiNguoiNhan.className = trangThai;
+        trangThaiNguoiNhan.textContent = transThai === 'online' ? 'online' : 'offline';
+        trangThaiNguoiNhan.className = transThai;
         trangThaiNguoiNhan.style.marginLeft = '5px';
     });
 });
@@ -85,6 +92,11 @@ cacNhom.forEach(function(nhom) {
     } else {
         trangThaiNhom.classList.add('offline');
     }
+    const tenNhom = this.querySelector('.group-name').textContent;
+    chatBox.style.display = 'block';
+    chatBoxName.textContent = tenNhom;
+    chatBoxStatus.className = '';
+    chatBoxStatus.textContent = '';
 });
 document.addEventListener('click', function() {
     danhSachBanBe.style.display = 'none';
@@ -104,3 +116,6 @@ searchInput.addEventListener("keyup", (e) => {
         friend.style.display = friendName.includes(searchTerm) ? "block" : "none";
     });
 });
+
+
+
