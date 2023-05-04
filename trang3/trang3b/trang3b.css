@@ -244,7 +244,7 @@ transform: scale(60%);
 }
 .side-bar-1.active {
     width: 20%;
-    border-right: 5px solid #b4b4b9;
+    border-right: 2px solid #b4b4b9;
 }
 .side-bar-1 span{
     margin-left: 5px;
@@ -298,7 +298,7 @@ nav li {
 }
 
 nav li:hover {
-    background-color: #839098;
+    background-color: #ffffff;
 }
 nav a:active {
     color: #4B5580;
@@ -326,6 +326,7 @@ nav i {
 .side-bar-1.active ul li a .toggle-text {
     display: inline;
 }
+
 .body-qlct-2-2{
     width:100%;
     height: 92vh;
